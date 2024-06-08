@@ -4,7 +4,7 @@ import requests
 import json
 
 class GPT_Model():
-    def __init__(self, model="gpt-4-turbo-preview", api_key=openai.api_key, temperature=0, max_tokens=4000, n=1, patience=1000000, sleep_time=0.1, system_prompt=""):
+    def __init__(self, model="gpt-4-turbo", api_key=openai.api_key, temperature=0, max_tokens=4000, n=1, patience=1000000, sleep_time=0.1, system_prompt=""):
         self.model = model
         self.api_key = api_key
         self.temperature = temperature
