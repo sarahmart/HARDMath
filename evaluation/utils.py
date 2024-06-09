@@ -51,3 +51,53 @@ def parse_frac_expression(frac_expression):
         print("The floating-point result is:", result)
     else:
         print("No fraction found in the string.")
+
+def answer_type_extract(answer_val):
+    if answer_val:
+        if re.search(r'[a-zA-Z]', answer_val):
+            answer_type = "math_expression"
+        elif re.search(r'\d+\.\d+', answer_val):
+            answer_type = "float"
+        elif re.search(r'^\d+$', answer_val):
+            answer_type = "int"
+        elif re.search(r'\[.*\]', answer_val):
+            answer_type = "list"
+        else:
+            answer_type = "uncertain"  
+    else:
+        answer_type = "Answer extraction error"
+    return answer_type
+
+def compare_lists_within_threshold(list1, list2,threshold):
+    result = []
+    for val1, val2 in zip(list1, list2):
+        try:
+            if val1 is None or val2 is None:
+                result.append(False)
+            else:
+                num1 = N(sympify(val1))
+                num2 = N(sympify(val2))
+                diff = abs(num1 - num2)
+                #avg = (num1 + num2) / 2
+                if abs(diff / num2) <= threshold:
+                    result.append(True)
+                else:
+                    result.append(False)
+        except (TypeError, ValueError):
+            result.append(False)
+    return result
+
+def list_diff(list1, list2):
+    result = []
+    for val1, val2 in zip(list1, list2):
+        try:
+            if val1 is None or val2 is None:
+                result.append(None)
+            else:
+                num1 = N(sympify(val1))
+                num2 = N(sympify(val2))
+                diff = abs(num1 - num2)
+                result.append(diff)
+        except (TypeError, ValueError):
+            result.append(None)
+    return result
