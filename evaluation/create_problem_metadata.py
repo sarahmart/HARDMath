@@ -9,7 +9,7 @@ def create_problem_dict(question, solution, pid, extracted_solution=None, questi
         answer_val = extracted_solution
     else:
         # TODO: check this part 
-        answer_extraction.get_boxed_answers(solution, pattern = re.compile(r'\\approx|='),latex_wrap=r'\$(.*?)\$',answer_type=None)
+        answer_val = answer_extraction.get_boxed_answers(solution, pattern = re.compile(r'\\approx|='),latex_wrap=r'\$(.*?)\$',answer_type=None)
     # Determine the answer type based on answer_val
     
     if not answer_type:
