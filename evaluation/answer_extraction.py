@@ -16,7 +16,7 @@ def extract_final_answer(final_answer, pattern):
     parts = [part.strip() for part in parts if part.strip()]
     final_expression = parts[-1] if parts else final_answer
     # deal with the case where the final answer is a nested boxed expression
-    if "boxed" in final_expression:
+    if "{" or "}" in final_expression:
         start_idx = final_expression.find('{') + 1
         end_idx = final_expression.rfind('}')
         return final_expression[start_idx:end_idx]
@@ -33,7 +33,7 @@ def extract_final_answer_allform(latex_response, pattern = re.compile(r'\\approx
     final_answer = extract_boxed_content(latex_response,latex_wrap = latex_wrap)
     if not final_answer:
         return None
-    if answer_type is 'float' or 'math_exprssion':
+    if answer_type == 'float' or 'math_exprssion':
         return extract_final_answer(final_answer, pattern)
     if answer_type == 'list':
         return extract_final_answer_list(final_answer)
