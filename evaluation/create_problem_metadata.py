@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 import json
 
-def create_problem_dict(question, solution, pid, extrcated_answer=None, question_type=None, answer_type=None):
+def create_problem_dict(question, solution, pid, small_eval_point, small_analytical, small_numerical, \
+                        large_eval_point, large_analytical, large_numerical, extrcated_answer=None, question_type=None, answer_type=None):
     # of the df already provides extracted answer, we directly load it 
     if extrcated_answer:
         #answer_val = list(map(latex2sympy,extrcated_answer))
@@ -24,13 +25,19 @@ def create_problem_dict(question, solution, pid, extrcated_answer=None, question
 
     # Construct the problem dictionary
     problem_dict = {
+        "pid": pid,
         "question": question,
         "solution": solution,
         "question_type": question_type,
-        "answer_val": answer_val,
         "answer_type": answer_type,
+        "answer_val": answer_val,
         "precision": precision,
-        "pid": pid
+        "small_eval_point":small_eval_point,
+        "small_analytical":small_analytical,
+        "small_numerical":small_numerical,
+        "large_eval_point":large_eval_point,
+        "large_analytical":large_analytical,
+        "large_numerical":large_numerical
     }
 
     return problem_dict
@@ -45,7 +52,14 @@ def create_problem_dict_all(df,problem_dict_path = "data/eval_problems/eval_HARD
         extrcated_answer = row["extracted_answer"]
         question_type = row["question_type"]
         answer_type = row["answer_type"]
-        problem_dict = create_problem_dict(question, solution_latex, pid, extrcated_answer, question_type, answer_type)
+        small_eval_point = row["small_eval_point"]
+        small_analytical = row["small_analytical"]
+        small_numerical = row["small_numerical"]
+        large_eval_point = row["large_eval_point"]
+        large_analytical = row["large_analytical"]
+        large_numerical = row["large_numerical"]
+        problem_dict = create_problem_dict(question, solution_latex, pid, small_eval_point, small_analytical, small_numerical, \
+                        large_eval_point, large_analytical, large_numerical, extrcated_answer, question_type, answer_type)
         problem_dict_all.append(problem_dict)
     with open(problem_dict_path, mode='w', encoding='utf-8') as jsonfile:
         json.dump(problem_dict_all, jsonfile, ensure_ascii=False, indent=4)
