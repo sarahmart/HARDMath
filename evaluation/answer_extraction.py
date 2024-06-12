@@ -2,6 +2,22 @@ import re
 
 # automatic answer extraction using \boxed{} in the response
 
+def answer_type_extract(answer_val):
+    if answer_val:
+        if re.search(r'[a-zA-Z]', answer_val):
+            answer_type = "math_expression"
+        elif re.search(r'\d+\.\d+', answer_val):
+            answer_type = "float"
+        elif re.search(r'^\d+$', answer_val):
+            answer_type = "int"
+        elif re.search(r'\[.*\]', answer_val):
+            answer_type = "list"
+        else:
+            answer_type = "uncertain"  
+    else:
+        answer_type = "Answer extraction error"
+    return answer_type
+
 def extract_boxed_content(latex_response, latex_wrap = r'\$(.*?)\$'):
     matches = re.findall(latex_wrap, latex_response, re.DOTALL)
     boxed_list = [match for match in matches if "boxed" in match]

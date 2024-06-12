@@ -2,6 +2,22 @@ import re
 from IPython.display import display, Markdown, Latex
 from sympy.parsing.latex import parse_latex
 from sympy import sympify, N
+import json
+import pandas as pd
+import numpy as np
+
+def read_json(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def save_json(data, path):
+    with open(path, 'w') as f:
+        json.dump(data, f, indent=4)
+
+def read_clean_csv(csv_path):
+    df = pd.read_csv(csv_path)
+    df = df.replace({np.nan: None})
+    return df
 
 def display_content(input_str, show_display=True):
     latex_str = input_str.replace(r'\[', ' $').replace(r'\]', '$ ').replace(r'\(', ' $').replace(r'\)', ' $').replace('$\\', ' $').replace('$','$ ')
@@ -43,22 +59,6 @@ def parse_frac_expression(frac_expression):
         print("The floating-point result is:", result)
     else:
         print("No fraction found in the string.")
-
-def answer_type_extract(answer_val):
-    if answer_val:
-        if re.search(r'[a-zA-Z]', answer_val):
-            answer_type = "math_expression"
-        elif re.search(r'\d+\.\d+', answer_val):
-            answer_type = "float"
-        elif re.search(r'^\d+$', answer_val):
-            answer_type = "int"
-        elif re.search(r'\[.*\]', answer_val):
-            answer_type = "list"
-        else:
-            answer_type = "uncertain"  
-    else:
-        answer_type = "Answer extraction error"
-    return answer_type
 
 def compare_lists_within_threshold(list1, list2,threshold):
     result = []

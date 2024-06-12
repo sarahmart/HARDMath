@@ -60,6 +60,17 @@ def create_query_prompt(problem, examples, shot_num):
     query = (demo_prompt + "\n\n" + test_query).strip()
     return query
 
+def create_query_prompt_batch(problem_metadata_json, examples, args):
+    prompt_dict = {}
+    question_specific_examples = {key: value for key, value in examples.items() if value.get('question_type') == args.question_type}
+    for pid, problem in problem_metadata_json.items():
+        prompt = create_query_prompt(
+            problem = problem, 
+            examples = question_specific_examples,
+            shot_num = args.shot_num,
+            )
+        prompt_dict[pid] = prompt
+
 def create_grading_prompt(response_latex, solution_latex, question_type=None,integral_subtype=None):
     common_query = f"Please take this response: {response_latex}\n\n and this ground truth \
         solution: {solution_latex} and grade the response based on the following criteria:"

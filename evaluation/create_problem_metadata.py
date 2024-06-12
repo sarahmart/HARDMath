@@ -3,9 +3,10 @@ import answer_extraction
 import utils
 import numpy as np
 import pandas as pd
-import json
 
-def create_problem_dict(question, solution, pid, small_eval_point, small_analytical, small_numerical, \
+
+
+def create_problem_dict(question, solution, small_eval_point, small_analytical, small_numerical, \
                         large_eval_point, large_analytical, large_numerical, extrcated_answer=None, question_type=None, answer_type=None):
     # of the df already provides extracted answer, we directly load it 
     if extrcated_answer:
@@ -15,7 +16,7 @@ def create_problem_dict(question, solution, pid, small_eval_point, small_analyti
         # TODO: check this part 
         answer_val = answer_extraction.extract_final_answer_allform(solution, pattern = re.compile(r'\\approx|='),latex_wrap=r'\$(.*?)\$',answer_type=None)
     if answer_type is None:
-        answer_type = utils.answer_type_extract(answer_val)
+        answer_type = answer_extraction.answer_type_extract(answer_val)
 
     # Determine the precision for float types
     precision = None
@@ -25,7 +26,6 @@ def create_problem_dict(question, solution, pid, small_eval_point, small_analyti
 
     # Construct the problem dictionary
     problem_dict = {
-        "pid": pid,
         "question": question,
         "solution": solution,
         "question_type": question_type,
@@ -41,29 +41,44 @@ def create_problem_dict(question, solution, pid, small_eval_point, small_analyti
     }
 
     return problem_dict
+def create_example_dict_all(row):
+    question = row["question"]
+    solution = row["solution"]
+    question_type = row["question_type"]
+    example_dict = {
+        "question": question,
+        "solution": solution,
+        "question_type": question_type
+    }
+    return example_dict
 
-def create_problem_dict_all(df,problem_dict_path = "data/eval_problems/eval_HARDMath.json"):
-    problem_dict_all = []
+def create_problem_example_dict_all(df,example_list,problem_dict_path = "data/eval_HARDMath.json",example_dict_path = "data/examples_HARDMath.json"):
+    problem_dict_all = {}
+    example_dict_all = {}
     for i, row in df.iterrows():
-        question = row["question"]
-        solution = row["solution"]
-        solution_latex = utils.display_content(solution, False)
         pid = str(i)
-        extrcated_answer = row["extracted_answer"]
-        question_type = row["question_type"]
-        answer_type = row["answer_type"]
-        small_eval_point = row["small_eval_point"]
-        small_analytical = row["small_analytical"]
-        small_numerical = row["small_numerical"]
-        large_eval_point = row["large_eval_point"]
-        large_analytical = row["large_analytical"]
-        large_numerical = row["large_numerical"]
-        problem_dict = create_problem_dict(question, solution_latex, pid, small_eval_point, small_analytical, small_numerical, \
-                        large_eval_point, large_analytical, large_numerical, extrcated_answer, question_type, answer_type)
-        problem_dict_all.append(problem_dict)
-    with open(problem_dict_path, mode='w', encoding='utf-8') as jsonfile:
-        json.dump(problem_dict_all, jsonfile, ensure_ascii=False, indent=4)
-
+        if i in example_list:
+            example_dict = create_example_dict_all(row)
+            example_dict_all[pid]=example_dict
+        else:
+            question = row["question"]
+            solution = row["solution"]
+            solution_latex = utils.display_content(solution, False)
+            extrcated_answer = row["extracted_answer"]
+            question_type = row["question_type"]
+            answer_type = row["answer_type"]
+            small_eval_point = row["small_eval_point"]
+            small_analytical = row["small_analytical"]
+            small_numerical = row["small_numerical"]
+            large_eval_point = row["large_eval_point"]
+            large_analytical = row["large_analytical"]
+            large_numerical = row["large_numerical"]
+            problem_dict = create_problem_dict(question, solution_latex, small_eval_point, small_analytical, small_numerical, \
+                            large_eval_point, large_analytical, large_numerical, extrcated_answer, question_type, answer_type)
+            problem_dict_all[pid]=problem_dict
+    utils.save_json(problem_dict_all, problem_dict_path)
+    utils.save_json(example_dict_all, example_dict_path)
     print(f"Saved {len(problem_dict_all)} problems to {problem_dict_path}")
-    return problem_dict_all
+    print(f"Saved {len(example_dict_all)} examples to {example_dict_path}")
+    return problem_dict_all,example_dict_all
 
