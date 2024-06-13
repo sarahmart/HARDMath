@@ -2,7 +2,7 @@
 
 This is the repository for HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics.
 
-This repository contains the training and evaluation data described in the paper. The format of the data is detailed below.
+This repository host the [full dataset](./data/HARDMath.json) and the evaluation dataset, together with the generation and evaluation code described in the paper. The format of the data is detailed below.
 
 ### Dataset Format:
 **“question” (str):** the text containing the applied mathematics problem  
