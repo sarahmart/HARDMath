@@ -53,3 +53,27 @@ def extract_final_answer_allform(latex_response, pattern = re.compile(r'\\approx
         return extract_final_answer(final_answer, pattern)
     if answer_type == 'list':
         return extract_final_answer_list(final_answer)
+
+def fetch_scores(data_dict):
+    scores = []
+    for key, value in data_dict.items():
+        if 'score' in value:
+            scores.append(value['score'])
+    return scores
+
+def categorize_scores(data_dict):
+    incorrect = 0
+    partial = 0
+    correct = 0
+    
+    for value in data_dict.values():
+        if 'score' in value:
+            score = value['score']
+            if score == 0:
+                incorrect += 1
+            elif score == 1:
+                correct += 1
+            else:
+                partial += 1
+    
+    return [incorrect, partial, correct]
