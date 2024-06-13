@@ -77,8 +77,9 @@ def create_problem_example_dict_all(df,example_list,problem_dict_path = "data/ev
                             large_eval_point, large_analytical, large_numerical, extrcated_answer, question_type, answer_type)
             problem_dict_all[pid]=problem_dict
     utils.save_json(problem_dict_all, problem_dict_path)
-    utils.save_json(example_dict_all, example_dict_path)
     print(f"Saved {len(problem_dict_all)} problems to {problem_dict_path}")
-    print(f"Saved {len(example_dict_all)} examples to {example_dict_path}")
+    if example_dict_all != {}:
+        utils.save_json(example_dict_all, example_dict_path)
+        print(f"Saved {len(example_dict_all)} examples to {example_dict_path}")
     return problem_dict_all,example_dict_all
 

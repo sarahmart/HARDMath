@@ -1,0 +1,1052 @@
+question,solution,question_type,answer_type,extracted_answer,small_eval_point,small_analytical,small_numerical,large_eval_point,large_analytical,large_numerical
+"You are analysing the potential energy $U(x)$ of a system, which is modelled by the polynomial \[U(x) = a_{1} x^{8} + a_{2} x^{6} + a_{3}.\] To better understand the behaviour of this system under different scaling conditions, you are tasked with nondimensionalizing the potential energy to obtain a simplified form $U(x) = \epsilon y^{8} + y^{6} + 1,$ where $y$ is a dimensionless variable and $\epsilon$ is a parameter that depends on the coefficients $a_1$, $a_2$, and $a_3.$
+Determine the appropriate scaling factors and express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[6]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{8} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{4}{3}} + a_{3} y^{6} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial for $U(x)$ with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{8} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{4}{3}}}{a_{3}} + y^{6} + 1}.\]By inspection, we can see that the potential energy can be nondimensionalized using\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{4}{3}}}{a_{3}}}.\]",nondimensionalization_symbolic,math_expression,,,,,,,
+"You're studying the growth of a population of yeast cells in a controlled environment. The growth of the yeast population is modelled by the polynomial \[P(t) = a_{1} t^{9} + a_{2} t^{8} + a_{3},\] such that $P(t)$ represents the population size at a given time $t$ and $a_1$, $a_2$, and $a_3$ are constants representing various factors influencing yeast growth.
+
+Nondimensionalizing this polynomial to obtain instead one of a simpler form for manipulation and solving gives $\epsilon y^{9} + y^{8} + 1$, with $y$ a dimensionless variable representing normalized population size and $\epsilon$ a function of $a_1$, $a_2$, and $a_3.$ Determine the scaling factor and express $\epsilon$ in terms of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[t=y \sqrt[8]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{9} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{9}{8}} + a_{3} y^{8} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{9} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{9}{8}}}{a_{3}} + y^{8} + 1}.\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{9}{8}}}{a_{3}}}.\]",nondimensionalization_symbolic,math_expression,,,,,,,
+"You are working on a mathematical model to describe the behaviour of a certain physical system, and you've come up with the polynomial \[f(x) = a x^{10} + b x^{8} + c.\]
+In this polynomial, $x$ represents a variable related to the system's parameters, and $a, b$ and $c$ are coefficients representing various properties of the system.
+
+To make further analysis more manageable and insightful, you're tasked with nondimensionalising this polynomial. Your goal is to express the polynomial in the form $\epsilon y^{10} + y^{8} + 1,$ where $y$ is a dimensionless variable and $\epsilon$ is a parameter that depends on the coefficients. Express $\epsilon$ as a function of $a$, $b$, and $c.$","We begin with the substitution\[x=y \sqrt[8]{\frac{c}{b}}.\]
+This gives the expression\[a y^{10} \left(\frac{c}{b}\right)^{\frac{5}{4}} + c y^{8} + c.\]
+Dividing by the constant $c$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a$, $b$, and $c$:\[ \boxed{\frac{a y^{10} \left(\frac{c}{b}\right)^{\frac{5}{4}}}{c} + y^{8} + 1}.\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a \left(\frac{c}{b}\right)^{\frac{5}{4}}}{c}}.\]
+",nondimensionalization_symbolic,math_expression,,,,,,,
+"In your research on quantum wavelets, you encounter a polynomial that describes the energy distribution of a particular quantum state. This polynomial is given by \[E(x) = a_{1} x^{9} + a_{2} x^{4} + a_{3}.\] Here, $E(x)$ is the energy at a quantum state characterised by the variable $x$, while $a_1$, $a_2$, and $a_3$ are coefficients that depend on various properties of the wavelet.
+
+To facilitate comparisons across different scales and simplify the analysis, you are required to nondimensionalize this polynomial. Transform the polynomial into the form $\epsilon y^{9} + y^{4} + 1.$ Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[4]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[E(x) = a_{1} y^{9} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{9}{4}} + a_{3} y^{4} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial for the energy with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{9} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{9}{4}}}{a_{3}} + y^{4} + 1}.\]By inspection, we can see that the parameter \[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{9}{4}}}{a_{3}}}.\]",nondimensionalization_symbolic,math_expression,,,,,,,
+"You are examining the velocity profile $V(x)$ of fluid flow through a pipe. The velocity profile is described by \[V(x) = p x^{9} + q x^{6} + r,\] with $V(x)$ the fluid velocity at a position $x$ in the pipe and coefficients $p, q, r$ depend on various factors such as fluid viscosity and pipe geometry.
+
+To facilitate a comparison of the velocity profiles under different conditions, you need to nondimensionalize $V(x)$ by transforming it into form $\epsilon y^{9} + y^{6} + 1. $ Determine the appropriate scaling factor and express $\epsilon$ as a function of $p$, $q$, and $r.$","We begin with the substitution\[x=y \sqrt[6]{\frac{r}{q}}.\]
+This gives a new formula for the velocity \[V(x) = p y^{9} \left(\frac{r}{q}\right)^{\frac{3}{2}} + a_{3} y^{6} + r.\]
+Dividing by $r$ leaves us with the nondimensionalized polynomial with coefficients in terms of $p$, $q$, and $r$:\[ \boxed{\frac{p y^{9} \left(\frac{r}{q}\right)^{\frac{3}{2}}}{r} + y^{6} + 1}.\] By inspection, we can see that\[ \boxed{\epsilon=\frac{p \left(\frac{r}{q}\right)^{\frac{3}{2}}}{r}}.\]",nondimensionalization_symbolic,math_expression,,,,,,,
+"In a study of polymer flow through a narrow channel, you are analysing the pressure profile $P(x)$ along the length of the channel. The pressure profile is described by \[P(x) = - 3 x^{10} + 8 x^{9} + 1,\] where $P(x)$ represents the pressure at a position $x$ along the channel.
+ 
+To facilitate comparison of pressure profiles under different experimental conditions, you need to nondimensionalize this polynomial. Your goal is to transform the polynomial into the form $\epsilon y^{10} \pm y^{9} \pm 1$ and solve for $\epsilon$.","For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our pressure profile is then:\[- a_{1} x^{10} + a_{2} x^{9} + a_{3}.\] 
+Since the first coefficient is negative, we multiply the entire expression by -1:\[a_{1} x^{10} - a_{2} x^{9} - a_{3}\]Using substitution\[x=y \sqrt[9]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{10}{9}} - a_{3} y^{9} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{10}{9}}}{a_{3}} - y^{9} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{3 \cdot 2^{\frac{2}{3}} y^{10}}{16} - y^{9} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{3 \cdot 2^{\frac{2}{3}}}{16}\implies \boxed{\epsilon \approx0.30}.\]",nondimentionalization_numeric,float,,,,,,,
+"You are examining the potential energy profile $P(x)$ of a molecule as a function of its position $x$ along a trajectory: \[P(x) = 9 x^{7} - 2 x - 9.\]
+
+To simplify analysis and allow for comparison of potential energy profiles under various conditions, you need to nondimensionalize this polynomial, transforming it into one of the form $\epsilon y^{7} \pm y^{1} \pm 1$. Solve for $\epsilon$.","For now, we ignore the numeric values of the coefficients potential energy expression and instead call them $a_1, a_2, a_3$. Our potential energy is then:\[a_{1} x^{7} - a_{2} x - a_{3}.\] Using substitution\[x=\frac{a_{3} y}{a_{2}}\]
+gives the expression\[\frac{a_{1} a_{3}^{7} y^{7}}{a_{2}^{7}} - a_{3} y - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} a_{3}^{6} y^{7}}{a_{2}^{7}} - y - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{4782969 y^{7}}{128} - y - 1\]
+From inspection of this nondimensionalized equation, we can now identify the $\epsilon$ required to nondimensionalize our potential energy: \[ \epsilon=\frac{4782969}{128}\implies \boxed{\epsilon \approx37366.95}.\]",nondimentionalization_numeric,float,,,,,,,
+"Say you are investigating a nonlinear dynamical system whose behaviour is described by a potential function \[P(x) = 7 x^{7} + 9 x^{5} - 1.\] $P(x)$ represents the potential at system state variable $x$
+
+To understand the scaling properties of your system and to be able to compare it with other similar nonlinear systems, you need to nondimensionalize the potential function into the form $\epsilon y^{7} \pm y^{5} \pm 1$. Determine the appropriate scaling factor and solve for $\epsilon$.","For now, we ignore the numeric values of the coefficients in the potential function and instead call them $a_1, a_2, a_3$. The potential function is then represented as:\[a_{1} x^{7} + a_{2} x^{5} - a_{3}.\] Using substitution\[x=y \sqrt[5]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{7} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{7}{5}} + a_{3} y^{5} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized potential with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{7} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{7}{5}}}{a_{3}} + y^{5} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{7 \cdot \sqrt[5]{3} y^{7}}{27} + y^{5} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{7 \cdot \sqrt[5]{3}}{27}\implies \boxed{\epsilon \approx0.32}.\]",nondimentionalization_numeric,float,,,,,,,
+"You are studying the concentration profile of a certain protein within a cell, which is modeled by \[P(x) = x^{2} - 2 x + 7.\] $P(x)$ represents the concentration of the protein at a distance $x$ from the nucleus.
+
+To compare results under different experimental conditions, you need to nondimensionalize the concentration profile by transforming it into the form $\epsilon y^{2} \pm y^{1} \pm 1$. Here, $y$ is a dimensionless variable representing a scaled distance from the nucleus. Solve for $\epsilon$.","For now, we ignore the numeric values of the coefficients in the concentration profile expression and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{2} - a_{2} x + a_{3}.\] Using substitution\[x=\frac{a_{3} y}{a_{2}}\]
+gives the following expression for $P(x)$: \[\frac{a_{1} a_{3}^{2} y^{2}}{a_{2}^{2}} - a_{3} y + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} a_{3} y^{2}}{a_{2}^{2}} - y + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{7 y^{2}}{4} - y + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{7}{4}\implies \boxed{\epsilon \approx1.75}.\]",nondimentionalization_numeric,float,,,,,,,
+"Your research involves analysing the potential energy of a particle in a non-uniform electric field, which is given by \[P(x) = x^{3} + 10 x^{2} + 6,\] where $P(x)$ represents the potential energy at a position $x$ in the field.
+
+To identify the dominant parameters in this potential energy profile and compare it to others under different conditions, you should nondimensionalize the profile into form $\epsilon y^{3} \pm y^{2} \pm 1$ and solve for $\epsilon$.","For now, we ignore the numeric values of the coefficients in the potential energy profile and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{3} + a_{2} x^{2} + a_{3}.\] Using substitution\[x=y \sqrt{\frac{a_{3}}{a_{2}}}\]
+gives the potential energy profile \[a_{1} y^{3} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{3}{2}} + a_{3} y^{2} + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{3} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{3}{2}}}{a_{3}} + y^{2} + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{\sqrt{15} y^{3}}{50} + y^{2} + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{\sqrt{15}}{50}\implies \boxed{\epsilon \approx0.08}.\]",nondimentionalization_numeric,float,,,,,,,
+"Imagine you're an ecologist studying population dynamics of a predator-prey system in a changing environment. The dynamics of the system are modelled by \[P(x) =\epsilon x^{4} + x^{3} + 1.\] $P(x)$ represents the net growth rate of the predator population at a given time $x$ and $\epsilon$ represents the overall environmental stress level.
+
+You're interested in understanding how small and large positive values of $\epsilon$ affect the stability of the predator population. To gain insights into this, find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial describing the predator-prey system dynamics to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{4};$ $B=x^{3};$ $C=1.$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1 non-zero root: 
+\[\epsilon x^{4} + x^{3}=0 \]\[ \implies \boxed{ x=\left[ - \frac{1}{\epsilon}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid equilibrium points for small $\epsilon$, while their validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 3 non-zero roots: \[x^{3} + 1=0\]\[ \implies\boxed{ x=\left[ -1, \  \frac{1}{2} - \frac{\sqrt{3} i}{2}, \  \frac{1}{2} + \frac{\sqrt{3} i}{2}\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid steady states of the predator-prey model for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 4 non-zero roots: \[\epsilon x^{4} + 1=0\]\[ \implies\boxed{ x=\left[ - \sqrt[4]{- \frac{1}{\epsilon}}, \  \sqrt[4]{- \frac{1}{\epsilon}}, \  - i \sqrt[4]{- \frac{1}{\epsilon}}, \  i \sqrt[4]{- \frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid equilibrium points for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 4 has exactly 4 roots. We have found 4 roots that are valid in the limit of small positive $\epsilon$ and 4 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution for the roots of this predator-prey system, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[4]{- \frac{1}{\epsilon}}, \  \sqrt[4]{- \frac{1}{\epsilon}}, \  - i \sqrt[4]{- \frac{1}{\epsilon}}, \  i \sqrt[4]{- \frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \frac{1}{\epsilon}, \  -1, \  \frac{1}{2} - \frac{\sqrt{3} i}{2}, \  \frac{1}{2} + \frac{\sqrt{3} i}{2}\right]} \]",polynomial_roots,list,,,,,,,
+"Imagine you're a physicist studying the behaviour of a quantum mechanical system governed by \[E(x) =\epsilon x^{7} + x^{3} - 1,\] where $E(x)$ represents the total energy of the system at a particular configuration $x$ and $\epsilon$ is a parameter related to the scaled strength of an external perturbation.
+
+You want to understand how small and large positive values of $\epsilon$ influence the stability and behaviour of the system. To achieve this, find first-order approximations for all roots of the polynomial in the limits of small and large positive $\epsilon$.","We begin by equating the polynomial to zero to solve for the roots: $E(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{7};$ $B=x^{3};$ $C=-1.$
+
+This problem has no analytical solutions, so we find approximate solutions to the roots by considering the three possible dominant balances of the energy equation. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 4 non-zero roots: 
+\[\epsilon x^{7} + x^{3}=0 \]\[ \implies \boxed{ x=\left[ - \sqrt[4]{- \frac{1}{\epsilon}}, \  \sqrt[4]{- \frac{1}{\epsilon}}, \  - i \sqrt[4]{- \frac{1}{\epsilon}}, \  i \sqrt[4]{- \frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 3 non-zero roots: \[x^{3} - 1=0\]\[ \implies\boxed{ x=\left[ 1, \  - \frac{1}{2} - \frac{\sqrt{3} i}{2}, \  - \frac{1}{2} + \frac{\sqrt{3} i}{2}\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 7 non-zero roots: \[\epsilon x^{7} - 1=0\]\[ \implies\boxed{ x=\left[ - \sqrt[7]{\frac{1}{\epsilon}} e^{\frac{i \pi}{7}}, \  - \sqrt[7]{\frac{1}{\epsilon}} e^{- \frac{i \pi}{7}}, \  \sqrt[7]{\frac{1}{\epsilon}} e^{- \frac{2 i \pi}{7}}, \  \sqrt[7]{\frac{1}{\epsilon}} e^{\frac{2 i \pi}{7}}, \  - \left(\sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right) \sqrt[7]{\frac{1}{\epsilon}}, \  \left(- \sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right) \sqrt[7]{\frac{1}{\epsilon}}, \  \sqrt[7]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 7 has exactly 7 roots. We have found 7 roots that are valid in the limit of small positive $\epsilon$ and 7 roots valid in the limit of large positive $\epsilon$ for our energy equation $E(x)$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $E(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[7]{\frac{1}{\epsilon}} e^{\frac{i \pi}{7}}, \  - \sqrt[7]{\frac{1}{\epsilon}} e^{- \frac{i \pi}{7}}, \  \sqrt[7]{\frac{1}{\epsilon}} e^{- \frac{2 i \pi}{7}}, \  \sqrt[7]{\frac{1}{\epsilon}} e^{\frac{2 i \pi}{7}}, \  - \left(\sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right) \sqrt[7]{\frac{1}{\epsilon}}, \  \left(- \sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right) \sqrt[7]{\frac{1}{\epsilon}}, \  \sqrt[7]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[4]{- \frac{1}{\epsilon}}, \  \sqrt[4]{- \frac{1}{\epsilon}}, \  - i \sqrt[4]{- \frac{1}{\epsilon}}, \  i \sqrt[4]{- \frac{1}{\epsilon}}, \  1, \  - \frac{1}{2} - \frac{\sqrt{3} i}{2}, \  - \frac{1}{2} + \frac{\sqrt{3} i}{2}\right]} \]",polynomial_roots,list,,,,,,,
+"Alice, a keen botanist and mathematician, is conducting research on the growth of a rare species of plant. She believes that the polynomial \[P(x) =\epsilon x^{4} + x^{2} - 1\] might hold the key to understanding the optimal conditions for the plant's growth. The roots of this polynomial represent critical points in the plant's development. By investigating how these roots change as $\epsilon$ varies, Alice hopes to gain insights into how the plant adapts to different environmental conditions, ultimately leading to more effective cultivation strategies.
+
+Can you assist Alice by finding first-order approximations for all the roots of the $P(x)$ as $\epsilon$ tends towards both zero and infinity?","We begin by equating Alice's polynomial to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{4};$ $B=x^{2};$ $C=-1.$
+
+We find approximate solutions to the roots by considering the three possible dominant balances from Alice's equation. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 2 non-zero roots: 
+\[\epsilon x^{4} + x^{2}=0 \]\[ \implies \boxed{ x=\left[ - \sqrt{- \frac{1}{\epsilon}}, \  \sqrt{- \frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2 non-zero roots: \[x^{2} - 1=0\]\[ \implies\boxed{ x=\left[ -1, \  1\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 4 non-zero roots: \[\epsilon x^{4} - 1=0\]\[ \implies\boxed{ x=\left[ - i \sqrt[4]{\frac{1}{\epsilon}}, \  i \sqrt[4]{\frac{1}{\epsilon}}, \  - \sqrt[4]{\frac{1}{\epsilon}}, \  \sqrt[4]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, Alice's polynomial of degree 4 has exactly 4 roots. We have found 4 roots that are valid in the limit of small positive $\epsilon$ and 4 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to Alice's problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - i \sqrt[4]{\frac{1}{\epsilon}}, \  i \sqrt[4]{\frac{1}{\epsilon}}, \  - \sqrt[4]{\frac{1}{\epsilon}}, \  \sqrt[4]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{- \frac{1}{\epsilon}}, \  \sqrt{- \frac{1}{\epsilon}}, \  -1, \  1\right]} \]",polynomial_roots,list,,,,,,,
+"At the Quantum Dynamics Research Institute, Dr. Patel is investigating the behaviour of a quantum system using mathematical models. One such model involves the polynomial \[P(x) =\epsilon x^{4} - x^{2} + 1.\] This polynomial describes the energy levels of particles within the system under certain conditions.
+
+As Dr. Patel's research assistant, your task is to analyse how changes in 
+$\epsilon$ affect the stability of the system. The roots of the polynomial correspond to the energy levels of the particles. By examining how these roots behave as $\epsilon$ approaches zero and as it becomes very large, you could gain insights into the stability of the quantum system.
+
+Compute the first-order approximations for all roots of the polynomial $P(x)$ in the limits of small positive $\epsilon$ and large positive $\epsilon$.","We begin by equating Dr. Patel's polynomial to zero to solve for its roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{4};$ $B=- x^{2};$ $C=1.$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 2 non-zero roots: 
+\[\epsilon x^{4} - x^{2}=0 \]\[ \implies \boxed{ x=\left[ - \sqrt{\frac{1}{\epsilon}}, \  \sqrt{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2 non-zero roots: \[1 - x^{2}=0\]\[ \implies\boxed{ x=\left[ -1, \  1\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 4 non-zero roots: \[\epsilon x^{4} + 1=0\]\[ \implies\boxed{ x=\left[ - \sqrt[4]{- \frac{1}{\epsilon}}, \  \sqrt[4]{- \frac{1}{\epsilon}}, \  - i \sqrt[4]{- \frac{1}{\epsilon}}, \  i \sqrt[4]{- \frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, this polynomial of degree 4 has exactly 4 roots.We have found 4 roots that are valid in the limit of small positive $\epsilon$ and 4 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to Dr. Patel's problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of the energy-level polynomial $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[4]{- \frac{1}{\epsilon}}, \  \sqrt[4]{- \frac{1}{\epsilon}}, \  - i \sqrt[4]{- \frac{1}{\epsilon}}, \  i \sqrt[4]{- \frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{\frac{1}{\epsilon}}, \  \sqrt{\frac{1}{\epsilon}}, \  -1, \  1\right]} \]",polynomial_roots,list,,,,,,,
+"Suppose you are planning to become a beekeeper, and your mentor tells you that there is a `golden rule' to beekeeping: the revenue earned depends on the number of bees in a hive in a particular season, and is determined by a polynomial equation. The break-even populations of a hive are therefore the roots of the nondimensionalized polynomial, i.e., the points where $$\epsilon x^{5} + x^{2} + 1 = 0.$$
+
+This equation arises as the balance between the revenue generated from the honey and other products created by the bees, represented by $x^2$ and the cost of maintaining the bees. This cost includes two components: the term given by $\epsilon x^5$ accounts for the nonlinear increase in expenses related hive maintenance as the bee population grows, while $1$ is the scaled fixed cost of operating the beekeeping business.
+
+Use the method of dominant balance to calculate the bee populations in your hive at which you will break even. Do this by finding approximate expressions for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. Only a single-term approximation to each root is required. ","We begin by equating the `golden rule' polynomial to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{5};$ $B=x^{2};$ $C=1.$
+
+This problem has no analytical solutions, so we find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 3 non-zero roots: 
+\[\epsilon x^{5} + x^{2}=0 \]\[ \implies \boxed{ x=\left[ \sqrt[3]{- \frac{1}{\epsilon}}, \  \frac{\sqrt[3]{- \frac{1}{\epsilon}} \left(-1 - \sqrt{3} i\right)}{2}, \  \frac{\sqrt[3]{- \frac{1}{\epsilon}} \left(-1 + \sqrt{3} i\right)}{2}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2 non-zero roots: \[x^{2} + 1=0\]\[ \implies\boxed{ x=\left[ - i, \  i\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 5 non-zero roots: \[\epsilon x^{5} + 1=0\]\[ \implies\boxed{ x=\left[ \sqrt[5]{- \frac{1}{\epsilon}}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(-1 + \sqrt{5} - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right)}{4}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(-1 + \sqrt{5} + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right)}{4}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(- \sqrt{5} - 1 - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right)}{4}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(- \sqrt{5} - 1 + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right)}{4}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, our `golden' polynomial of degree 5 has exactly 5 roots. We have found 5 roots that are valid in the limit of small positive $\epsilon$ and 5 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the beekeeping root-finding problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ \sqrt[5]{- \frac{1}{\epsilon}}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(-1 + \sqrt{5} - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right)}{4}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(-1 + \sqrt{5} + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right)}{4}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(- \sqrt{5} - 1 - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right)}{4}, \  \frac{\sqrt[5]{- \frac{1}{\epsilon}} \left(- \sqrt{5} - 1 + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right)}{4}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \sqrt[3]{- \frac{1}{\epsilon}}, \  \frac{\sqrt[3]{- \frac{1}{\epsilon}} \left(-1 - \sqrt{3} i\right)}{2}, \  \frac{\sqrt[3]{- \frac{1}{\epsilon}} \left(-1 + \sqrt{3} i\right)}{2}, \  - i, \  i\right]} \]",polynomial_roots,list,,,,,,,
+"In the field of geophysics, researchers often encounter mathematical models to describe various phenomena related to Earth's structure and dynamics. Consider the polynomial \[P(x) =\epsilon x^{8} + x^{7} - 1.\] This polynomial arises in the study of seismic waves and their propagation through Earth's layers.
+
+Geophysicists are interested in understanding how changes in $\epsilon$ affect the behaviour of seismic waves. The roots of the polynomial correspond to critical points in the wave propagation process, such as points of reflection or refraction. 
+
+Compute the first-order approximations for all roots of the polynomial $P(x)$ in the limits of small and large positive $\epsilon$.","We begin by equating the seismic wave propagation polynomial to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{8};$ $B=x^{7};$ $C=-1.$
+
+This problem has no analytical solutions, so we find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1 non-zero root: 
+\[\epsilon x^{8} + x^{7}=0 \]\[ \implies \boxed{ x=\left[ - \frac{1}{\epsilon}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 7 non-zero roots: \[x^{7} - 1=0\]\[ \implies\boxed{ x=\left[ 1, \  - e^{\frac{i \pi}{7}}, \  - e^{- \frac{i \pi}{7}}, \  e^{- \frac{2 i \pi}{7}}, \  e^{\frac{2 i \pi}{7}}, \  - \sin{\left(\frac{\pi}{14} \right)} - i \cos{\left(\frac{\pi}{14} \right)}, \  - \sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 8 non-zero roots: \[\epsilon x^{8} - 1=0\]\[ \implies\boxed{ x=\left[ - i \sqrt[8]{\frac{1}{\epsilon}}, \  i \sqrt[8]{\frac{1}{\epsilon}}, \  \frac{\sqrt{2} \left(-1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \left(-1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  - \sqrt[8]{\frac{1}{\epsilon}}, \  \sqrt[8]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 8 has exactly 8 roots. We have found 8 roots for the seismic wave propagation equation that are valid in the limit of small positive $\epsilon$ and 8 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the this root-finding problem, giving us the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - i \sqrt[8]{\frac{1}{\epsilon}}, \  i \sqrt[8]{\frac{1}{\epsilon}}, \  \frac{\sqrt{2} \left(-1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \left(-1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  - \sqrt[8]{\frac{1}{\epsilon}}, \  \sqrt[8]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \frac{1}{\epsilon}, \  1, \  - e^{\frac{i \pi}{7}}, \  - e^{- \frac{i \pi}{7}}, \  e^{- \frac{2 i \pi}{7}}, \  e^{\frac{2 i \pi}{7}}, \  - \sin{\left(\frac{\pi}{14} \right)} - i \cos{\left(\frac{\pi}{14} \right)}, \  - \sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right]} \]",polynomial_roots,list,,,,,,,
+"As you prepare to venture into the world of renewable energy, your mentor imparts a crucial principle: the viability of a wind turbine project hinges on the wind speed in a given region during operation. This relationship is encapsulated by a polynomial equation, where the critical wind speeds for profitability are determined by the roots of the nondimensionalized polynomial.
+
+The equation governing this relationship is given by \[P(x) =\epsilon x^{5} - x^{3} - 1,\] where, $x$ represents wind speed, and $\epsilon$ is a small positive parameter signifying factors influencing the operational costs of wind turbines. 
+
+Your task is to apply the method of dominant balance to approximate the critical wind speeds at which your wind turbine project will break even. Determine the first-order approximations for all the roots of the polynomial in the limits of small positive $\epsilon$ large positive $\epsilon$. Only a single-term approximation to each root is necessary.","We begin by equating the given polynomial to zero to solve for the critical wind speeds: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{5};$ $B=- x^{3};$ $C=-1.$
+
+This problem has no analytical solutions, so we find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 2 non-zero roots: 
+\[\epsilon x^{5} - x^{3}=0 \]\[ \implies \boxed{ x=\left[ - \sqrt{\frac{1}{\epsilon}}, \  \sqrt{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 3 non-zero roots: \[- x^{3} - 1=0\]\[ \implies\boxed{ x=\left[ -1, \  \frac{1}{2} - \frac{\sqrt{3} i}{2}, \  \frac{1}{2} + \frac{\sqrt{3} i}{2}\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 5 non-zero roots: \[\epsilon x^{5} - 1=0\]\[ \implies\boxed{ x=\left[ \frac{\left(- \sqrt{5} - 1 - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} - 1 + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \sqrt[5]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 5 has exactly 5 roots. We have found 5 roots that are valid in the limit of small positive $\epsilon$ and 5 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots (corresponding to critical wind speeds) in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ \frac{\left(- \sqrt{5} - 1 - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} - 1 + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[5]{\frac{1}{\epsilon}}}{4}, \  \sqrt[5]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{\frac{1}{\epsilon}}, \  \sqrt{\frac{1}{\epsilon}}, \  -1, \  \frac{1}{2} - \frac{\sqrt{3} i}{2}, \  \frac{1}{2} + \frac{\sqrt{3} i}{2}\right]} \]",polynomial_roots,list,,,,,,,
+"Imagine you are an engineer designing a suspension system for a car. The system is modelled by a \[P(x) =\epsilon x^{8} + x^{7} - 1,\] where $\epsilon$ represents a small positive parameter related to the stiffness of the suspension. You're interested in understanding how the roots of this polynomial, which represent the system's equilibrium points, behave as $\epsilon$ changes.
+
+Find the first-order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$.","We begin by equating the suspension system polynomial to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{8};$ $B=x^{7};$ $C=-1.$
+
+This problem has no analytical solutions, so we find approximate solutions to the system's equilibrium points by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1 non-zero root: 
+\[\epsilon x^{8} + x^{7}=0 \]\[ \implies \boxed{ x=\left[ - \frac{1}{\epsilon}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 7 non-zero roots: \[x^{7} - 1=0\]\[ \implies\boxed{ x=\left[ 1, \  - e^{\frac{i \pi}{7}}, \  - e^{- \frac{i \pi}{7}}, \  e^{- \frac{2 i \pi}{7}}, \  e^{\frac{2 i \pi}{7}}, \  - \sin{\left(\frac{\pi}{14} \right)} - i \cos{\left(\frac{\pi}{14} \right)}, \  - \sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 8 non-zero roots: \[\epsilon x^{8} - 1=0\]\[ \implies\boxed{ x=\left[ - i \sqrt[8]{\frac{1}{\epsilon}}, \  i \sqrt[8]{\frac{1}{\epsilon}}, \  \frac{\sqrt{2} \left(-1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \left(-1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  - \sqrt[8]{\frac{1}{\epsilon}}, \  \sqrt[8]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 8 has exactly 8 roots. We have found 8 roots that are valid in the limit of small positive $\epsilon$ and 8 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of the suspension system polynomaial $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - i \sqrt[8]{\frac{1}{\epsilon}}, \  i \sqrt[8]{\frac{1}{\epsilon}}, \  \frac{\sqrt{2} \left(-1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \left(-1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 + i\right) \sqrt[8]{\frac{1}{\epsilon}}}{2}, \  - \sqrt[8]{\frac{1}{\epsilon}}, \  \sqrt[8]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \frac{1}{\epsilon}, \  1, \  - e^{\frac{i \pi}{7}}, \  - e^{- \frac{i \pi}{7}}, \  e^{- \frac{2 i \pi}{7}}, \  e^{\frac{2 i \pi}{7}}, \  - \sin{\left(\frac{\pi}{14} \right)} - i \cos{\left(\frac{\pi}{14} \right)}, \  - \sin{\left(\frac{\pi}{14} \right)} + i \cos{\left(\frac{\pi}{14} \right)}\right]} \]",polynomial_roots,list,,,,,,,
+"You are a biologist studying the growth dynamics of a population of organisms. The population growth is modelled by \[P(x) =\epsilon x^{3} - x^{2} - 1,\] with $\epsilon$ a positive parameter related to the environmental carrying capacity. You're interested in understanding how the roots of this polynomial, which represent the population equilibrium points, behave as $\epsilon$ changes.
+
+Find first-order approximations for all roots of the polynomial in the limit of small and large positive $\epsilon$.","We begin by equating the population growth equation to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{3};$ $B=- x^{2};$ $C=-1.$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1 non-zero root: 
+\[\epsilon x^{3} - x^{2}=0 \]\[ \implies \boxed{ x=\left[ \frac{1}{\epsilon}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2 non-zero roots: \[- x^{2} - 1=0\]\[ \implies\boxed{ x=\left[ - i, \  i\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 3 non-zero roots: \[\epsilon x^{3} - 1=0\]\[ \implies\boxed{ x=\left[ \frac{\left(-1 - \sqrt{3} i\right) \sqrt[3]{\frac{1}{\epsilon}}}{2}, \  \frac{\left(-1 + \sqrt{3} i\right) \sqrt[3]{\frac{1}{\epsilon}}}{2}, \  \sqrt[3]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 3 has exactly 3 roots. We have found 3 roots for the population growth equation that are valid in the limit of small positive $\epsilon$ and 3 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of the population growth equation for large positive $\epsilon$ are\[ \boxed{ \left[ \frac{\left(-1 - \sqrt{3} i\right) \sqrt[3]{\frac{1}{\epsilon}}}{2}, \  \frac{\left(-1 + \sqrt{3} i\right) \sqrt[3]{\frac{1}{\epsilon}}}{2}, \  \sqrt[3]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{1}{\epsilon}, \  - i, \  i\right]} \]",polynomial_roots,list,,,,,,,
+"Say you're an astrophysicist studying the stability of planetary orbits in a binary star system. The motion of a planet around one of the stars can be modelled as \[P(x) =\epsilon x^{10} - x^{8} - 1\] with $\epsilon$ a small positive parameter related to the gravitational influence of the secondary star. You're interested in understanding how the roots of this polynomial, which represent the planet's orbital stability points, behave. 
+
+Give first-order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$.","We begin by equating the planetary motion polynomial to zero to solve for the roots: $P(x) = 0.$ This problem can be rewritten in the form $A+B+C=0$, where: $A=\epsilon x^{10};$ $B=- x^{8};$ $C=-1.$
+
+This problem has no analytical solutions, so we find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 2 non-zero roots: 
+\[\epsilon x^{10} - x^{8}=0 \]\[ \implies \boxed{ x=\left[ - \sqrt{\frac{1}{\epsilon}}, \  \sqrt{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 8 non-zero roots: \[- x^{8} - 1=0\]\[ \implies\boxed{ x=\left[ - \frac{\sqrt{2 - \sqrt{2}}}{2} + \frac{i \sqrt{\sqrt{2} + 2}}{2}, \  \frac{\sqrt{2 - \sqrt{2}}}{2} - \frac{\sqrt{-2 - \sqrt{2}}}{2}, \  - \frac{\sqrt{\sqrt{2} + 2}}{2} - \frac{i \sqrt{2 - \sqrt{2}}}{2}, \  \frac{\sqrt{\sqrt{2} + 2}}{2} + \frac{\sqrt{-2 + \sqrt{2}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(- \sqrt{2 - \sqrt{2}} + i \sqrt{\sqrt{2} + 2}\right)}{4}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(\sqrt{\sqrt{2} + 2} + \sqrt{-2 + \sqrt{2}}\right)}{4}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(- \sqrt{\sqrt{2} + 2} - \sqrt{-2 + \sqrt{2}}\right)}{4}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(\sqrt{2 - \sqrt{2}} - i \sqrt{\sqrt{2} + 2}\right)}{4}\right]}.\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 10 non-zero roots: \[\epsilon x^{10} - 1=0\]\[ \implies\boxed{ x=\left[ \frac{\left(- \sqrt{5} - 1 - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} - 1 + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} + 1 - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} + 1 + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(1 + \sqrt{5} - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(1 + \sqrt{5} + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  - \sqrt[10]{\frac{1}{\epsilon}}, \  \sqrt[10]{\frac{1}{\epsilon}}\right]}.\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 10 has exactly 10 roots. We have found 10 roots to the planetary motion polynomial that are valid in the limit of small positive $\epsilon$ and 10 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ \frac{\left(- \sqrt{5} - 1 - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} - 1 + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} + 1 - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(- \sqrt{5} + 1 + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} - \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(-1 + \sqrt{5} + \sqrt{2} \sqrt{-5 - \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(1 + \sqrt{5} - \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  \frac{\left(1 + \sqrt{5} + \sqrt{2} \sqrt{-5 + \sqrt{5}}\right) \sqrt[10]{\frac{1}{\epsilon}}}{4}, \  - \sqrt[10]{\frac{1}{\epsilon}}, \  \sqrt[10]{\frac{1}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{\frac{1}{\epsilon}}, \  \sqrt{\frac{1}{\epsilon}}, \  - \frac{\sqrt{2 - \sqrt{2}}}{2} + \frac{i \sqrt{\sqrt{2} + 2}}{2}, \  \frac{\sqrt{2 - \sqrt{2}}}{2} - \frac{\sqrt{-2 - \sqrt{2}}}{2}, \  - \frac{\sqrt{\sqrt{2} + 2}}{2} - \frac{i \sqrt{2 - \sqrt{2}}}{2}, \  \frac{\sqrt{\sqrt{2} + 2}}{2} + \frac{\sqrt{-2 + \sqrt{2}}}{2}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(- \sqrt{2 - \sqrt{2}} + i \sqrt{\sqrt{2} + 2}\right)}{4}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(\sqrt{\sqrt{2} + 2} + \sqrt{-2 + \sqrt{2}}\right)}{4}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(- \sqrt{\sqrt{2} + 2} - \sqrt{-2 + \sqrt{2}}\right)}{4}, \  \frac{\sqrt{2} \cdot \left(1 - i\right) \left(\sqrt{2 - \sqrt{2}} - i \sqrt{\sqrt{2} + 2}\right)}{4}\right]} \]",polynomial_roots,list,,,,,,,
+"Imagine you are part of a research team studying atmospheric dynamics at various altitudes using sophisticated weather balloons. These balloons are influenced by multiple atmospheric layers, each with different properties. The following equation provided models the vertical displacement of a weather balloon as it travels through these layers: $$y''' = \frac{y}{x^{3} - 9} + y'^{5} - \frac{y''}{2 x^{3} + 3} - 5 e^{- x},$$ where $y(x)$ represents the altitude of the balloon in meters and $x$ represents the time in hours. The differential equation has the following initial conditions at $x = 0: y(0) = 2.00, y'(0) = 0.00, y''(0) = 3.00.$
+Find an approximate analytical formula for the height of the balloon after a large amount of time has passed (in the large $x$ regime).
+
+","One can solve for the altitude of the balloon using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{5}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 2.9404\right)^{p - 3} = \alpha^{5} p^{5} \left(x - 2.9404\right)^{5 p - 5}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{5} p^{5}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 5 p - 5
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = - \sqrt{2} \cdot \sqrt[4]{3}, \quad p = \frac{1}{2}
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+2.19030447635282 = C + 0.300029701499999 \sqrt{2} \cdot \sqrt[4]{3}
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = 1.6319,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = - \sqrt{2} \cdot \sqrt[4]{3} (x - 2.9404)^{\frac{1}{2}} + (1.6319).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = - \sqrt{2} \cdot \sqrt[4]{3} (x - 2.9404)^{\frac{1}{2}} + 1.6319]}$$
+
+",ODE,math_expression,,,,,,,
+"Consider the design and simulation of an advanced control system for spacecraft attitude adjustment. This system relies on small thrusters, which are activated in response to various dynamic forces encountered in orbit. The following differential equation provided models the angle of rotation $y(x)$ as a function of time $x$: $$y''' = \frac{y}{2 \cdot \left(6 x^{3} + 6 x + 5\right)} + y'^{2} - \frac{y''}{2 x^{4} + 8} - 4 + e^{- x}$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 1.00, y''(0) = 3.00.$
+Find an approximate analytical formula for the angle of rotation $y(x)$ after a large amount of time has passed.
+
+","One can solve for the spacecraft's angle of rotation using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{2}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 2.2203\right)^{p - 3} = \alpha^{2} p^{2} \left(x - 2.2203\right)^{2 p - 2}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 2 p - 2
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = -6, \quad p = -1
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+62.7350132401035 = C + 66.6747351164608
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = -3.9397,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = -6 (x - 2.2203)^{-1} + (-3.9397).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = -6 (x - 2.2203)^{-1} + -3.9397]}$$
+
+",ODE,math_expression,,,,,,,
+"The growth of an investment portfolio over time can be modeled by differential equations.Here, $y(x)$ represents the value of a portfolio at time $x$. Consider the portfolio modeled by the following ordinary differential equation: $$y''' = \frac{y}{x^{4} + 2 x^{2} - 3} + y'^{2} - \frac{y''}{3 x^{3} + 5} + \frac{1}{2 x + \sin{\left(x \right)} - 2},$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 1.00, y''(0) = 2.00.$
+Derive an analytical formula that approximates the value of the portfolio $y(x)$ after a long amount of time has passed.
+
+","One can solve for the value of an investment portfolio using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{2}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 2.2903\right)^{p - 3} = \alpha^{2} p^{2} \left(x - 2.2903\right)^{2 p - 2}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 2 p - 2
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = -6, \quad p = -1
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+64.8259124866024 = C + 66.6798706014395
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = -1.854,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = -6 (x - 2.2903)^{-1} + (-1.854).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = -6 (x - 2.2903)^{-1} + -1.854]}$$
+
+",ODE,math_expression,,,,,,,
+"Researchers are studying the complex interactions between global temperature and greenhouse gas concentrations to predict climate change impacts more accurately. In the following model, $y(x)$ represents the atmospheric concentration of a specific greenhouse gas, such as methane, and $x$ is the global average temperature in degrees Celsius, where $$y''' = \frac{y}{3 \cdot \left(3 x^{4} - x^{3} - 1\right)} + y'^{4} - \frac{y''}{20 x^{3} + 5 x^{2} - 20 x + 3} - 3 - 3 e^{- x}$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 3.00, y''(0) = 2.00.$
+Provide an approximate analytical formula for the greenhouse gas concentration $y(x)$ at high temperatures $x$.
+
+","One can solve for the greenhouse gas concentration using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 0.2501\right)^{p - 3} = \alpha^{4} p^{4} \left(x - 0.2501\right)^{4 p - 4}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 4 p - 4
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = \sqrt[3]{30}, \quad p = \frac{1}{3}
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+2.57145586618234 = C - 0.448114179575657 \cdot \sqrt[3]{30}
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = 3.9639,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = \sqrt[3]{30} (x - 0.2501)^{\frac{1}{3}} + (3.9639).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = \sqrt[3]{30} (x - 0.2501)^{\frac{1}{3}} + 3.9639]}$$
+
+",ODE,math_expression,,,,,,,
+"Engineers are developing a new drug delivery system that uses a biodegradable implant releasing a drug in a controlled manner. Here, $y(x)$ describes the concentration of the drug in the bloodstream, while
+$x$ is the mass of the drug within the implant, where $$y''' = \frac{y}{3 \cdot \left(4 x - 3\right)} + y'^{2} + \frac{y''}{4 \cdot \left(5 x^{4} + 5 x^{2} - 2 x - 1\right)} + e^{- x}$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 3.00, y''(0) = 2.00.$
+Find an approximate analytical formula for the drug concentration $y(x)$ when the mass of the drug in the implant is large.
+
+","One can solve for the drug concentration using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{2}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 1.5303\right)^{p - 3} = \alpha^{2} p^{2} \left(x - 1.5303\right)^{2 p - 2}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 2 p - 2
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = -6, \quad p = -1
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+60.0474074920771 = C + 66.6241562039622
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = -6.5767,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = -6 (x - 1.5303)^{-1} + (-6.5767).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = -6 (x - 1.5303)^{-1} + -6.5767]}$$
+
+",ODE,math_expression,,,,,,,
+"Acoustic engineers are often tasked with designing concert halls that optimize sound quality. The following differential equation models the decay of sound intensity $y(x)$ over time $x$: $$y''' = \frac{y}{20 x^{4} + 7} + y'^{4} + \frac{y''}{4 x^{2} - 9} + e^{- x}$$
+with initial conditions at $x = 0: y(0) = 3.00, y'(0) = 3.00, y''(0) = 2.00.$
+Provide an analytical formula that approximates the decay of sound intensity $y(x)$ after a large amount of time has passed.
+
+","One can solve for decay of sound intensity over time using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 0.2501\right)^{p - 3} = \alpha^{4} p^{4} \left(x - 0.2501\right)^{4 p - 4}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 4 p - 4
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = \sqrt[3]{30}, \quad p = \frac{1}{3}
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+3.58068443428299 = C - 0.448114179575657 \cdot \sqrt[3]{30}
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = 4.9731,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = \sqrt[3]{30} (x - 0.2501)^{\frac{1}{3}} + (4.9731).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = \sqrt[3]{30} (x - 0.2501)^{\frac{1}{3}} + 4.9731]}$$
+
+",ODE,math_expression,,,,,,,
+"Urban planners use models to predict how cities expand and how this affects infrastructure and resources. These models can help predict future growth and plan for essential services like water, roads, and schools. In the following scenario, $y(x)$ represents the city's population, and $x$ indicates the cumulative area of land developed for housing. These are related by the following differential equation: $$y''' = \frac{y}{2 \left(x^{4} - x^{2} - 1\right)} + y'^{4} + \frac{y''}{5 x^{3} - x^{2} - 9} + \frac{1}{- 4 x^{3} + \sin{\left(x \right)} + 7}$$
+with initial conditions at $x = 0: y(0) = 1.00, y'(0) = 2.00, y''(0) = 3.00.$
+Find an approximate analytical formula for the city's population $y(x)$ when a large area of land has been developed for housing.
+
+","One can solve for the city's population using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 0.3901\right)^{p - 3} = \alpha^{4} p^{4} \left(x - 0.3901\right)^{4 p - 4}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 4 p - 4
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = \sqrt[3]{30}, \quad p = \frac{1}{3}
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+1.88503066420544 = C - 0.448091168848887 \cdot \sqrt[3]{30}
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = 3.2774,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = \sqrt[3]{30} (x - 0.3901)^{\frac{1}{3}} + (3.2774).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = \sqrt[3]{30} (x - 0.3901)^{\frac{1}{3}} + 3.2774]}$$
+
+",ODE,math_expression,,,,,,,
+"Astrophysicists often study the life cycles of stars to understand universal evolution, and one approach involves finding the relationship between the luminosity of a star, $y(x)$, and its age, $x$. Consider the following model for a star's luminosity: $$y''' = - \frac{y}{25 x^{4} - 7} + y'^{4} + \frac{y''}{25 x^{4} + 5 x^{2} + 5 x - 4} + \frac{1}{4 x^{4} - 3 x^{3} + \cos{\left(x \right)} - 3}$$
+with initial conditions at $x = 0: y(0) = 1.00, y'(0) = 3.00, y''(0) = 3.00.$
+Provide an approximate analytical formula for the luminosity $y(x)$ when a star is old.
+
+","One can solve for the star's luminosity using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 0.2401\right)^{p - 3} = \alpha^{4} p^{4} \left(x - 0.2401\right)^{4 p - 4}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 4 p - 4
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = \sqrt[3]{30}, \quad p = \frac{1}{3}
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+1.54532965492227 = C - 0.448115823108571 \cdot \sqrt[3]{30}
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = 2.9377,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = \sqrt[3]{30} (x - 0.2401)^{\frac{1}{3}} + (2.9377).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = \sqrt[3]{30} (x - 0.2401)^{\frac{1}{3}} + 2.9377]}$$
+
+",ODE,math_expression,,,,,,,
+"Psychological researchers are investigating how cognitive abilities change as individuals age, specifically focusing on executive functions, memory, and problem-solving skills. In the following model, $y(x)$ represents a cognitive performance score, determined through standardized testing, and $x$ represents the participant's age in years. Consider the following model for cognitive score: $$y''' = - \frac{y}{15} + y'^{2} - \frac{y''}{x^{2} + 5 x + 5} - 2 - 3 e^{- x}$$
+with initial conditions at $x = 0: y(0) = 0.00, y'(0) = 2.00, y''(0) = 1.00.$
+Find an approximate analytical formula for a participant's cognitive participant score $y(x)$ if their age is large.
+
+","One can solve for a participant's cognitive participant score using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{2}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 2.4103\right)^{p - 3} = \alpha^{2} p^{2} \left(x - 2.4103\right)^{2 p - 2}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 2 p - 2
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = -6, \quad p = -1
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+64.8381966249335 = C + 66.6886761307364
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = -1.8505,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = -6 (x - 2.4103)^{-1} + (-1.8505).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = -6 (x - 2.4103)^{-1} + -1.8505]}$$
+
+",ODE,math_expression,,,,,,,
+"In the field of Internet technology, network engineers and systems analysts are interested in finding ways to optimize data flow across global networks. In the following model, $y(x)$ represents the volume of data processed per unit of time, while $x$ corresponds to the network's bandwidth. The relationship between these two quantities can be modeled by this ordinary differential equation: $$y''' = - \frac{y}{2 x^{2} + 2 x + 8} + y'^{4} - \frac{y''}{x^{3} + 2 x + 4} + \frac{1}{\sin{\left(x \right)} - 2}$$
+with initial conditions at $x = 0: y(0) = 3.00, y'(0) = 3.00, y''(0) = 1.00.$
+Find an approximate analytical expression for $y(x)$, the volume of data processed per unit of time, if the network has high bandwidth.
+
+","One can solve for the volume of data processed per unit of time using the method of dominant balance. The dominant balance in the large x regime is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+The solution for the large \( x \) regime uses an ansatz of the form 
+$$ y = \alpha (x - x^*)^p, $$ 
+where \( x^* \) is the divergence point. Plugging in the ansatz and solving for the terms yields 
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) \left(x - 0.2601\right)^{p - 3} = \alpha^{4} p^{4} \left(x - 0.2601\right)^{4 p - 4}
+$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to \( (x - x^*) \). This leads to an equation where the coefficients and powers of \( (x - x^*) \) are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of \( (x - x^*) \).
+
+The coefficients' equation is:
+$$
+\alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}
+$$
+
+The powers' equation is:
+$$
+p - 3 = 4 p - 4
+$$
+
+Solving this system of equations provides the values of \( \alpha \) and \( p \). 
+A valid solution is identified if \( \alpha \) and \( p \) are both nonzero. 
+In such a case, the solution for \( \alpha \) and \( p \) is found to be:
+$$
+\alpha = \sqrt[3]{30}, \quad p = \frac{1}{3}
+$$
+
+With these values, the integration constant \( C \) is determined by substituting 
+a known point from the numerical solution into the ansatz. This yields the following equation for \( C \):
+$$
+3.60853223716905 = C - 0.448112536030687 \cdot \sqrt[3]{30}
+$$
+
+Solving this equation, we find the value of \( C \) to be:
+$$
+C = 5.0009,
+$$
+
+so, the analytical approximation for the solution at large $x$ (near the divergence point) is given by
+$$
+y = \sqrt[3]{30} (x - 0.2601)^{\frac{1}{3}} + (5.0009).
+$$
+
+Thus, the solution is given by 
+$$\boxed{[y = \sqrt[3]{30} (x - 0.2601)^{\frac{1}{3}} + 5.0009]}$$
+
+",ODE,math_expression,,,,,,,
+"Researchers are studying the thermal properties of advanced polymers that change their characteristics under different heat conditions. The integral $I(\epsilon)$ relates the heat capacity of the polymer to the temperature, where $x$ represents temperature in degrees Celsius, and $\epsilon$ is a parameter describing the molecular structure stability of the polymer under heat. Consider the following expression for the heat capacity of the polymer: $I(\epsilon) = \int_0^{84.00} \frac{1}{\epsilon + 1.0 x^{11.0} + 5.0 x^{12.0}} dx$. Develop analytical formulas that approximate the heat capacity $I(\epsilon)$ for different regimes of the polymer's molecular structural stability.","
+    The integral is of the form $I(\epsilon) = \int_0^{84} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{1.0*\epsilon} \right)^{1/11.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{1.0}{\epsilon^{0.9091}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{5.0*\epsilon} \right)^{1/12.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8639}{\epsilon^{0.9091}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{84}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{1.0}{\epsilon^{0.9091}}, \frac{0.8639}{\epsilon^{0.9091}}, \frac{84}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Imagine you are an environmental scientist studying the concentration of a pollutant in a river that flows through an industrial area. The concentration of the pollutant at different points along the river can be modeled by the integral $I(\epsilon)$, where $\epsilon$ is a small positive constant that accounts for the natural degradation and dispersion of the pollutant. The concentration of the pollutant is given by $I(\epsilon) = \int_0^{32.00} \frac{1}{\epsilon + 5.0 x^{10.0} + 7.0 x^{13.0}} dx$, where $x$ represents the distance downstream from the industrial area. Develop approximate analytical formulasfor the pollutant concentration for different values of $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{32} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{5.0*\epsilon} \right)^{1/10.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8513}{\epsilon^{0.9}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{7.0*\epsilon} \right)^{1/13.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8232}{\epsilon^{0.9}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{32}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.8513}{\epsilon^{0.9}}, \frac{0.8232}{\epsilon^{0.9}}, \frac{32}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Astrophysicists study the distribution of dark matter galaxy clusters. The density of dark matter at different radial distances from the center of the cluster can be modeled by the integral $I(\epsilon) = \int_0^{62.00} \frac{1}{\epsilon + 2.0 x^{8.0} + 3.0 x^{16.0} + 3.0 x^{19.0}} dx$, where $x$ represents the radial distance in megaparsecs (Mpc) from the center of the cluster, and $\epsilon$ is a small positive constant that accounts for the uncertainty in the dark matter distribution due to observational limitations and the presence of ordinary matter. Develop analytical formulas that approximate $I(\epsilon)$ for different ranges of uncertainty values, $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{62} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{2.0*\epsilon} \right)^{1/8.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.917}{\epsilon^{0.875}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{3.0*\epsilon} \right)^{1/19.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8717}{\epsilon^{0.875}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{62}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.917}{\epsilon^{0.875}}, \frac{0.8717}{\epsilon^{0.875}}, \frac{62}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Suppose you are a biomedical researcher studying the effectiveness of a new drug in treating a rare genetic disorder. The concentration of the drug in the patient's bloodstream at different times after administration can be represented by $I(\epsilon)$ in the following equation, $I(\epsilon) = \int_0^{55.00} \frac{1}{\epsilon + 9.0 x^{7.0} + 6.0 x^{9.0} + 4.0 x^{15.0} + 5.0 x^{16.0}} dx$, where $x$ represents the time in hours since the drug was administered and $\epsilon$ measures the patient's specific metabolism. Given this information, provide an approximate analytical formula for $I(\epsilon)$ at different regimes of the patient's metabolism $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{55} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{6.0*\epsilon} \right)^{1/7.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.7742}{\epsilon^{0.8571}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{5.0*\epsilon} \right)^{1/16.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.7946}{\epsilon^{0.8571}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{55}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.7742}{\epsilon^{0.8571}}, \frac{0.7946}{\epsilon^{0.8571}}, \frac{55}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"City planners are often interested in studying the population density distribution in a rapidly growing city. There can be complex relationships between the population density of a certain region and its distance from the city center. If $x$ is the distance from the city's center, and $\epsilon$ measures the average price of a home in that city, the population density can be given by the integral $I(\epsilon) = \int_0^{97.00} \frac{1}{\epsilon + 3.0 x^{5.0} + 1.0 x^{8.0} + 1.0 x^{15.0} + 1.0 x^{16.0}} dx$. Using this model, develop analytical formulas that approximate the population density $I(\epsilon)$ at varying average home prices $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{97} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{3.0*\epsilon} \right)^{1/5.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8027}{\epsilon^{0.8}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{1.0*\epsilon} \right)^{1/16.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{1.0}{\epsilon^{0.8}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{97}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.8027}{\epsilon^{0.8}}, \frac{1.0}{\epsilon^{0.8}}, \frac{97}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Tourist attractions can produce significant revenue that help cities thrive. However, the popularity of many attractions can depend on several factors, such as the proximity to restaurants or historical significance. Suppose $x$ is the age of a particular tourist attraction in years, and $\epsilon$ is its cost of construction. If the revenue produced by the attraction is given by $I(\epsilon) = \int_0^{38.00} \frac{1}{\epsilon + 6.0 x^{5.0} + 2.0 x^{10.0}} dx$, develop distinct analytical formulas that approximate its value $I(\epsilon)$ for different costs of construction $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{38} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{6.0*\epsilon} \right)^{1/5.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.6988}{\epsilon^{0.8}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{2.0*\epsilon} \right)^{1/10.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8706}{\epsilon^{0.8}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{38}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.6988}{\epsilon^{0.8}}, \frac{0.8706}{\epsilon^{0.8}}, \frac{38}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Many climate scientists study the global carbon dioxide (CO2) absorption by the oceans. The rate of CO2 absorption at different latitudes depends on $x$, the depth of the ocean at that latitude, and $\epsilon$, which accounts for the influence of various physical and biological factors on CO2 absorption, such as ocean temperature, salinity, and phytoplankton productivity. To estimate the total annual CO2 absorption by the oceans, you need to calculate $I(\epsilon) = \int_0^{14.00} \frac{1}{\epsilon + 4.0 x^{7.0} + 3.0 x^{10.0} + 7.0 x^{13.0} + 13.0 x^{17.0}} dx$. Develop analytical formulas that approximate the rate of CO2 absorption $I(\epsilon)$ for different regimes of $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{14} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{4.0*\epsilon} \right)^{1/7.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8203}{\epsilon^{0.8571}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{6.0*\epsilon} \right)^{1/17.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.7742}{\epsilon^{0.8571}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{14}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.8203}{\epsilon^{0.8571}}, \frac{0.7742}{\epsilon^{0.8571}}, \frac{14}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Imagine you are a geophysicist studying the distribution of a rare mineral in the Earth's crust. The concentration of the mineral at different depths below the surface can be modeled by the function $I(\epsilon) = \int_0^{47.00} \frac{1}{\epsilon + 4.0 x^{4.0} + 5.0 x^{5.0} + 8.0 x^{10.0} + 1.0 x^{11.0} + 2.0 x^{15.0} + 3.0 x^{17.0}} dx$, where $x$ represents the depth in kilometers, and $\epsilon$ accounts for the variability in the mineral's formation temperature. Use this model to develop analytical formulas that approximate the mineral's concentration $I(\epsilon)$ for different regimes of the mineral's formation temperature variability.","
+    The integral is of the form $I(\epsilon) = \int_0^{47} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{4.0*\epsilon} \right)^{1/4.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.7071}{\epsilon^{0.75}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{3.0*\epsilon} \right)^{1/17.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.7598}{\epsilon^{0.75}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{47}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.7071}{\epsilon^{0.75}}, \frac{0.7598}{\epsilon^{0.75}}, \frac{47}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Suppose you are an epidemiologist studying the spread of a new infectious disease in a population and have just developed a new model for the number of infected individuals. You find that this number is dependent on the time in days since the outbreak, represented by $x$, and a new variable that you've invented to measure the disease's infectiousness, represented by $\epsilon$. Specifically, your model states that the number of infected individuals is given by the integral $I(\epsilon) = \int_0^{38.00} \frac{1}{\epsilon + 6.0 x^{4.0} + 3.0 x^{10.0}} dx$. Develop analytical formulas that approximate the number of infected individuals $I(\epsilon)$ for different regimes of $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{38} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{6.0*\epsilon} \right)^{1/4.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.6389}{\epsilon^{0.75}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{3.0*\epsilon} \right)^{1/10.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.7598}{\epsilon^{0.75}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{38}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.6389}{\epsilon^{0.75}}, \frac{0.7598}{\epsilon^{0.75}}, \frac{38}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
+"Imagine you are a chemical engineer studying the heat transfer properties of a new class of industrial coolant. The coolant's ability to absorb heat at different temperatures can be modeled by the integral $I(\epsilon) = \int_0^{12.00} \frac{1}{\epsilon + 6.0 x^{13.0}} dx$, where $x$ represents the temperature in Kelvin, and $\epsilon$ is a variable that accounts for the coolant's unique molecular structure and complexity. You want to commercialized this coolant, but you need to understand its heat absorptivity for different possible material complexities. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.","
+    The integral is of the form $I(\epsilon) = \int_0^{12} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{6.0*\epsilon} \right)^{1/13.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8712}{\epsilon^{0.9231}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{6.0*\epsilon} \right)^{1/13.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.8712}{\epsilon^{0.9231}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{12}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.8712}{\epsilon^{0.9231}}, \frac{0.8712}{\epsilon^{0.9231}}, \frac{12}{\epsilon}}$.
+    ",integral,math_expression,,,,,,,
