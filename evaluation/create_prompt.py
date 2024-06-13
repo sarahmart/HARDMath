@@ -70,9 +70,10 @@ def create_query_prompt_batch(problem_metadata_json, examples, args):
             shot_num = args.shot_num,
             )
         prompt_dict[pid] = prompt
+    return prompt_dict
 
-def create_grading_prompt(response_latex, solution_latex, question_type=None,integral_subtype=None):
-    common_query = f"Please take this response: {response_latex}\n\n and this ground truth \
+def create_grading_prompt(latex_response, solution_latex, question_type=None,integral_subtype=None):
+    common_query = f"Please take this response: {latex_response}\n\n and this ground truth \
         solution: {solution_latex} and grade the response based on the following criteria:"
     if question_type == "polynomial_roots":
         grade_guide = "1) Check both the small and large $\epsilon$ solutions. \
@@ -104,3 +105,4 @@ def create_grading_prompt(response_latex, solution_latex, question_type=None,int
         4) Give the final grading as a float in Latex boxed format \\[boxed{}\\]"
     query = f"{common_query}\n\n{grade_guide}"
     return query
+

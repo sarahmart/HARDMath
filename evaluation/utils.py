@@ -20,7 +20,9 @@ def read_clean_csv(csv_path):
     return df
 
 def display_content(input_str, show_display=True):
-    latex_str = input_str.replace(r'\[', ' $').replace(r'\]', '$ ').replace(r'\(', ' $').replace(r'\)', ' $').replace('$\\', ' $').replace('$','$ ')
+    latex_str = input_str.response.replace(r'\[', ' $').replace(r'\]', '$ ').replace(r'\(', ' $').\
+        replace(r'\)', ' $').replace('$$\\', ' $').replace('$\\', ' $').replace('$$','$ ').\
+        replace('\\begin{align*}',' $').replace('\\end{align*}','$')
     if show_display:
         display(Latex(latex_str))
     return latex_str

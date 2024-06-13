@@ -67,7 +67,7 @@ class Ollama_Server:
             "Content-Type": "application/json"
         }
 
-    def get_inference(self, use_prompt):
+    def get_response(self, use_prompt):
         # Define the payload
         payload = {
             "model": self.model_name,
@@ -90,8 +90,5 @@ class Ollama_Server:
             print(f"Request failed with status code {response.status_code}")
             return None
 
-# Example usage:
-# server = Ollama_Server("http://your-server-url.com", "model_name_here", temperature=0.7)
-# result = server.get_inference("Your prompt here")
-# print(result)
+
 
