@@ -7,7 +7,7 @@ This repository hosts the [full dataset](./data/HARDMath.json) and the [evaluati
 ### Introduction
 HARDMath is a dataset of challenging, graduate-level problems in applied mathematics that can be used for language model training and evaluation. Unlike other popular mathematical datasets, HARDMath contains problems that require more advanced problem-solving skills and approximation methods.
 
-The dataset contains a train set of 1,050 problems and a test set of 437 problems, divided across seven different problem types. A "Word Problem in Context" set is also introduced, which consists of 40 manually-written problems that require asymptotic reasoning in the context of plausible real-world scenarios. 
+The dataset contains a train set of 1,050 problems and a test set of 437 problems, divided across seven different problem types. A "Word Problem in Context" set is also introduced, which consists of 40 handwritten problems that require asymptotic reasoning in the context of plausible real-world scenarios. 
 
 ### Data Access
 Our full datasets of problems and solutions are stored in the `data` directory. They are available in either CSV or JSON format.
