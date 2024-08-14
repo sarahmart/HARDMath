@@ -86,13 +86,13 @@ This will install all required packages and dependencies and the custom modules 
 To run the script, use the following command:
 
 ```bash
-python script_name.py --data_dir <path_to_data> --input_file <input_file_name> --example_file <example_file_name> --output_dir <output_directory> --output_file <output_file_name> --model <model_name> --key <api_key> --question_type <question_type> --temperature <temperature_value> --server_ip <server_ip_address>
+python script_name.py --data_dir <path_to_data> --input_file <input_file_name> --example_file <example_file_name> --output_dir <output_directory> --output_file <output_file_name> --model <model_name> --grader <grader_name> --key <api_key> --question_type <question_type> --temperature <temperature_value> --server_ip <server_ip_address>
 ```
 
 Example command:
 
 ```bash
-python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
+python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --grader gpt-4o --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
 ```
 
 ##### Command-Line Flags
@@ -103,6 +103,7 @@ python script_name.py --data_dir data --input_file eval_HARDMath.json --example_
 - `--output_dir`: Directory where the results will be saved. Default is `results/test`.
 - `--output_file`: Name of the output file (e.g., `nondimensionalization_symbolic_1shot_gpt4.json`). Default is `nondimensionalization_symbolic_1shot_gpt4.json`.
 - `--model`: The model to use for generating responses. Choices include `gpt-4-turbo`, `gpt-3.5-turbo`, `gpt-4o`, `llama3-8b`, `codellama-13b`. Default is `gpt-3.5-turbo`.
+- `--grader`: The model to use for grading responses. Choices include `gpt-4-turbo`, `gpt-4o`. Default is `gpt-4o`.
 - `--key`: Your API key for the model (if using OpenAI's GPT models). If not provided, the script will attempt to load it from the environment variable `OPENAI_API_KEY`.
 - `--prompt_file`: (Optional) Path to a file containing custom prompts. If not provided, the script will create new prompts.
 - `--shot_num`: Number of examples to use for few-shot learning. Default is `0`.
