@@ -28,3 +28,84 @@ In the CSV and JSON files containing our data, each problem stores the following
 
 ### Data Generation
 To generate problems and their solutions, navigate to the `src` directory and choose the type of problem you would like to generate. Running the `[problem_type]_generator.ipynb` Jupyter notebook will generate $n$ problems and their solutions, and save the results in a .csv file. The number of problems can be set by the variable `num_problems` near the top of each notebook.
+
+### Evaluation
+
+#### Getting Started 
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/sarahmart/HARDMath.git
+```
+
+Navigate into the cloned directory:
+
+```bash
+cd HARDMath/evaluation
+```
+
+#### Prerequisites
+
+The repository includes a `requirements.yml` file to set up a Conda environment with all necessary dependencies. To create the environment, run:
+
+```bash
+conda env create -f requirements.yml
+```
+
+After the environment is created, activate it with:
+
+```bash
+conda activate hardmath-env
+```
+
+This will install all required packages and dependencies and the custom modules needed to run the scripts.
+
+
+#### How to Run
+
+To run the script, use the following command:
+
+```bash
+python script_name.py --data_dir <path_to_data> --input_file <input_file_name> --example_file <example_file_name> --output_dir <output_directory> --output_file <output_file_name> --model <model_name> --key <api_key> --sys_prompt <system_prompt_type> --question_type <question_type> --temperature <temperature_value> --server_ip <server_ip_address>
+```
+
+Example command:
+
+```bash
+python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --key YOUR_API_KEY --sys_prompt math_assistant --question_type nondimensionalization_symbolic --temperature 0.0 
+```
+
+##### Command-Line Flags
+
+- `--data_dir`: Directory where your input files are located. Default is `data`.
+- `--input_file`: The main input data file (e.g., `eval_HARDMath.json`). Default is `eval_HARDMath.json`.
+- `--example_file`: Example data file for one-shot learning (e.g., `example_HARDMath_1shot.json`). Default is `examples_HARDMath_1shot.json`.
+- `--output_dir`: Directory where the results will be saved. Default is `results/test`.
+- `--output_file`: Name of the output file (e.g., `nondimensionalization_symbolic_1shot_gpt4.json`). Default is `nondimensionalization_symbolic_1shot_gpt4.json`.
+- `--model`: The model to use for generating responses. Choices include `gpt-4-turbo`, `gpt-3.5-turbo`, `gpt-4o`, `llama3-8b`, `codellama-13b`. Default is `gpt-3.5-turbo`.
+- `--key`: Your API key for the model (if using OpenAI's GPT models). If not provided, the script will attempt to load it from the environment variable `OPENAI_API_KEY`.
+- `--sys_prompt`: The system prompt guiding the model's behavior. Choices include:
+  - `math_assistant`: The model behaves as a helpful assistant for solving mathematical problems.
+  - `grader`: The model behaves as a grading assistant.
+  - `none`: No system prompt is provided.
+- `--prompt_file`: (Optional) Path to a file containing custom prompts. If not provided, the script will create new prompts.
+- `--shot_num`: Number of examples to use for few-shot learning. Default is `0`.
+- `--question_type`: The type of mathematical problems being evaluated. Choices include `nondimensionalization_symbolic`, `nondimensionalization_numeric`, `integral`, `ode`, `polynomial_roots`. Default is `nondimensionalization_symbolic`.
+- `--integral_subtype`: (Optional) Subtype of integral problems (if applicable). Choices include `traditional` and `laplace`.
+- `--temperature`: Controls the creativity of the model's responses. Lower values make the model more deterministic. Default is `0.0`.
+- `--server_ip`: IP address of the server if using a local model server (e.g., Ollama Server). Default is `10.120.16.254`.
+
+##### Output
+
+The results will be saved in the specified output directory and file. The output JSON file will contain the prompts, model responses, extracted answers, and comparison scores.
+
+##### Troubleshooting
+
+If you encounter any issues while running the script, ensure that:
+
+1. The input files are correctly formatted JSON files.
+2. The custom modules (`utils`, `create_prompt`, `models`, `answer_extraction`) are properly set up.
+3. Your API key is correctly provided if using GPT models from OpenAI.
+
+For more detailed debugging, check the error messages printed during the script execution.
