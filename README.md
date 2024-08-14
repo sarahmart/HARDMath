@@ -113,7 +113,7 @@ python script_name.py --data_dir data --input_file eval_HARDMath.json --example_
 - `--question_type`: The type of mathematical problems being evaluated. Choices include `nondimensionalization_symbolic`, `nondimensionalization_numeric`, `integral`, `ode`, `polynomial_roots`. Default is `nondimensionalization_symbolic`.
 - `--integral_subtype`: (Optional) Subtype of integral problems (if applicable). Choices include `traditional` and `laplace`.
 - `--temperature`: Controls the creativity of the model's responses. Lower values make the model more deterministic. Default is `0.0`.
-- `--server_ip`: IP address of the server if using a local model server (e.g., Ollama Server). Default is `10.120.16.254`.
+- `--server_ip`: IP address of the server if using a local model server (e.g., Ollama Server).
 
 ##### Output
 
