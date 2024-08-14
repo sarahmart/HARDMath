@@ -14,7 +14,7 @@ def create_problem_dict(question, solution, small_eval_point, small_analytical, 
         answer_val = extrcated_answer
     else:
         # TODO: check this part 
-        answer_val = answer_extraction.extract_final_answer_allform(solution, pattern = re.compile(r'\\approx|='),latex_wrap=r'\$(.*?)\$',answer_type=None)
+        answer_val = answer_extraction.extract_final_answer_allform(solution, pattern = re.compile(r'\\approx|='),latex_wrap=r'\$(.*?)\$',answer_type=answer_type)
     if answer_type is None:
         answer_type = answer_extraction.answer_type_extract(answer_val)
 

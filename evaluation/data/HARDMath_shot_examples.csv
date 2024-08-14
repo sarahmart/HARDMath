@@ -1,0 +1,895 @@
+question,solution,question_type,answer_type,extracted_answer,small_eval_point,small_analytical,small_numerical,large_eval_point,large_analytical,large_numerical
+"Consider the following third-order ordinary differential equation $$y''' = x + \frac{y}{2 x^{2} + 3} + y'^{2} + \frac{y''}{\sin{\left(x \right)} + 4} - 5$$
+with initial conditions at $x = 0: y(0) = 1.00, y'(0) = 3.00, y''(0) = 1.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \cdot \left(\frac{2}{3} + \frac{1}{6 \left(\sin{\left(x \right)} + 4\right)} + \frac{1}{6 \cdot \left(2 x^{2} + 3\right)}\right) + 0.5 x^{2} + 3 x + 1.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{2}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(1.72115481548155 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2} \left(1.72115481548155 - x\right)^{2 p - 2}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2}.$$
+
+The powers' equation is:
+$$p - 3 = 2 p - 2.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = 6, \quad p = -1.$$
+
+The ansatz is now $$y' = 6(1.72115481548155-x)^{-1},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = 6(1.72115481548155-x)^{-1} + -2.49.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \cdot \left(\frac{2}{3} + \frac{1}{6 \left(\sin{\left(x \right)} + 4\right)} + \frac{1}{6 \cdot \left(2 x^{2} + 3\right)}\right) + 0.5 x^{2} + 3 x + 1, y = 6(1.72 - x)^{-1}+-2.49}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \cdot \left(\frac{2}{3} + \frac{1}{6 \left(\sin{\left(x \right)} + 4\right)} + \frac{1}{6 \cdot \left(2 x^{2} + 3\right)}\right) + 0.5 x^{2} + 3 x + 1, y = 6(1.72 - x)^{-1}+-2.49]}$$
+",0.1,1.30576250636284,1.302680795287026,1.7039432673267323,346.112921252307,340.75697225612373
+"Consider the following third-order ordinary differential equation $$y''' = x + \frac{y}{\sin{\left(x \right)} + 2} + y'^{5} + \frac{y''}{\tan{\left(x \right)} + 3} - 2$$
+with initial conditions at $x = 0: y(0) = 1.00, y'(0) = 3.00, y''(0) = 2.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \cdot \left(\frac{241}{6} + \frac{1}{3 \left(\tan{\left(x \right)} + 3\right)} + \frac{1}{6 \left(\sin{\left(x \right)} + 2\right)}\right) + 1.0 x^{2} + 3 x + 1.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{5}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.121010801080108 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5} \left(0.121010801080108 - x\right)^{5 p - 5}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5}.$$
+
+The powers' equation is:
+$$p - 3 = 5 p - 5.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt{2} \cdot \sqrt[4]{3}, \quad p = \frac{1}{2}.$$
+
+The ansatz is now $$y' = - \sqrt{2} \cdot \sqrt[4]{3}(0.121010801080108-x)^{\frac{1}{2}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt{2} \cdot \sqrt[4]{3}(0.121010801080108-x)^{\frac{1}{2}} + 1.64.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \cdot \left(\frac{241}{6} + \frac{1}{3 \left(\tan{\left(x \right)} + 3\right)} + \frac{1}{6 \left(\sin{\left(x \right)} + 2\right)}\right) + 1.0 x^{2} + 3 x + 1, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.12 - x)^{\frac{1}{2}}+1.64}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \cdot \left(\frac{241}{6} + \frac{1}{3 \left(\tan{\left(x \right)} + 3\right)} + \frac{1}{6 \left(\sin{\left(x \right)} + 2\right)}\right) + 1.0 x^{2} + 3 x + 1, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.12 - x)^{\frac{1}{2}}+1.64]}$$
+",0.1,1.35035355331671,1.3649779098142196,0.1198006930693069,1.57514740753516,1.507552447681201
+"Consider the following third-order ordinary differential equation $$y''' = - 3 x + y^{5} + y'^{4} + \frac{y''}{3 x \left(x - 1\right)}$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 2.00, y''(0) = 3.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \cdot \left(8 + \frac{1}{6 x \left(x - 1\right)}\right) + 1.5 x^{2} + 2 x + 2.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.351031503150315 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4} \left(0.351031503150315 - x\right)^{4 p - 4}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}.$$
+
+The powers' equation is:
+$$p - 3 = 4 p - 4.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt[3]{30}, \quad p = \frac{1}{3}.$$
+
+The ansatz is now $$y' = - \sqrt[3]{30}(0.351031503150315-x)^{\frac{1}{3}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt[3]{30}(0.351031503150315-x)^{\frac{1}{3}} + 4.19.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \cdot \left(8 + \frac{1}{6 x \left(x - 1\right)}\right) + 1.5 x^{2} + 2 x + 2, y = - \sqrt[3]{30}(0.35 - x)^{\frac{1}{3}}+4.19}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \cdot \left(8 + \frac{1}{6 x \left(x - 1\right)}\right) + 1.5 x^{2} + 2 x + 2, y = - \sqrt[3]{30}(0.35 - x)^{\frac{1}{3}}+4.19]}$$
+",0.1,2.22114814814815,2.210057698320375,0.3475211881188118,3.71819728533273,3.427741617468938
+"Consider the following third-order ordinary differential equation $$y''' = - 3 x + \frac{y}{\cos{\left(x \right)} + 1} + y'^{4} - 4 - \frac{y''}{x \left(x + 3\right)}$$
+with initial conditions at $x = 0: y(0) = 0.00, y'(0) = 3.00, y''(0) = 1.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \cdot \left(\frac{77}{6} - \frac{1}{6 x \left(x + 3\right)}\right) + 0.5 x^{2} + 3 x.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.30102700270027 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4} \left(0.30102700270027 - x\right)^{4 p - 4}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}.$$
+
+The powers' equation is:
+$$p - 3 = 4 p - 4.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt[3]{30}, \quad p = \frac{1}{3}.$$
+
+The ansatz is now $$y' = - \sqrt[3]{30}(0.30102700270027-x)^{\frac{1}{3}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt[3]{30}(0.30102700270027-x)^{\frac{1}{3}} + 2.08.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \cdot \left(\frac{77}{6} - \frac{1}{6 x \left(x + 3\right)}\right) + 0.5 x^{2} + 3 x, y = - \sqrt[3]{30}(0.3 - x)^{\frac{1}{3}}+2.08}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \cdot \left(\frac{77}{6} - \frac{1}{6 x \left(x + 3\right)}\right) + 0.5 x^{2} + 3 x, y = - \sqrt[3]{30}(0.3 - x)^{\frac{1}{3}}+2.08]}$$
+",0.1,0.317295698924731,0.308999398724383,0.2980167326732673,1.63142685335974,1.6973379312140204
+"Consider the following third-order ordinary differential equation $$y''' = y^{2} + y'^{2} - y'' + \frac{1}{\cos{\left(x \right)} + 2}$$
+with initial conditions at $x = 0: y(0) = 1.00, y'(0) = 3.00, y''(0) = 2.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = \frac{25 x^{3}}{18} + 1.0 x^{2} + 3 x + 1.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{2}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(1.5611404140414 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2} \left(1.5611404140414 - x\right)^{2 p - 2}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{2} p^{2}.$$
+
+The powers' equation is:
+$$p - 3 = 2 p - 2.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = 6, \quad p = -1.$$
+
+The ansatz is now $$y' = 6(1.5611404140414-x)^{-1},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = 6(1.5611404140414-x)^{-1} + -2.85.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = \frac{25 x^{3}}{18} + 1.0 x^{2} + 3 x + 1, y = 6(1.56 - x)^{-1}+-2.85}$$
+
+",ODE,list,"$$\boxed{[y = \frac{25 x^{3}}{18} + 1.0 x^{2} + 3 x + 1, y = 6(1.56 - x)^{-1}+-2.85]}$$
+",0.1,1.31138888888889,1.3081931229864396,1.54552900990099,381.484325181955,316.9266455947844
+"Consider the following third-order ordinary differential equation $$y''' = x + y^{2} + y'^{4} - \frac{y''}{2 x^{2} - 3} - 5$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 2.00, y''(0) = 0.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = \frac{5 x^{3}}{2} + 2 x + 2.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{4}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.50104500450045 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4} \left(0.50104500450045 - x\right)^{4 p - 4}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4}.$$
+
+The powers' equation is:
+$$p - 3 = 4 p - 4.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt[3]{30}, \quad p = \frac{1}{3}.$$
+
+The ansatz is now $$y' = - \sqrt[3]{30}(0.50104500450045-x)^{\frac{1}{3}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt[3]{30}(0.50104500450045-x)^{\frac{1}{3}} + 4.47.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = \frac{5 x^{3}}{2} + 2 x + 2, y = - \sqrt[3]{30}(0.5 - x)^{\frac{1}{3}}+4.47}$$
+
+",ODE,list,"$$\boxed{[y = \frac{5 x^{3}}{2} + 2 x + 2, y = - \sqrt[3]{30}(0.5 - x)^{\frac{1}{3}}+4.47]}$$
+",0.1,2.2025,2.2005228563779218,0.4960345544554455,3.93802737449387,3.9175095434470304
+"Consider the following third-order ordinary differential equation $$y''' = x + y'^{5} + \frac{y''}{3} - 5 - \frac{y}{2 x \left(x - 1\right)}$$
+with initial conditions at $x = 0: y(0) = 1.00, y'(0) = 1.00, y''(0) = 1.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \left(- \frac{11}{18} - \frac{1}{12 x \left(x - 1\right)}\right) + 0.5 x^{2} + x + 1.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{5}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.481043204320432 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5} \left(0.481043204320432 - x\right)^{5 p - 5}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5}.$$
+
+The powers' equation is:
+$$p - 3 = 5 p - 5.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt{2} \cdot \sqrt[4]{3}, \quad p = \frac{1}{2}.$$
+
+The ansatz is now $$y' = - \sqrt{2} \cdot \sqrt[4]{3}(0.481043204320432-x)^{\frac{1}{2}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt{2} \cdot \sqrt[4]{3}(0.481043204320432-x)^{\frac{1}{2}} + 2.29.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \left(- \frac{11}{18} - \frac{1}{12 x \left(x - 1\right)}\right) + 0.5 x^{2} + x + 1, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.48 - x)^{\frac{1}{2}}+2.29}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \left(- \frac{11}{18} - \frac{1}{12 x \left(x - 1\right)}\right) + 0.5 x^{2} + x + 1, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.48 - x)^{\frac{1}{2}}+2.29]}$$
+",0.1,1.10531481481481,1.1114187119598846,0.4762327722772277,2.16095062223375,2.057691998311668
+"Consider the following third-order ordinary differential equation $$y''' = x + \frac{y}{\cos{\left(x \right)} + 3} + y'^{5} - 1 - \frac{y''}{x^{2}}$$
+with initial conditions at $x = 0: y(0) = 3.00, y'(0) = 3.00, y''(0) = 1.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \cdot \left(\frac{121}{3} + \frac{1}{2 \left(\cos{\left(x \right)} + 3\right)} - \frac{1}{6 x^{2}}\right) + 0.5 x^{2} + 3 x + 3.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{5}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.281025202520252 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5} \left(0.281025202520252 - x\right)^{5 p - 5}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5}.$$
+
+The powers' equation is:
+$$p - 3 = 5 p - 5.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt{2} \cdot \sqrt[4]{3}, \quad p = \frac{1}{2}.$$
+
+The ansatz is now $$y' = - \sqrt{2} \cdot \sqrt[4]{3}(0.281025202520252-x)^{\frac{1}{2}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt{2} \cdot \sqrt[4]{3}(0.281025202520252-x)^{\frac{1}{2}} + 3.98.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \cdot \left(\frac{121}{3} + \frac{1}{2 \left(\cos{\left(x \right)} + 3\right)} - \frac{1}{6 x^{2}}\right) + 0.5 x^{2} + 3 x + 3, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.28 - x)^{\frac{1}{2}}+3.98}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \cdot \left(\frac{121}{3} + \frac{1}{2 \left(\cos{\left(x \right)} + 3\right)} - \frac{1}{6 x^{2}}\right) + 0.5 x^{2} + 3 x + 3, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.28 - x)^{\frac{1}{2}}+3.98]}$$
+",0.1,3.32879182298173,3.2988739371081754,0.2782149504950494,3.88131437234679,4.079260358548924
+"Consider the following third-order ordinary differential equation $$y''' = - 5 x + y^{4} + y'^{5} + \frac{y''}{2}$$
+with initial conditions at $x = 0: y(0) = 3.00, y'(0) = 2.00, y''(0) = 1.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = \frac{227 x^{3}}{12} + 0.5 x^{2} + 2 x + 3.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d}{d x} y\right)^{5}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.191017101710171 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5} \left(0.191017101710171 - x\right)^{5 p - 5}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = - \alpha^{5} p^{5}.$$
+
+The powers' equation is:
+$$p - 3 = 5 p - 5.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = - \sqrt{2} \cdot \sqrt[4]{3}, \quad p = \frac{1}{2}.$$
+
+The ansatz is now $$y' = - \sqrt{2} \cdot \sqrt[4]{3}(0.191017101710171-x)^{\frac{1}{2}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = - \sqrt{2} \cdot \sqrt[4]{3}(0.191017101710171-x)^{\frac{1}{2}} + 3.81.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = \frac{227 x^{3}}{12} + 0.5 x^{2} + 2 x + 3, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.19 - x)^{\frac{1}{2}}+3.81}$$
+
+",ODE,list,"$$\boxed{[y = \frac{227 x^{3}}{12} + 0.5 x^{2} + 2 x + 3, y = - \sqrt{2} \cdot \sqrt[4]{3}(0.19 - x)^{\frac{1}{2}}+3.81]}$$
+",0.1,3.22391666666667,3.223772010557864,0.1891069306930692,3.7287134863032,3.6292814527205377
+"Consider the following third-order ordinary differential equation $$y''' = x + \frac{y}{\tan{\left(x \right)} + 5} + y'^{2} + y''^{4}$$
+with initial conditions at $x = 0: y(0) = 2.00, y'(0) = 3.00, y''(0) = 1.00.$
+Find analytical expressions that approximate the solution of $y(x)$ in the small and large $x$ regimes.
+
+","
+The solution in the small $x$ regime can be approximated using a Taylor series up to the third order. Plugging in the provided initial conditions, the Taylor series is:
+$$y = x^{3} \cdot \left(\frac{5}{3} + \frac{1}{3 \left(\tan{\left(x \right)} + 5\right)}\right) + 0.5 x^{2} + 3 x + 2.$$ 
+
+To find the solution in the large $x$ regime, the method of dominant balance can be used. The dominant balance is given by $$\frac{d^{3}}{d x^{3}} y = \left(\frac{d^{2}}{d x^{2}} y\right)^{4}.$$
+
+A power law ansatz can be used to approximate the solution at the divergence point. The ansatz has the form 
+$$y = \alpha (x^* - x)^p,$$ 
+where $x^*$ is the divergence point and can be determined through numerical code. Plugging in the ansatz and solving for the terms yields 
+$$- \alpha p \left(0.10100900090009 - x\right)^{p - 3} \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4} \left(0.10100900090009 - x\right)^{4 p - 8} \left(p - 1\right)^{4}$$
+
+After substituting the derivatives, the equation is reorganized to collect terms with respect to $(x^* - x)$. This leads to an equation where the coefficients and powers of $(x^* - x)$ are equated on both sides. Simplifying the equation gives us two separate equations, one for the coefficients and another for the powers of $(x^* - x)$.
+
+The coefficients' equation is:
+$$- \alpha p \left(p - 2\right) \left(p - 1\right) = \alpha^{4} p^{4} \left(p - 1\right)^{4}.$$
+
+The powers' equation is:
+$$p - 3 = 4 p - 8.$$
+
+Solving this system of equations provides the values of $\alpha$ and $p$. 
+A valid solution is identified if $\alpha$ and $p$ are both nonzero. 
+In this case, the solution for $\alpha$ and $p$ is found to be:
+$$\alpha = \frac{3 \cdot 3^{\frac{2}{3}}}{10}, \quad p = \frac{5}{3}.$$
+
+The ansatz is now $$y' = \frac{3 \cdot 3^{\frac{2}{3}}}{10}(0.10100900090009-x)^{\frac{5}{3}},$$ but to account for the initial conditions, a constant, $c=a-y'(0)$, is calculated and added to the ansatz.
+Thus, an analytical solution that approximates the solution at large $x$ is given by
+$$y = \frac{3 \cdot 3^{\frac{2}{3}}}{10}(0.10100900090009-x)^{\frac{5}{3}} + 1.99.$$
+
+
+Therefore, the full solution is given by 
+$$\boxed{y = x^{3} \cdot \left(\frac{5}{3} + \frac{1}{3 \left(\tan{\left(x \right)} + 5\right)}\right) + 0.5 x^{2} + 3 x + 2, y = \frac{3 \cdot 3^{\frac{2}{3}}}{10}(0.1 - x)^{\frac{5}{3}}+1.99}$$
+
+",ODE,list,"$$\boxed{[y = x^{3} \cdot \left(\frac{5}{3} + \frac{1}{3 \left(\tan{\left(x \right)} + 5\right)}\right) + 0.5 x^{2} + 3 x + 2, y = \frac{3 \cdot 3^{\frac{2}{3}}}{10}(0.1 - x)^{\frac{5}{3}}+1.99]}$$
+",0.1,2.30673202185505,2.3041204517373197,0.0999989108910891,1.98999657991935,2.3041169819614207
+Consider the integral $I(\epsilon) = \int_0^{38.00} \frac{1}{\epsilon + 8.0 x^{7.0} + 2.0 x^{16.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{38} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{8.0*\epsilon} \right)^{1/7.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.88}{\epsilon^{0.94}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{2.0*\epsilon} \right)^{1/16.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.91}{\epsilon^{0.86}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{38}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.88}{\epsilon^{0.94}}, \frac{0.91}{\epsilon^{0.86}}, \frac{38}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.88}{\epsilon^{0.94}}, \frac{0.91}{\epsilon^{0.86}}]}$$
+    ",0.001,276.9591490305376,286.4603521834158,739072203.3525776,4.642925187921005e-09,4.730930242094154e-09
+Consider the integral $I(\epsilon) = \int_0^{18.00} \frac{1}{\epsilon + 4.0 x^{6.0} + 2.0 x^{11.0} + 2.0 x^{16.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{18} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{4.0*\epsilon} \right)^{1/6.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.92}{\epsilon^{0.94}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{2.0*\epsilon} \right)^{1/16.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.89}{\epsilon^{0.83}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{18}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.92}{\epsilon^{0.94}}, \frac{0.89}{\epsilon^{0.83}}, \frac{18}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.92}{\epsilon^{0.94}}, \frac{0.89}{\epsilon^{0.83}}]}$$
+    ",0.001,250.9901442183411,262.6413933826051,739072203.3525776,4.642925187921005e-09,4.677015190633085e-09
+Consider the integral $I(\epsilon) = \int_0^{23.00} \frac{1}{\epsilon + 3.0 x^{16.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{23} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{3.0*\epsilon} \right)^{1/16.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.93}{\epsilon^{0.94}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{3.0*\epsilon} \right)^{1/16.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.93}{\epsilon^{0.94}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{23}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.93}{\epsilon^{0.94}}, \frac{0.93}{\epsilon^{0.94}}, \frac{23}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.93}{\epsilon^{0.94}}, \frac{0.93}{\epsilon^{0.94}}]}$$
+    ",0.001,606.2893249252014,610.2026453218493,739072203.3525776,4.526744495735706e-09,4.565528433349989e-09
+"Consider the integral \par \begin{equation} I(x) = \int_{-0.2}^{0.8} (2.2 \sin{\left(t \right)} - 2.0 \cos{\left(t \right)} + 1.3) e^{+ x (- 0.7 t^{4} - 0.2 t + 0.1 \cos{\left(t \right)} - 2.1 \operatorname{atan}{\left(t \right)})} \, dt \end{equation} \par Develop an analytical formula for $I(x)$ that is accurate as $x \to \infty$.","The integral is of the form \begin{equation} I(x) = \int_{a}^{b} g(t) e^{+ x f(t)} \, dt \end{equation} \par where $a=-0.2$, $b=0.8$, $g(t) = 2.2 \sin{\left(t \right)} - 2.0 \cos{\left(t \right)} + 1.3$, and $f(t) = - 0.7 t^{4} - 0.2 t + 0.1 \cos{\left(t \right)} - 2.1 \operatorname{atan}{\left(t \right)}$. This means we can use Laplace's method to develop an analytical approximation in the limit that $x \to \infty$. \par In this limit, the integral will be dominated by the integrand near the maximum of $f(t)$ within the bounds $[-0.2, 0.8]$. So, to simplify the integral, we will expand the integrand around this maximum. \par However, it is impossible to compute the maximum of $f(t)$ within these bounds analytically. We, therefore, find the maximum numerically with the dual annealing algorithm. Using a few iterations of dual annealing, we find that the maximum of $f(t)$ occurs at $t_0 = [-0.2]$. \par Since the integral is dominated by the value of the integrand near $t_0=a$, we Taylor expand the integrand around this point: \begin{equation} I(x) =  \int_{a}^{b} (g(a) + (t-a)g'(a)+...) e^{+ x (f(a) + (t-a) f'(a) + ...)} \, dt \end{equation} We can then approximate \begin{equation} I(x) \approx \int_{a}^{b} g(a) e^{+ x (f(a) + (t-a) f'(a))} \, dt \end{equation} Pulling out the constant in the integral gives \begin{equation} I(x) \approx g(a) e^{+ x f(a)} \int_{a}^{b} e^{+ x (t-a) f'(a)}  \, dt \end{equation} \par We perform the change of variables $u = x (t-a) |f'(a)|$. Note that $f'(a) < 0$ since it is a maximum. Rewriting the integral yields \begin{equation} I(x) \approx g(a) e^{+ x f(a)} \int_{0}^{x (b-a) |f'(a)|} \frac{1}{x |f'(a)|} e^{-u} \, du. \end{equation} Since we are interested in a solution for $I(x)$ as $x \to \infty$, we can simplify the integral by approximating the upper bound as \begin{equation} I(x) \approx g(a) e^{+ x f(a)} \frac{1}{x |f'(a)|} \int_{0}^{\infty} e^{-u} \, du. \end{equation} \par Solving the integral and evaluating, we find that \par \begin{equation} \boxed{I(x) \approx - \frac{0.50 e^{0.55 x}}{x}}. \end{equation} ",integral,math_expression,\boxed{I(x) \approx - \frac{0.50 e^{0.55 x}}{x}},,,,58.78016072274912,-1022660000000.0,-1005670000000.0
+Consider the integral $I(\epsilon) = \int_0^{45.00} \frac{1}{\epsilon + 19.0 x^{10.0} + 3.0 x^{15.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{45} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{8.0*\epsilon} \right)^{1/10.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.87}{\epsilon^{0.93}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{3.0*\epsilon} \right)^{1/15.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.9}{\epsilon^{0.9}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{45}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.87}{\epsilon^{0.93}}, \frac{0.9}{\epsilon^{0.9}}, \frac{45}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.87}{\epsilon^{0.93}}, \frac{0.9}{\epsilon^{0.9}}]}$$
+    ",0.001,407.0905315369044,379.4869251677439,739072203.3525776,4.9062631590751504e-09,4.94360292789536e-09
+Consider the integral $I(\epsilon) = \int_0^{98.00} \frac{1}{\epsilon + 5.0 x^{19.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{98} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{5.0*\epsilon} \right)^{1/19.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.92}{\epsilon^{0.95}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{5.0*\epsilon} \right)^{1/19.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.92}{\epsilon^{0.95}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{98}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.92}{\epsilon^{0.95}}, \frac{0.92}{\epsilon^{0.95}}, \frac{98}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.92}{\epsilon^{0.95}}, \frac{0.92}{\epsilon^{0.95}}]}$$
+    ",0.001,638.7300787202925,641.6498288347773,739072203.3525776,3.641650219158997e-09,3.3307826159839083e-09
+Consider the integral $I(\epsilon) = \int_0^{10.00} \frac{1}{\epsilon + 6.0 x^{7.0} + 3.0 x^{14.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{10} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{6.0*\epsilon} \right)^{1/7.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.88}{\epsilon^{0.93}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{3.0*\epsilon} \right)^{1/14.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.85}{\epsilon^{0.86}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{10}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.88}{\epsilon^{0.93}}, \frac{0.85}{\epsilon^{0.86}}, \frac{10}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.88}{\epsilon^{0.93}}, \frac{0.85}{\epsilon^{0.86}}]}$$
+    ",0.001,288.5785899842912,298.43202600133463,739072203.3525776,5.3791130927391966e-09,5.42445369731407e-09
+"Consider the integral \par \begin{equation} I(x) = \int_{-0.9}^{0.3} (- 1.3 t^{5} - 1.7 t^{2} + 0.8 t + 2.1 \operatorname{atan}{\left(t \right)}) e^{- x (1.8 t^{4} + 1.3 \operatorname{atan}{\left(t \right)})} \, dt \end{equation} \par Develop an analytical formula for $I(x)$ that is accurate as $x \to \infty$.","The integral is of the form \begin{equation} I(x) = \int_{a}^{b} g(t) e^{- x f(t)} \, dt \end{equation} \par where $a=-0.9$, $b=0.3$, $g(t) = - 1.3 t^{5} - 1.7 t^{2} + 0.8 t + 2.1 \operatorname{atan}{\left(t \right)}$, and $f(t) = 1.8 t^{4} + 1.3 \operatorname{atan}{\left(t \right)}$. This means we can use Laplace's method to develop an analytical approximation in the limit that $x \to \infty$. \par In this limit, the integral will be dominated by the integrand near the minimum of $f(t)$ within the bounds $[-0.9, 0.3]$. So, to simplify the integral, we will expand the integrand around this minimum. \par In this case, we can find the minimum of $f(t) = 1.8 t^{4} + 1.3 \operatorname{atan}{\left(t \right)}$ on the interval analytically. We begin by looking for critical points $t_{crit}$ of $f(t)$ by solving $f'(t) = 7.2 t^{3} + \frac{1.3}{t^{2} + 1} = 0$ for $t$. This gives us that $t_{crit} = [-0.52]$. To find the minimum on this interval, we evaluate $f(t)$ at the critical points $t_{crit}$ and at the bounds, $-0.9$ and $0.3$. We select the value of $t$ that gives the smallest value for $f(t)$. Here, we find the minimum $t_0 = [-0.52]$. \par Since the integral is dominated by the value of the integrand near -0.52, we Taylor expand the integrand around this point: \begin{equation} I(x) =  \int_{a}^{b} (g(-0.52) + (t+0.52)g'(-0.52)+...) e^{- x (f(-0.52) + (t+0.52) f'(-0.52) + \frac{(t+0.52)^2}{2} f''(-0.52) +...)} \end{equation}But $f'(-0.52) = 0$ by definition, so we can remove this term from the exponent. We can then approximate \begin{equation} I(x) \approx \int_{a}^{b} g(-0.52) e^{- x (f(-0.52) + \frac{(t+0.52)^2}{2} f''(-0.52))} \, dt, \end{equation} \par which equals \par \begin{equation} g(-0.52) e^{- x f(-0.52)} \int_{a}^{b} e^{- x (\frac{(t+0.52)^2}{2} f''(-0.52))} \, dt. \end{equation} \par We perform the change of variables $u = \sqrt{x \frac{|f''(-0.52)|}{2}}(t+0.52)$, rewriting the integral as \begin{equation} g(-0.52) e^{- x f(-0.52)} \int_{\sqrt{x \frac{|f''(-0.52)|}{2}} (a+0.52)}^{\sqrt{x \frac{|f''(-0.52)|}{2}} (b+0.52)} \sqrt{\frac{2}{x |f''(-0.52)|}} e^{-u^2} \, du. \end{equation} \par Since we are interested in a solution for $I(x)$ as $x \to \infty$, we can simplify the integral by approximating the bounds as \begin{equation} g(-0.52) e^{- x f(-0.52)} \sqrt{\frac{2}{x |f''(-0.52)|} } \int_{-\infty}^{\infty} e^{-u^2} \, du. \end{equation} \par Solving this integral and evaluating, we find that \par \begin{equation} \boxed{I(x) \approx - 1.00 \sqrt{\pi} \sqrt{\frac{1}{x}} e^{0.49 x}}. \end{equation}",integral,math_expression,\boxed{I(x) \approx - 1.00 \sqrt{\pi} \sqrt{\frac{1}{x}} e^{0.49 x}},,,,55.268148571446034,-152364000000.0,-151438000000.0
+"Consider the integral \par \begin{equation} I(x) = \int_{-0.5}^{0.1} (- 0.3 t^{5} + 3.8 \cos{\left(t \right)} + 2.8 \operatorname{atan}{\left(t \right)}) e^{+ x (2.3 t^{3} - 0.9 t + 1.6 \sin{\left(t \right)} - 1.2 \operatorname{atan}{\left(t \right)} + 2.0)} \, dt \end{equation} \par Develop an analytical formula for $I(x)$ that is accurate as $x \to \infty$.","The integral is of the form \begin{equation} I(x) = \int_{a}^{b} g(t) e^{+ x f(t)} \, dt \end{equation} \par where $a=-0.5$, $b=0.1$, $g(t) = - 0.3 t^{5} + 3.8 \cos{\left(t \right)} + 2.8 \operatorname{atan}{\left(t \right)}$, and $f(t) = 2.3 t^{3} - 0.9 t + 1.6 \sin{\left(t \right)} - 1.2 \operatorname{atan}{\left(t \right)} + 2.0$. This means we can use Laplace's method to develop an analytical approximation in the limit that $x \to \infty$. \par In this limit, the integral will be dominated by the integrand near the maximum of $f(t)$ within the bounds $[-0.5, 0.1]$. So, to simplify the integral, we will expand the integrand around this maximum. \par However, it is impossible to compute the maximum of $f(t)$ within these bounds analytically. We, therefore, find the maximum numerically with the dual annealing algorithm. Using a few iterations of dual annealing, we find that the maximum of $f(t)$ occurs at $t_0 = [-0.26]$. \par Since the integral is dominated by the value of the integrand near -0.26, we Taylor expand the integrand around this point: \begin{equation} I(x) =  \int_{a}^{b} (g(-0.26) + (t+0.26)g'(-0.26)+...) e^{+ x (f(-0.26) + (t+0.26) f'(-0.26) + \frac{(t+0.26)^2}{2} f''(-0.26) +...)} \end{equation}But $f'(-0.26) = 0$ by definition, so we can remove this term from the exponent. We can then approximate \begin{equation} I(x) \approx \int_{a}^{b} g(-0.26) e^{+ x (f(-0.26) + \frac{(t+0.26)^2}{2} f''(-0.26))} \, dt, \end{equation} \par which equals \par \begin{equation} g(-0.26) e^{+ x f(-0.26)} \int_{a}^{b} e^{+ x (\frac{(t+0.26)^2}{2} f''(-0.26))} \, dt. \end{equation} \par We perform the change of variables $u = \sqrt{x \frac{|f''(-0.26)|}{2}}(t+0.26)$, rewriting the integral as \begin{equation} g(-0.26) e^{+ x f(-0.26)} \int_{\sqrt{x \frac{|f''(-0.26)|}{2}} (a+0.26)}^{\sqrt{x \frac{|f''(-0.26)|}{2}} (b+0.26)} \sqrt{\frac{2}{x |f''(-0.26)|}} e^{-u^2} \, du. \end{equation} \par Since we are interested in a solution for $I(x)$ as $x \to \infty$, we can simplify the integral by approximating the bounds as \begin{equation} g(-0.26) e^{+ x f(-0.26)} \sqrt{\frac{2}{x |f''(-0.26)|} } \int_{-\infty}^{\infty} e^{-u^2} \, du. \end{equation} \par Solving this integral and evaluating, we find that \par \begin{equation} \boxed{I(x) \approx 2.15 \sqrt{\pi} \sqrt{\frac{1}{x}} e^{2.09 x}}. \end{equation}",integral,math_expression,\boxed{I(x) \approx 2.15 \sqrt{\pi} \sqrt{\frac{1}{x}} e^{2.09 x}},,,,13.399552696593384,1463260000000.0,1520546724124.3008
+Consider the integral $I(\epsilon) = \int_0^{18.00} \frac{1}{\epsilon + 8.0 x^{7.0} + 4.0 x^{8.0}} dx$. Develop analytical formulas that approximate $I(\epsilon)$ for different regimes of $\epsilon$.,"
+    The integral is of the form $I(\epsilon) = \int_0^{18} \frac{1}{\epsilon + P(x)} dx$ where $P(x)$ is a polynomial. Thus, its value can be estimated as the product between a height and a width.
+    Since the integrand is maximized at $x = 0$, the height can be set to $\frac{1}{\epsilon}$.
+
+    For small $\epsilon$,
+    we define the width as the point where the integrand becomes half of its maximum height.
+    This corresponds to solving for $x$ given $P(x) = \epsilon$.
+    Applying dominant balance, considering the term in $P(x)$ with the smallest degree, the width is approximated as $ \left( \frac{1}{8.0*\epsilon} \right)^{1/7.0} $.
+    Therefore, the analytical approximation of the integral for small $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.77}{\epsilon^{0.88}}}$.
+
+    For an intermediate regime where $\epsilon$ is large,
+    we also define the width based on the term with the largest degree.
+    The width is approximated as \( \left( \frac{1}{4.0*\epsilon} \right)^{1/8.0} \).
+    Therefore, the analytical approximation of the integral for large $\epsilon$ is $\boxed{I(\epsilon) = \frac{0.82}{\epsilon^{0.86}}}$.
+
+    If the width of the integral exceeds the range of integration, we consider one more regime for very large $\epsilon$.
+    The width is then just the range of integration, so in this regime, the integral can be approximated as $\frac{L}{\epsilon}$.
+    Therefore, the analytical approximation of the integral for very large $\epsilon$ is $\boxed{I(\epsilon) = \frac{18}{\epsilon}}$.
+
+    Altogether, the solutions at small, large, and very large $\epsilon$ are $\boxed{\frac{0.77}{\epsilon^{0.88}}, \frac{0.82}{\epsilon^{0.86}}, \frac{18}{\epsilon}}$.
+    ",integral,list,"
+    $$\boxed{[\frac{0.77}{\epsilon^{0.88}}, \frac{0.82}{\epsilon^{0.86}}]}$$
+    ",0.001,276.9591490305376,280.83100608916993,739072203.3525776,1.460970648888394e-08,1.4626592281297784e-08
+Nondimensionalize the polynomial \[P(x) = - x^{10} - 8 x^{3} + 9 x\] into a polynomial of the form $\epsilon y^{10} \pm y^{3} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[- a_{1} x^{10} - a_{2} x^{3} + a_{3}.\] 
+Since the first coefficient is negative, we multiply the entire expression by -1:\[a_{1} x^{10} + a_{2} x^{3} - a_{3}\]Using substitution\[x=y \sqrt[3]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{10}{3}} + a_{3} y^{3} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{10}{3}}}{a_{3}} + y^{3} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{81 \cdot 3^{\frac{2}{3}} y^{10}}{1024} + y^{3} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{81 \cdot 3^{\frac{2}{3}}}{1024}\implies \boxed{\epsilon \approx0.16.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx0.16}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = - 10 x^{10} + 7 x^{2} - 7 x\] into a polynomial of the form $\epsilon y^{10} \pm y^{2} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[- a_{1} x^{10} + a_{2} x^{2} - a_{3}.\] 
+Since the first coefficient is negative, we multiply the entire expression by -1:\[a_{1} x^{10} - a_{2} x^{2} + a_{3}\]Using substitution\[x=y \sqrt{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[\frac{a_{1} a_{3}^{5} y^{10}}{a_{2}^{5}} - a_{3} y^{2} + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} a_{3}^{4} y^{10}}{a_{2}^{5}} - y^{2} + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{10 y^{10}}{7} - y^{2} + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{10}{7}\implies \boxed{\epsilon \approx1.43.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx1.43}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = - 7 x^{10} - 7 x^{5} - 8\] into a polynomial of the form $\epsilon y^{10} \pm y^{5} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[- a_{1} x^{10} - a_{2} x^{5} - a_{3}.\] 
+Since the first coefficient is negative, we multiply the entire expression by -1:\[a_{1} x^{10} + a_{2} x^{5} + a_{3}\]Using substitution\[x=y \sqrt[5]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[\frac{a_{1} a_{3}^{2} y^{10}}{a_{2}^{2}} + a_{3} y^{5} + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} a_{3} y^{10}}{a_{2}^{2}} + y^{5} + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{8 y^{10}}{7} + y^{5} + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{8}{7}\implies \boxed{\epsilon \approx1.14.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx1.14}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = 6 x^{10} - 7 x^{8} + 8 x^{7}\] into a polynomial of the form $\epsilon y^{10} \pm y^{8} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{10} - a_{2} x^{8} + a_{3}.\] Using substitution\[x=y \sqrt[8]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{4}} - a_{3} y^{8} + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{4}}}{a_{3}} - y^{8} + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{6 \cdot 14^{\frac{3}{4}} y^{10}}{49} - y^{8} + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{6 \cdot 14^{\frac{3}{4}}}{49}\implies \boxed{\epsilon \approx0.89.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx0.89}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = 6 x^{10} + 6 x^{9} - 8 x^{2}\] into a polynomial of the form $\epsilon y^{10} \pm y^{9} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{10} + a_{2} x^{9} - a_{3}.\] Using substitution\[x=y \sqrt[9]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{10}{9}} + a_{3} y^{9} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{10}{9}}}{a_{3}} + y^{9} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{2^{\frac{2}{9}} \cdot 3^{\frac{8}{9}} y^{10}}{3} + y^{9} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{2^{\frac{2}{9}} \cdot 3^{\frac{8}{9}}}{3}\implies \boxed{\epsilon \approx1.03.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx1.03}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = 3 x^{10} + 5 x + 6\] into a polynomial of the form $\epsilon y^{10} \pm y^{1} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{10} + a_{2} x + a_{3}.\] Using substitution\[x=\frac{a_{3} y}{a_{2}}\]
+gives the expression\[\frac{a_{1} a_{3}^{10} y^{10}}{a_{2}^{10}} + a_{3} y + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} a_{3}^{9} y^{10}}{a_{2}^{10}} + y + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{30233088 y^{10}}{9765625} + y + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{30233088}{9765625}\implies \boxed{\epsilon \approx3.10.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx3.10}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = 5 x^{10} + 10 x^{8} - 5\] into a polynomial of the form $\epsilon y^{10} \pm y^{8} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{10} + a_{2} x^{8} - a_{3}.\] Using substitution\[x=y \sqrt[8]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{4}} + a_{3} y^{8} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{4}}}{a_{3}} + y^{8} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{2^{\frac{3}{4}} y^{10}}{4} + y^{8} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{2^{\frac{3}{4}}}{4}\implies \boxed{\epsilon \approx0.42.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx0.42}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = 2 x^{10} + 5 x^{4} + 8 x^{2}\] into a polynomial of the form $\epsilon y^{10} \pm y^{4} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{10} + a_{2} x^{4} + a_{3}.\] Using substitution\[x=y \sqrt[4]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{2}} + a_{3} y^{4} + a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{2}}}{a_{3}} + y^{4} + 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{32 \sqrt{10} y^{10}}{125} + y^{4} + 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{32 \sqrt{10}}{125}\implies \boxed{\epsilon \approx0.81.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx0.81}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = 6 x^{10} + 8 x^{4} - 3\] into a polynomial of the form $\epsilon y^{10} \pm y^{4} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[a_{1} x^{10} + a_{2} x^{4} - a_{3}.\] Using substitution\[x=y \sqrt[4]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{2}} + a_{3} y^{4} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} y^{10} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{5}{2}}}{a_{3}} + y^{4} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{9 \sqrt{6} y^{10}}{128} + y^{4} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{9 \sqrt{6}}{128}\implies \boxed{\epsilon \approx0.17.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx0.17}\]$$,,,,,,
+Nondimensionalize the polynomial \[P(x) = - x^{10} + 9 x^{5} + 3 x^{2}\] into a polynomial of the form $\epsilon y^{10} \pm y^{5} \pm 1$. Solve for $\epsilon$.,"For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our polynomial is then:\[- a_{1} x^{10} + a_{2} x^{5} + a_{3}.\] 
+Since the first coefficient is negative, we multiply the entire expression by -1:\[a_{1} x^{10} - a_{2} x^{5} - a_{3}\]Using substitution\[x=y \sqrt[5]{\frac{a_{3}}{a_{2}}}\]
+gives the expression\[\frac{a_{1} a_{3}^{2} y^{10}}{a_{2}^{2}} - a_{3} y^{5} - a_{3}.\]
+Dividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$: \[\frac{a_{1} a_{3} y^{10}}{a_{2}^{2}} - y^{5} - 1\]
+Substituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get: \[\frac{y^{10}}{27} - y^{5} - 1\]
+From inspection of this nondimensionalized equation, we can now identify $\epsilon$: \[ \epsilon=\frac{1}{27}\implies \boxed{\epsilon \approx0.04.}\]",nondimensionalization_numeric,float,$$\boxed{\epsilon \approx0.04}\]$$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{18} + a_{2} x + a_{3}\]into one of the form $\epsilon y^{18} + y^{1} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=\frac{a_{3} y}{a_{2}}.\]
+This gives the expression\[\frac{a_{1} a_{3}^{18} y^{18}}{a_{2}^{18}} + a_{3} y + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} a_{3}^{17} y^{18}}{a_{2}^{18}} + y + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} a_{3}^{17}}{a_{2}^{18}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} a_{3}^{17}}{a_{2}^{18}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{21} + a_{2} x^{15} + a_{3}\]into one of the form $\epsilon y^{21} + y^{15} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[15]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{21} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{7}{5}} + a_{3} y^{15} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{21} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{7}{5}}}{a_{3}} + y^{15} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{7}{5}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{7}{5}}}{a_{3}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{14} + a_{2} x^{3} + a_{3}\]into one of the form $\epsilon y^{14} + y^{3} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[3]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{14} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{14}{3}} + a_{3} y^{3} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{14} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{14}{3}}}{a_{3}} + y^{3} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{14}{3}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{14}{3}}}{a_{3}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{24} + a_{2} x^{5} + a_{3}\]into one of the form $\epsilon y^{24} + y^{5} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[5]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{24} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{24}{5}} + a_{3} y^{5} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{24} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{24}{5}}}{a_{3}} + y^{5} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{24}{5}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{24}{5}}}{a_{3}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{24} + a_{2} x^{2} + a_{3}\]into one of the form $\epsilon y^{24} + y^{2} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[\frac{a_{1} a_{3}^{12} y^{24}}{a_{2}^{12}} + a_{3} y^{2} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} a_{3}^{11} y^{24}}{a_{2}^{12}} + y^{2} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} a_{3}^{11}}{a_{2}^{12}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} a_{3}^{11}}{a_{2}^{12}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{25} + a_{2} x^{24} + a_{3}\]into one of the form $\epsilon y^{25} + y^{24} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[24]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{25} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}} + a_{3} y^{24} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{25} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}}}{a_{3}} + y^{24} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}}}{a_{3}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{24} + a_{2} x^{20} + a_{3}\]into one of the form $\epsilon y^{24} + y^{20} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[20]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{24} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{6}{5}} + a_{3} y^{20} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{24} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{6}{5}}}{a_{3}} + y^{20} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{6}{5}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{6}{5}}}{a_{3}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{25} + a_{2} x^{24} + a_{3}\]into one of the form $\epsilon y^{25} + y^{24} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[24]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{25} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}} + a_{3} y^{24} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{25} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}}}{a_{3}} + y^{24} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{25}{24}}}{a_{3}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{13} + a_{2} x + a_{3}\]into one of the form $\epsilon y^{13} + y^{1} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=\frac{a_{3} y}{a_{2}}.\]
+This gives the expression\[\frac{a_{1} a_{3}^{13} y^{13}}{a_{2}^{13}} + a_{3} y + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} a_{3}^{12} y^{13}}{a_{2}^{13}} + y + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} a_{3}^{12}}{a_{2}^{13}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} a_{3}^{12}}{a_{2}^{13}}} $$,,,,,,
+"Nondimensionalize the polynomial\[a_{1} x^{23} + a_{2} x^{10} + a_{3}\]into one of the form $\epsilon y^{23} + y^{10} + 1. $Express $\epsilon$ as a function of $a_1$, $a_2$, and $a_3.$","We begin with the substitution\[x=y \sqrt[10]{\frac{a_{3}}{a_{2}}}.\]
+This gives the expression\[a_{1} y^{23} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{23}{10}} + a_{3} y^{10} + a_{3}.\]
+Dividing by the constant $a_3$ leaves us with the nondimensionalized polynomial with coefficients in terms of $a_1$, $a_2$, and $a_3$:\[ \boxed{\frac{a_{1} y^{23} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{23}{10}}}{a_{3}} + y^{10} + 1.}\]By inspection, we can see that\[ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{23}{10}}}{a_{3}}.}\]",nondimensionalization_symbolic,math_expression,$$ \boxed{\epsilon=\frac{a_{1} \left(\frac{a_{3}}{a_{2}}\right)^{\frac{23}{10}}}{a_{3}}} $$,,,,,,
+"Consider the polynomial\[P(x) =\epsilon x^{7} + x^{6} - 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{7.00};$ $B=x^{6.00};$ $C=-1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1.00 non-zero root: 
+\[\epsilon x^{7.00} + x^{6.00}=0.00 \]\[ \implies \boxed{ x=\left[ - \frac{1.00}{\epsilon}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 6.00 non-zero roots: \[x^{6.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ -1.00, \  1.00, \  - \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  - \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}, \  \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 7.00 non-zero roots: \[\epsilon x^{7.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ - \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{\frac{i \pi}{7.00}}, \  - \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{- \frac{i \pi}{7.00}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{7.00}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{7.00}}, \  - \left(\sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right) \sqrt[7.00]{\frac{1.00}{\epsilon}}, \  \left(- \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right) \sqrt[7.00]{\frac{1.00}{\epsilon}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 7.00 has exactly 7.00 roots. We have found 7.00 roots that are valid in the limit of small positive $\epsilon$ and 7.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{\frac{i \pi}{7.00}}, \  - \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{- \frac{i \pi}{7.00}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{7.00}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{7.00}}, \  - \left(\sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right) \sqrt[7.00]{\frac{1.00}{\epsilon}}, \  \left(- \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right) \sqrt[7.00]{\frac{1.00}{\epsilon}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \frac{1.00}{\epsilon}, \  -1.00, \  1.00, \  - \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  - \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}, \  \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{\frac{i \pi}{7.00}}, \  - \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{- \frac{i \pi}{7.00}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{7.00}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{7.00}}, \  - \left(\sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right) \sqrt[7.00]{\frac{1.00}{\epsilon}}, \  \left(- \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right) \sqrt[7.00]{\frac{1.00}{\epsilon}}, \  \sqrt[7.00]{\frac{1.00}{\epsilon}}\right], \left[ - \frac{1.00}{\epsilon}, \  -1.00, \  1.00, \  - \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  - \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}, \  \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}\right]}\]$$",0.01,"[[(-100+0j), (-1+0j), (1+0j), (-0.5-0.8660254037844386j), (-0.5+0.8660254037844386j), (0.5-0.8660254037844386j), (0.5+0.8660254037844386j)]]","[-100.        +0.j           -1.00167929+0.j
+   -0.49915411+0.86746867j   -0.49915411-0.86746867j
+    0.5008209 +0.86458213j    0.5008209 -0.86458213j
+    0.99834571+0.j        ]",100.0,"[[(-0.46665454380761895-0.22472898404895528j), (-0.46665454380761895+0.22472898404895528j), (0.3229349641486195-0.4049476366868961j), (0.3229349641486195+0.4049476366868961j), (-0.11525415430256111-0.5049614435221506j), (-0.11525415430256111+0.5049614435221506j), (0.5179474679231211+0j)]]","[-0.46809383+0.22472377j -0.46809383-0.22472377j -0.11668526+0.50494987j
+ -0.11668526-0.50494987j  0.51653061+0.j          0.32151379+0.4049385j
+  0.32151379-0.4049385j ]"
+"Consider the polynomial\[P(x) =\epsilon x^{3} - x + 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{3.00};$ $B=- x;$ $C=1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 2.00 non-zero roots: 
+\[\epsilon x^{3.00} - x=0.00 \]\[ \implies \boxed{ x=\left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 1.00 non-zero root: \[1.00 - x=0.00\]\[ \implies\boxed{ x=\left[ 1.00\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 3.00 non-zero roots: \[\epsilon x^{3.00} + 1.00=0.00\]\[ \implies\boxed{ x=\left[ \sqrt[3.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - \sqrt{3.00} i\right)}{2.00}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{3.00} i\right)}{2.00}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 3.00 has exactly 3.00 roots. We have found 3.00 roots that are valid in the limit of small positive $\epsilon$ and 3.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ \sqrt[3.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - \sqrt{3.00} i\right)}{2.00}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{3.00} i\right)}{2.00}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}, \  1.00\right]} \]",polynomial_roots,list,"$$\boxed{\left[ \sqrt[3.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - \sqrt{3.00} i\right)}{2.00}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{3.00} i\right)}{2.00}\right], \left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}, \  1.00\right]}\]$$",0.01,"[[(-10+0j), (10+0j), (1+0j)]]",[-10.46680532   9.45649274   1.01031258],100.0,"[[(0.10772173450159418+0.1865795172362064j), (0.10772173450159418-0.1865795172362064j), (-0.21544346900318836-3.3881317890172014e-21j)]]",[-0.23089073+0.j         0.11544537+0.1731557j  0.11544537-0.1731557j]
+"Consider the polynomial\[P(x) =\epsilon x^{3} - x + 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{3.00};$ $B=- x;$ $C=1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 2.00 non-zero roots: 
+\[\epsilon x^{3.00} - x=0.00 \]\[ \implies \boxed{ x=\left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 1.00 non-zero root: \[1.00 - x=0.00\]\[ \implies\boxed{ x=\left[ 1.00\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 3.00 non-zero roots: \[\epsilon x^{3.00} + 1.00=0.00\]\[ \implies\boxed{ x=\left[ \sqrt[3.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - \sqrt{3.00} i\right)}{2.00}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{3.00} i\right)}{2.00}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 3.00 has exactly 3.00 roots. We have found 3.00 roots that are valid in the limit of small positive $\epsilon$ and 3.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ \sqrt[3.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - \sqrt{3.00} i\right)}{2.00}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{3.00} i\right)}{2.00}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}, \  1.00\right]} \]",polynomial_roots,list,"$$\boxed{\left[ \sqrt[3.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - \sqrt{3.00} i\right)}{2.00}, \  \frac{\sqrt[3.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{3.00} i\right)}{2.00}\right], \left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}, \  1.00\right]}\]$$",0.01,"[[(-10+0j), (10+0j), (1+0j)]]",[-10.46680532   9.45649274   1.01031258],100.0,"[[(0.10772173450159418+0.1865795172362064j), (0.10772173450159418-0.1865795172362064j), (-0.21544346900318836-3.3881317890172014e-21j)]]",[-0.23089073+0.j         0.11544537+0.1731557j  0.11544537-0.1731557j]
+"Consider the polynomial\[P(x) =\epsilon x^{10} - x^{9} + 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{10.00};$ $B=- x^{9.00};$ $C=1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1.00 non-zero root: 
+\[\epsilon x^{10.00} - x^{9.00}=0.00 \]\[ \implies \boxed{ x=\left[ \frac{1.00}{\epsilon}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 9.00 non-zero roots: \[1.00 - x^{9.00}=0.00\]\[ \implies\boxed{ x=\left[ 1.00, \  - \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  - \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}, \  - e^{\frac{i \pi}{9.00}}, \  - e^{- \frac{i \pi}{9.00}}, \  e^{- \frac{2.00 i \pi}{9.00}}, \  e^{\frac{2.00 i \pi}{9.00}}, \  \sin{\left(\frac{\pi}{18.00} \right)} - i \cos{\left(\frac{\pi}{18.00} \right)}, \  \sin{\left(\frac{\pi}{18.00} \right)} + i \cos{\left(\frac{\pi}{18.00} \right)}\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 10.00 non-zero roots: \[\epsilon x^{10.00} + 1.00=0.00\]\[ \implies\boxed{ x=\left[ - \sqrt[10.00]{- \frac{1.00}{\epsilon}}, \  \sqrt[10.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{5.00} - \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{5.00} + \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(1.00 + \sqrt{5.00} - \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(1.00 + \sqrt{5.00} + \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} - 1.00 - \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} - 1.00 + \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} + 1.00 - \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} + 1.00 + \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 10.00 has exactly 10.00 roots. We have found 10.00 roots that are valid in the limit of small positive $\epsilon$ and 10.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[10.00]{- \frac{1.00}{\epsilon}}, \  \sqrt[10.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{5.00} - \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{5.00} + \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(1.00 + \sqrt{5.00} - \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(1.00 + \sqrt{5.00} + \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} - 1.00 - \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} - 1.00 + \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} + 1.00 - \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} + 1.00 + \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{1.00}{\epsilon}, \  1.00, \  - \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  - \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}, \  - e^{\frac{i \pi}{9.00}}, \  - e^{- \frac{i \pi}{9.00}}, \  e^{- \frac{2.00 i \pi}{9.00}}, \  e^{\frac{2.00 i \pi}{9.00}}, \  \sin{\left(\frac{\pi}{18.00} \right)} - i \cos{\left(\frac{\pi}{18.00} \right)}, \  \sin{\left(\frac{\pi}{18.00} \right)} + i \cos{\left(\frac{\pi}{18.00} \right)}\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - \sqrt[10.00]{- \frac{1.00}{\epsilon}}, \  \sqrt[10.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{5.00} - \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + \sqrt{5.00} + \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(1.00 + \sqrt{5.00} - \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(1.00 + \sqrt{5.00} + \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} - 1.00 - \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} - 1.00 + \sqrt{2.00} \sqrt{-5.00 + \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} + 1.00 - \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}, \  \frac{\sqrt[10.00]{- \frac{1.00}{\epsilon}} \left(- \sqrt{5.00} + 1.00 + \sqrt{2.00} \sqrt{-5.00 - \sqrt{5.00}}\right)}{4.00}\right], \left[ \frac{1.00}{\epsilon}, \  1.00, \  - \frac{1.00}{2.00} - \frac{\sqrt{3.00} i}{2.00}, \  - \frac{1.00}{2.00} + \frac{\sqrt{3.00} i}{2.00}, \  - e^{\frac{i \pi}{9.00}}, \  - e^{- \frac{i \pi}{9.00}}, \  e^{- \frac{2.00 i \pi}{9.00}}, \  e^{\frac{2.00 i \pi}{9.00}}, \  \sin{\left(\frac{\pi}{18.00} \right)} - i \cos{\left(\frac{\pi}{18.00} \right)}, \  \sin{\left(\frac{\pi}{18.00} \right)} + i \cos{\left(\frac{\pi}{18.00} \right)}\right]}\]$$",0.01,"[[(100+0j), (1+0j), (-0.5-0.8660254037844386j), (-0.5+0.8660254037844386j), (-0.9396926207859084-0.3420201433256687j), (-0.9396926207859084+0.3420201433256687j), (0.766044443118978-0.6427876096865394j), (0.766044443118978+0.6427876096865394j), (0.17364817766693036-0.984807753012208j), (0.17364817766693036+0.984807753012208j)]]","[100.        +0.j           1.00111858+0.j
+   0.76623362+0.64388828j   0.76623362-0.64388828j
+   0.17260042+0.98518132j   0.17260042-0.98518132j
+  -0.50054818+0.86506321j  -0.50054818-0.86506321j
+  -0.93884515+0.34131229j  -0.93884515-0.34131229j]",100.0,"[[(-0.6000760939721738-0.19497654217006763j), (0.6000760939721738+0.19497654217006763j), (0.37086742191107924-0.5104552144101643j), (3.3881317890172014e-21+0.6309573444801932j), (0.6000760939721738-0.19497654217006763j), (0.37086742191107924+0.5104552144101643j), (-0.37086742191107924-0.5104552144101643j), (-0.6000760939721738+0.19497654217006763j), (-3.3881317890172014e-21-0.6309573444801932j), (-0.37086742191107924+0.5104552144101643j)]]","[ 0.60108293+0.1949743j   0.60108293-0.1949743j   0.37187159+0.51044939j
+  0.37187159-0.51044939j  0.00099994+0.63095021j  0.00099994-0.63095021j
+ -0.36987163+0.5104495j  -0.36987163-0.5104495j  -0.59908283+0.19497437j
+ -0.59908283-0.19497437j]"
+"Consider the polynomial\[P(x) =\epsilon x^{8} - x^{7} + 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{8.00};$ $B=- x^{7.00};$ $C=1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1.00 non-zero root: 
+\[\epsilon x^{8.00} - x^{7.00}=0.00 \]\[ \implies \boxed{ x=\left[ \frac{1.00}{\epsilon}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 7.00 non-zero roots: \[1.00 - x^{7.00}=0.00\]\[ \implies\boxed{ x=\left[ 1.00, \  - e^{\frac{i \pi}{7.00}}, \  - e^{- \frac{i \pi}{7.00}}, \  e^{- \frac{2.00 i \pi}{7.00}}, \  e^{\frac{2.00 i \pi}{7.00}}, \  - \sin{\left(\frac{\pi}{14.00} \right)} - i \cos{\left(\frac{\pi}{14.00} \right)}, \  - \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 8.00 non-zero roots: \[\epsilon x^{8.00} + 1.00=0.00\]\[ \implies\boxed{ x=\left[ - \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  - i \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  i \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(1.00 - i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(1.00 + i\right)}{2.00}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 8.00 has exactly 8.00 roots. We have found 8.00 roots that are valid in the limit of small positive $\epsilon$ and 8.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  - i \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  i \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(1.00 - i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(1.00 + i\right)}{2.00}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{1.00}{\epsilon}, \  1.00, \  - e^{\frac{i \pi}{7.00}}, \  - e^{- \frac{i \pi}{7.00}}, \  e^{- \frac{2.00 i \pi}{7.00}}, \  e^{\frac{2.00 i \pi}{7.00}}, \  - \sin{\left(\frac{\pi}{14.00} \right)} - i \cos{\left(\frac{\pi}{14.00} \right)}, \  - \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  - i \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  i \sqrt[8.00]{- \frac{1.00}{\epsilon}}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(-1.00 - i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(-1.00 + i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(1.00 - i\right)}{2.00}, \  \frac{\sqrt{2.00} \sqrt[8.00]{- \frac{1.00}{\epsilon}} \left(1.00 + i\right)}{2.00}\right], \left[ \frac{1.00}{\epsilon}, \  1.00, \  - e^{\frac{i \pi}{7.00}}, \  - e^{- \frac{i \pi}{7.00}}, \  e^{- \frac{2.00 i \pi}{7.00}}, \  e^{\frac{2.00 i \pi}{7.00}}, \  - \sin{\left(\frac{\pi}{14.00} \right)} - i \cos{\left(\frac{\pi}{14.00} \right)}, \  - \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right]}\]$$",0.01,"[[(100+0j), (1+0j), (-0.9009688679024191-0.4338837391175581j), (-0.9009688679024191+0.4338837391175581j), (0.6234898018587335-0.7818314824680298j), (0.6234898018587335+0.7818314824680298j), (-0.2225209339563144-0.9749279121818236j), (-0.2225209339563144+0.9749279121818236j)]]","[100.        +0.j           1.00143887+0.j
+   0.62316263+0.78322862j   0.62316263-0.78322862j
+  -0.22380161+0.97430018j  -0.22380161-0.97430018j
+  -0.90008046+0.43277669j  -0.90008046-0.43277669j]",100.0,"[[(-0.5195356406286372-0.2151987084845759j), (0.5195356406286372+0.2151987084845759j), (0.2151987084845759-0.5195356406286372j), (-0.2151987084845759+0.5195356406286372j), (-0.2151987084845759-0.5195356406286372j), (-0.5195356406286372+0.2151987084845759j), (0.5195356406286372-0.2151987084845759j), (0.2151987084845759+0.5195356406286372j)]]","[ 0.52079469+0.21519493j  0.52079469-0.21519493j  0.21645237+0.5195266j
+  0.21645237-0.5195266j  -0.21395249+0.51952672j -0.21395249-0.51952672j
+ -0.51829456+0.21519505j -0.51829456-0.21519505j]"
+"Consider the polynomial\[P(x) =\epsilon x^{2} - x + 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{2.00};$ $B=- x;$ $C=1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1.00 non-zero root: 
+\[\epsilon x^{2.00} - x=0.00 \]\[ \implies \boxed{ x=\left[ \frac{1.00}{\epsilon}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 1.00 non-zero root: \[1.00 - x=0.00\]\[ \implies\boxed{ x=\left[ 1.00\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2.00 non-zero roots: \[\epsilon x^{2.00} + 1.00=0.00\]\[ \implies\boxed{ x=\left[ - \sqrt{- \frac{1.00}{\epsilon}}, \  \sqrt{- \frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 2.00 has exactly 2.00 roots. We have found 2.00 roots that are valid in the limit of small positive $\epsilon$ and 2.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{- \frac{1.00}{\epsilon}}, \  \sqrt{- \frac{1.00}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{1.00}{\epsilon}, \  1.00\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - \sqrt{- \frac{1.00}{\epsilon}}, \  \sqrt{- \frac{1.00}{\epsilon}}\right], \left[ \frac{1.00}{\epsilon}, \  1.00\right]}\]$$",0.01,"[[(100+0j), (1+0j)]]",[98.98979486  1.01020514],100.0,"[[-0.1j, 0.1j]]",[0.005+0.09987492j 0.005-0.09987492j]
+"Consider the polynomial\[P(x) =\epsilon x^{9} + x^{2} - 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{9.00};$ $B=x^{2.00};$ $C=-1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 7.00 non-zero roots: 
+\[\epsilon x^{9.00} + x^{2.00}=0.00 \]\[ \implies \boxed{ x=\left[ \sqrt[7.00]{- \frac{1.00}{\epsilon}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{\frac{i \pi}{7.00}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{- \frac{i \pi}{7.00}}, \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{7.00}}, \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{7.00}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} \left(\sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right), \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} \left(- \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right)\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2.00 non-zero roots: \[x^{2.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ -1.00, \  1.00\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 9.00 non-zero roots: \[\epsilon x^{9.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ - \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{\frac{i \pi}{9.00}}, \  - \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{- \frac{i \pi}{9.00}}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{9.00}}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{9.00}}, \  \left(\sin{\left(\frac{\pi}{18.00} \right)} - i \cos{\left(\frac{\pi}{18.00} \right)}\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}, \  \left(\sin{\left(\frac{\pi}{18.00} \right)} + i \cos{\left(\frac{\pi}{18.00} \right)}\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}, \  \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 9.00 has exactly 9.00 roots. We have found 9.00 roots that are valid in the limit of small positive $\epsilon$ and 9.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{\frac{i \pi}{9.00}}, \  - \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{- \frac{i \pi}{9.00}}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{9.00}}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{9.00}}, \  \left(\sin{\left(\frac{\pi}{18.00} \right)} - i \cos{\left(\frac{\pi}{18.00} \right)}\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}, \  \left(\sin{\left(\frac{\pi}{18.00} \right)} + i \cos{\left(\frac{\pi}{18.00} \right)}\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}, \  \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \sqrt[7.00]{- \frac{1.00}{\epsilon}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{\frac{i \pi}{7.00}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{- \frac{i \pi}{7.00}}, \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{7.00}}, \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{7.00}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} \left(\sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right), \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} \left(- \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right), \  -1.00, \  1.00\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{\frac{i \pi}{9.00}}, \  - \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{- \frac{i \pi}{9.00}}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{9.00}}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{9.00}}, \  \left(\sin{\left(\frac{\pi}{18.00} \right)} - i \cos{\left(\frac{\pi}{18.00} \right)}\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}, \  \left(\sin{\left(\frac{\pi}{18.00} \right)} + i \cos{\left(\frac{\pi}{18.00} \right)}\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}, \  \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[9.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \sqrt[9.00]{\frac{1.00}{\epsilon}}\right], \left[ \sqrt[7.00]{- \frac{1.00}{\epsilon}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{\frac{i \pi}{7.00}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{- \frac{i \pi}{7.00}}, \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{- \frac{2.00 i \pi}{7.00}}, \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} e^{\frac{2.00 i \pi}{7.00}}, \  - \sqrt[7.00]{- \frac{1.00}{\epsilon}} \left(\sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right), \  \sqrt[7.00]{- \frac{1.00}{\epsilon}} \left(- \sin{\left(\frac{\pi}{14.00} \right)} + i \cos{\left(\frac{\pi}{14.00} \right)}\right), \  -1.00, \  1.00\right]}\]$$",0.01,"[[(1.7394985470537137+0.837698349713642j), (-1.2037703444305243-1.5094802675704497j), (-1.93069772888325+0j), (1.7394985470537137-0.837698349713642j), (0.4296206618184359+1.8822911058743355j), (0.4296206618184359-1.8822911058743355j), (-1.2037703444305243+1.5094802675704497j), (-1+0j), (1+0j)]]","[ 1.67385766+0.88621437j  1.67385766-0.88621437j  0.41932802+1.94500911j
+  0.41932802-1.94500911j -1.17015255+1.56985025j -1.17015255-1.56985025j
+ -1.83604011+0.j         -1.00522651+0.j          0.99520036+0.j        ]",100.0,"[[(-0.5633309263020813-0.20503568921556528j), (-0.5633309263020813+0.20503568921556528j), (0.4592315786941712-0.3853410483072391j), (0.4592315786941712+0.3853410483072391j), (0.10409934760791002-0.5903767375228044j), (0.10409934760791002+0.5903767375228044j), (-0.2997421251594705-0.5191685899448724j), (-0.2997421251594705+0.5191685899448724j), (0.599484250318941+0j)]]","[-0.55179879+0.18232935j -0.55179879-0.18232935j -0.3226561 +0.52070116j
+ -0.3226561 -0.52070116j  0.11473326+0.60992741j  0.11473326-0.60992741j
+  0.47297262+0.36540462j  0.47297262-0.36540462j  0.57349801+0.j        ]"
+"Consider the polynomial\[P(x) =\epsilon x^{4} - x - 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{4.00};$ $B=- x;$ $C=-1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 3.00 non-zero roots: 
+\[\epsilon x^{4.00} - x=0.00 \]\[ \implies \boxed{ x=\left[ \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[3.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[3.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \sqrt[3.00]{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 1.00 non-zero root: \[- x - 1.00=0.00\]\[ \implies\boxed{ x=\left[ -1.00\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 4.00 non-zero roots: \[\epsilon x^{4.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ - i \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  i \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  - \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  \sqrt[4.00]{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 4.00 has exactly 4.00 roots. We have found 4.00 roots that are valid in the limit of small positive $\epsilon$ and 4.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - i \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  i \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  - \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  \sqrt[4.00]{\frac{1.00}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[3.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[3.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \sqrt[3.00]{\frac{1.00}{\epsilon}}, \  -1.00\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - i \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  i \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  - \sqrt[4.00]{\frac{1.00}{\epsilon}}, \  \sqrt[4.00]{\frac{1.00}{\epsilon}}\right], \left[ \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[3.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[3.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \sqrt[3.00]{\frac{1.00}{\epsilon}}, \  -1.00\right]}\]$$",0.01,"[[(-2.320794416806389-4.019733843830848j), (-2.320794416806389+4.019733843830848j), (4.641588833612778+0j), (-1+0j)]]","[ 4.93597592+0.j        -1.97279831+4.0699248j -1.97279831-4.0699248j
+ -0.99037931+0.j       ]",100.0,"[[-0.31622776601683794j, 0.31622776601683794j, (-0.31622776601683794+0j), (0.31622776601683794+0j)]]","[ 0.34024859+0.j         -0.02499805+0.31722659j -0.02499805-0.31722659j
+ -0.2902525 +0.j        ]"
+"Consider the polynomial\[P(x) =\epsilon x^{2} - x - 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{2.00};$ $B=- x;$ $C=-1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1.00 non-zero root: 
+\[\epsilon x^{2.00} - x=0.00 \]\[ \implies \boxed{ x=\left[ \frac{1.00}{\epsilon}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 1.00 non-zero root: \[- x - 1.00=0.00\]\[ \implies\boxed{ x=\left[ -1.00\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 2.00 non-zero roots: \[\epsilon x^{2.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 2.00 has exactly 2.00 roots. We have found 2.00 roots that are valid in the limit of small positive $\epsilon$ and 2.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{1.00}{\epsilon}, \  -1.00\right]} \]",polynomial_roots,list,"$$\boxed{\left[ - \sqrt{\frac{1.00}{\epsilon}}, \  \sqrt{\frac{1.00}{\epsilon}}\right], \left[ \frac{1.00}{\epsilon}, \  -1.00\right]}\]$$",0.01,"[[(100+0j), (-1+0j)]]",[100.99019514  -0.99019514],100.0,"[[(-0.1+0j), (0.1+0j)]]",[ 0.10512492 -0.09512492]
+"Consider the polynomial\[P(x) =\epsilon x^{6} - x^{5} - 1.\] 
+Find first order approximations for all roots of the polynomial in the limit of small positive $\epsilon$ and large positive $\epsilon$. ","We begin by equating the polynomial to zero to solve for the roots: $P(x) = 0.00$ This problem can be rewritten in the form $A+B+C=0.00$, where: $A=\epsilon x^{6.00};$ $B=- x^{5.00};$ $C=-1.00$
+
+We find approximate solutions to the roots by considering the three possible dominant balances. For each dominant balance, we find the roots of the resulting equation and evaluate whether each balance is self-consistent for small or large positive $\epsilon$. \vspace{1em}
+
+We start with the balance $A+B=0.00$, assuming that $|C|$ is negligible when compared to $|A|$ and $|B|$. Solving this for $x$ in terms of $\epsilon$ then gives us 1.00 non-zero root: 
+\[\epsilon x^{6.00} - x^{5.00}=0.00 \]\[ \implies \boxed{ x=\left[ \frac{1.00}{\epsilon}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |B| \gg |C|,$ we substitute these found roots back into the terms $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Next we examine the balance $B+C=0.00$, assuming that $|A|$ is negligible when compared to $|B|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 5.00 non-zero roots: \[- x^{5.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ -1.00, \  \frac{1.00}{4.00} + \frac{\sqrt{5.00}}{4.00} + \frac{\sqrt{-10.00 + 2.00 \sqrt{5.00}}}{4.00}, \  - \frac{\sqrt{5.00}}{4.00} + \frac{1.00}{4.00} - \frac{i \sqrt{50.00 - 10.00 \sqrt{5.00}}}{8.00} - \frac{i \sqrt{10.00 - 2.00 \sqrt{5.00}}}{8.00}, \  \frac{1.00}{4.00} + \frac{\sqrt{5.00}}{4.00} - \frac{i \sqrt{10.00 \sqrt{5.00} + 50.00}}{16.00} - \frac{i \sqrt{2.00 \sqrt{5.00} + 10.00}}{16.00} - \frac{i \sqrt{10.00 - 2.00 \sqrt{5.00}}}{16.00} + \frac{i \sqrt{50.00 - 10.00 \sqrt{5.00}}}{16.00}, \  - \frac{\sqrt{5.00}}{4.00} + \frac{1.00}{4.00} - \frac{\sqrt{-10.00 + 2.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-10.00 - 2.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-50.00 + 10.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-50.00 - 10.00 \sqrt{5.00}}}{16.00}\right].}\]
+To verify that these roots are consistent with the assumption that $|B|, |C| \gg |A|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is true that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is false.
+
+\underline{Therefore, these roots are valid in the limit of small positive $\epsilon$ only.}\vspace{1em}
+
+Finally, we examine the balance $A+C=0.00$, assuming that $|B|$ is negligible when compared to $|A|$ and $|C|$. Solving this for $x$ in terms of $\epsilon$ gives us 6.00 non-zero roots: \[\epsilon x^{6.00} - 1.00=0.00\]\[ \implies\boxed{ x=\left[ \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(1.00 - \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(1.00 + \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  - \sqrt[6.00]{\frac{1.00}{\epsilon}}, \  \sqrt[6.00]{\frac{1.00}{\epsilon}}\right].}\]
+To verify that these roots are consistent with the assumption that $|A|, |C| \gg |B|,$ we substitute these found roots back into $A$, $B$, and $C$ and compare their magnitudes. Using this method, we find that it is false that these roots are valid for small $\epsilon$, while validity for large $\epsilon$ is true.
+
+\underline{Therefore, these roots are valid in the limit of large positive $\epsilon$ only.}\vspace{1em}
+
+By the Fundamental Theorem of Algebra, a polynomial of degree 6.00 has exactly 6.00 roots. We have found 6.00 roots that are valid in the limit of small positive $\epsilon$ and 6.00 roots valid in the limit of large positive $\epsilon$. Our method therefore provides a complete solution to the problem, finding the correct number of roots in each $\epsilon$ regime. 
+
+The roots of $P(x)$ for large positive $\epsilon$ are\[ \boxed{ \left[ \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(1.00 - \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(1.00 + \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  - \sqrt[6.00]{\frac{1.00}{\epsilon}}, \  \sqrt[6.00]{\frac{1.00}{\epsilon}}\right]} \]and the roots of $P(x)$ for small positive $\epsilon$ are\[ \boxed{ \left[ \frac{1.00}{\epsilon}, \  -1.00, \  \frac{1.00}{4.00} + \frac{\sqrt{5.00}}{4.00} + \frac{\sqrt{-10.00 + 2.00 \sqrt{5.00}}}{4.00}, \  - \frac{\sqrt{5.00}}{4.00} + \frac{1.00}{4.00} - \frac{i \sqrt{50.00 - 10.00 \sqrt{5.00}}}{8.00} - \frac{i \sqrt{10.00 - 2.00 \sqrt{5.00}}}{8.00}, \  \frac{1.00}{4.00} + \frac{\sqrt{5.00}}{4.00} - \frac{i \sqrt{10.00 \sqrt{5.00} + 50.00}}{16.00} - \frac{i \sqrt{2.00 \sqrt{5.00} + 10.00}}{16.00} - \frac{i \sqrt{10.00 - 2.00 \sqrt{5.00}}}{16.00} + \frac{i \sqrt{50.00 - 10.00 \sqrt{5.00}}}{16.00}, \  - \frac{\sqrt{5.00}}{4.00} + \frac{1.00}{4.00} - \frac{\sqrt{-10.00 + 2.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-10.00 - 2.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-50.00 + 10.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-50.00 - 10.00 \sqrt{5.00}}}{16.00}\right]} \]",polynomial_roots,list,"$$\boxed{\left[ \frac{\left(-1.00 - \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(-1.00 + \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(1.00 - \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  \frac{\left(1.00 + \sqrt{3.00} i\right) \sqrt[6.00]{\frac{1.00}{\epsilon}}}{2.00}, \  - \sqrt[6.00]{\frac{1.00}{\epsilon}}, \  \sqrt[6.00]{\frac{1.00}{\epsilon}}\right], \left[ \frac{1.00}{\epsilon}, \  -1.00, \  \frac{1.00}{4.00} + \frac{\sqrt{5.00}}{4.00} + \frac{\sqrt{-10.00 + 2.00 \sqrt{5.00}}}{4.00}, \  - \frac{\sqrt{5.00}}{4.00} + \frac{1.00}{4.00} - \frac{i \sqrt{50.00 - 10.00 \sqrt{5.00}}}{8.00} - \frac{i \sqrt{10.00 - 2.00 \sqrt{5.00}}}{8.00}, \  \frac{1.00}{4.00} + \frac{\sqrt{5.00}}{4.00} - \frac{i \sqrt{10.00 \sqrt{5.00} + 50.00}}{16.00} - \frac{i \sqrt{2.00 \sqrt{5.00} + 10.00}}{16.00} - \frac{i \sqrt{10.00 - 2.00 \sqrt{5.00}}}{16.00} + \frac{i \sqrt{50.00 - 10.00 \sqrt{5.00}}}{16.00}, \  - \frac{\sqrt{5.00}}{4.00} + \frac{1.00}{4.00} - \frac{\sqrt{-10.00 + 2.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-10.00 - 2.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-50.00 + 10.00 \sqrt{5.00}}}{16.00} + \frac{\sqrt{-50.00 - 10.00 \sqrt{5.00}}}{16.00}\right]}\]$$",0.01,"[[(100+0j), (-1+0j), (0.8090169943749475+0.5877852522924731j), (-0.30901699437494745-0.9510565162951535j), (0.8090169943749475-0.5877852522924731j), (-0.30901699437494745+0.9510565162951535j)]]","[100.00000001+0.j           0.80962995+0.58970268j
+   0.80962995-0.58970268j  -0.31062203+0.9498717j
+  -0.31062203-0.9498717j   -0.99801583+0.j        ]",100.0,"[[(-0.23207944168063893-0.40197338438308483j), (-0.23207944168063893+0.40197338438308483j), (0.23207944168063893-0.40197338438308483j), (0.23207944168063893+0.40197338438308483j), (-0.46415888336127786+0j), (0.46415888336127786+0j)]]","[ 0.46584066+0.j          0.23375352+0.4019603j   0.23375352-0.4019603j
+ -0.23042033+0.40196055j -0.23042033-0.40196055j -0.46250704+0.j        ]"

@@ -72,7 +72,7 @@
     "5": {
         "question": "In a study of polymer flow through a narrow channel, you are analysing the pressure profile $P(x)$ along the length of the channel. The pressure profile is described by \\[P(x) = - 3 x^{10} + 8 x^{9} + 1,\\] where $P(x)$ represents the pressure at a position $x$ along the channel.\n \nTo facilitate comparison of pressure profiles under different experimental conditions, you need to nondimensionalize this polynomial. Your goal is to transform the polynomial into the form $\\epsilon y^{10} \\pm y^{9} \\pm 1$ and solve for $\\epsilon$.",
         "solution": "For now, we ignore the numeric values of the coefficients and instead call them $a_1, a_2, a_3$. Our pressure profile is then: $- a_{1} x^{10} + a_{2} x^{9} + a_{3}.$  \nSince the first coefficient is negative, we multiply the entire expression by -1: $a_{1} x^{10} - a_{2} x^{9} - a_{3}$ Using substitution $x=y \\sqrt[9]{\\frac{a_{3}}{a_{2}}}$ \ngives the expression $a_{1} y^{10} \\left(\\frac{a_{3}}{a_{2}}\\right)^{\\frac{10}{9}} - a_{3} y^{9} - a_{3}.$ \nDividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$:   $frac{a_{1} y^{10} \\left(\\frac{a_{3}}{a_{2}}\\right)^{\\frac{10}{9}}}{a_{3}} - y^{9} - 1$ \nSubstituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get:   $frac{3 \\cdot 2^{\\frac{2}{3}} y^{10}}{16} - y^{9} - 1$ \nFrom inspection of this nondimensionalized equation, we can now identify  $epsilon$:  $ \\epsilon=\\frac{3 \\cdot 2^{\\frac{2}{3}}}{16}\\implies \\boxed{\\epsilon \\approx0.30}.$ ",
-        "question_type": "nondimentionalization_numeric",
+        "question_type": "nondimensionalization_numeric",
         "answer_type": "float",
         "answer_val": "0.30",
         "precision": 2,
@@ -86,7 +86,7 @@
     "6": {
         "question": "You are examining the potential energy profile $P(x)$ of a molecule as a function of its position $x$ along a trajectory: \\[P(x) = 9 x^{7} - 2 x - 9.\\]\n\nTo simplify analysis and allow for comparison of potential energy profiles under various conditions, you need to nondimensionalize this polynomial, transforming it into one of the form $\\epsilon y^{7} \\pm y^{1} \\pm 1$. Solve for $\\epsilon$.",
         "solution": "For now, we ignore the numeric values of the coefficients potential energy expression and instead call them $a_1, a_2, a_3$. Our potential energy is then: $a_{1} x^{7} - a_{2} x - a_{3}.$  Using substitution $x=\\frac{a_{3} y}{a_{2}}$ \ngives the expression  $frac{a_{1} a_{3}^{7} y^{7}}{a_{2}^{7}} - a_{3} y - a_{3}.$ \nDividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$:   $frac{a_{1} a_{3}^{6} y^{7}}{a_{2}^{7}} - y - 1$ \nSubstituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get:   $frac{4782969 y^{7}}{128} - y - 1$ \nFrom inspection of this nondimensionalized equation, we can now identify the  $epsilon$ required to nondimensionalize our potential energy:  $ \\epsilon=\\frac{4782969}{128}\\implies \\boxed{\\epsilon \\approx37366.95}.$ ",
-        "question_type": "nondimentionalization_numeric",
+        "question_type": "nondimensionalization_numeric",
         "answer_type": "float",
         "answer_val": "37366.95",
         "precision": 2,
@@ -100,7 +100,7 @@
     "7": {
         "question": "Say you are investigating a nonlinear dynamical system whose behaviour is described by a potential function \\[P(x) = 7 x^{7} + 9 x^{5} - 1.\\] $P(x)$ represents the potential at system state variable $x$\n\nTo understand the scaling properties of your system and to be able to compare it with other similar nonlinear systems, you need to nondimensionalize the potential function into the form $\\epsilon y^{7} \\pm y^{5} \\pm 1$. Determine the appropriate scaling factor and solve for $\\epsilon$.",
         "solution": "For now, we ignore the numeric values of the coefficients in the potential function and instead call them $a_1, a_2, a_3$. The potential function is then represented as: $a_{1} x^{7} + a_{2} x^{5} - a_{3}.$  Using substitution $x=y \\sqrt[5]{\\frac{a_{3}}{a_{2}}}$ \ngives the expression $a_{1} y^{7} \\left(\\frac{a_{3}}{a_{2}}\\right)^{\\frac{7}{5}} + a_{3} y^{5} - a_{3}.$ \nDividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized potential with coefficients in terms of $a_1, a_2, a_3$:   $frac{a_{1} y^{7} \\left(\\frac{a_{3}}{a_{2}}\\right)^{\\frac{7}{5}}}{a_{3}} + y^{5} - 1$ \nSubstituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get:   $frac{7 \\cdot \\sqrt[5]{3} y^{7}}{27} + y^{5} - 1$ \nFrom inspection of this nondimensionalized equation, we can now identify  $epsilon$:  $ \\epsilon=\\frac{7 \\cdot \\sqrt[5]{3}}{27}\\implies \\boxed{\\epsilon \\approx0.32}.$ ",
-        "question_type": "nondimentionalization_numeric",
+        "question_type": "nondimensionalization_numeric",
         "answer_type": "float",
         "answer_val": "0.32",
         "precision": 2,
@@ -114,7 +114,7 @@
     "8": {
         "question": "You are studying the concentration profile of a certain protein within a cell, which is modeled by \\[P(x) = x^{2} - 2 x + 7.\\] $P(x)$ represents the concentration of the protein at a distance $x$ from the nucleus.\n\nTo compare results under different experimental conditions, you need to nondimensionalize the concentration profile by transforming it into the form $\\epsilon y^{2} \\pm y^{1} \\pm 1$. Here, $y$ is a dimensionless variable representing a scaled distance from the nucleus. Solve for $\\epsilon$.",
         "solution": "For now, we ignore the numeric values of the coefficients in the concentration profile expression and instead call them $a_1, a_2, a_3$. Our polynomial is then: $a_{1} x^{2} - a_{2} x + a_{3}.$  Using substitution $x=\\frac{a_{3} y}{a_{2}}$ \ngives the following expression for $P(x)$:   $frac{a_{1} a_{3}^{2} y^{2}}{a_{2}^{2}} - a_{3} y + a_{3}.$ \nDividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$:   $frac{a_{1} a_{3} y^{2}}{a_{2}^{2}} - y + 1$ \nSubstituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get:   $frac{7 y^{2}}{4} - y + 1$ \nFrom inspection of this nondimensionalized equation, we can now identify  $epsilon$:  $ \\epsilon=\\frac{7}{4}\\implies \\boxed{\\epsilon \\approx1.75}.$ ",
-        "question_type": "nondimentionalization_numeric",
+        "question_type": "nondimensionalization_numeric",
         "answer_type": "float",
         "answer_val": "1.75",
         "precision": 2,
@@ -128,7 +128,7 @@
     "9": {
         "question": "Your research involves analysing the potential energy of a particle in a non-uniform electric field, which is given by \\[P(x) = x^{3} + 10 x^{2} + 6,\\] where $P(x)$ represents the potential energy at a position $x$ in the field.\n\nTo identify the dominant parameters in this potential energy profile and compare it to others under different conditions, you should nondimensionalize the profile into form $\\epsilon y^{3} \\pm y^{2} \\pm 1$ and solve for $\\epsilon$.",
         "solution": "For now, we ignore the numeric values of the coefficients in the potential energy profile and instead call them $a_1, a_2, a_3$. Our polynomial is then: $a_{1} x^{3} + a_{2} x^{2} + a_{3}.$  Using substitution $x=y \\sqrt{\\frac{a_{3}}{a_{2}}}$ \ngives the potential energy profile  $a_{1} y^{3} \\left(\\frac{a_{3}}{a_{2}}\\right)^{\\frac{3}{2}} + a_{3} y^{2} + a_{3}.$ \nDividing all terms by the coefficient remaining in front of the constant term gives us the nondimensionalized polynomial with coefficients in terms of $a_1, a_2, a_3$:   $frac{a_{1} y^{3} \\left(\\frac{a_{3}}{a_{2}}\\right)^{\\frac{3}{2}}}{a_{3}} + y^{2} + 1$ \nSubstituting in the known numeric values for $a_1, a_2, a_3$ (using their absolute values as we have already accounted for sign), we get:   $frac{\\sqrt{15} y^{3}}{50} + y^{2} + 1$ \nFrom inspection of this nondimensionalized equation, we can now identify  $epsilon$:  $ \\epsilon=\\frac{\\sqrt{15}}{50}\\implies \\boxed{\\epsilon \\approx0.08}.$ ",
-        "question_type": "nondimentionalization_numeric",
+        "question_type": "nondimensionalization_numeric",
         "answer_type": "float",
         "answer_val": "0.08",
         "precision": 2,

@@ -6,6 +6,7 @@ def create_demo_prompt(examples, shot_num):
     if shot_num > 0:
         demos = []
         shot_num = min(shot_num, len(examples))
+        examples = list(examples.values())
         for example in examples[:shot_num]:
             prompt = f"Example question: {example['question']}\n"
 
@@ -33,7 +34,7 @@ def create_query_prompt(problem, examples, shot_num):
     # Hint and prompt setup based on problem and answer type
     hint_text = ""
     assert answer_type in ["math_expression", "float", "list"]
-    assert question_type in ["integral", "ode","polynomial_roots", "nondimensionalization_symbolic", 'nondimentionalization_numeric']
+    assert question_type in ["integral", "ODE","polynomial_roots", "nondimensionalization_symbolic", 'nondimensionalization_numeric']
     if answer_type == "math_expression":
         if question_type == 'integral':
             hint_text = "Hint: Please answer the question requiring an answer in a SymPy convertible \
@@ -75,6 +76,7 @@ def create_query_prompt_batch(problem_metadata_json, examples, args):
 def create_grading_prompt(latex_response, solution_latex, question_type=None,integral_subtype=None):
     common_query = f"Please take this response: {latex_response}\n\n and this ground truth \
         solution: {solution_latex} and grade the response based on the following criteria:"
+    grade_guide = ""
     if question_type == "polynomial_roots":
         grade_guide = "1) Check both the small and large $\epsilon$ solutions. \
             2) For each solution, give full credit if it completely matches the elements in the \
@@ -97,7 +99,7 @@ def create_grading_prompt(latex_response, solution_latex, question_type=None,int
         it but the final answer is wrong; give no credit if it is completely wrong. \
         3) For both partial and no credit briefly state the error reason.\
         4) Give the final grading as a float in Latex boxed format \\[boxed{}\\]"
-    elif question_type == "ode":
+    elif question_type == "ODE":
         grade_guide = "1) Check both the small and large $\epsilon$ solutions. \
         2) For each solution, give full credit if it matches the formula in the answer key; \
         give no credit if it is completely wrong and briefly state the reason for the error. \
