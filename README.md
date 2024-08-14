@@ -4,10 +4,29 @@ This is the repository for HARDMath: A Benchmark Dataset for Challenging Problem
 
 This repository hosts the [full dataset](./data/HARDMath.json) and the [evaluation dataset](./evaluation/data/eval_HARDMath.json), together with the generation and evaluation code described in the paper. The format of the data is detailed below.
 
-### Introduction
-HARDMath is a dataset of challenging, graduate-level problems in applied mathematics that can be used for language model training and evaluation. Unlike other popular mathematical datasets, HARDMath contains problems that require more advanced problem-solving skills and approximation methods.
+### About HARDMath
 
-The dataset contains a train set of 1,050 problems and a test set of 437 problems, divided across seven different problem types. A "Word Problem in Context" set is also introduced, which consists of 40 handwritten problems that require asymptotic reasoning in the context of plausible real-world scenarios. 
+Improving the mathematical reasoning capabilities of Large Language Models (LLMs) is of significant interest to the machine learning community. To rigorously track the progress of these models, comprehensive and diverse benchmarks are essential. However, most existing benchmarks focus on problems at the undergraduate level or below and often feature straightforward solutions. In contrast, many real-world problems in science and engineering do not follow this trend and require approximations or sophisticated techniques that current benchmarks fail to evaluate. Therefore, it is imperative to develop benchmarks with more challenging problems and emphasize a different style of mathematical reasoning.    
+
+<p align="center">
+    <img src="assets/laplace_integral_example.png" width="80%"> <br>
+  An example of a difficult problem that does not have an exact solution but can be accurately approximated using techniques from applied mathematics.
+</p>
+
+To address this gap, we introduce **HARDMath**, a dataset of challenging, graduate-level problems in applied mathematics that can be used for language model evaluation. Unlike other popular mathematical datasets, HARDMath contains problems that require a combination of advanced problem-solving skills, approximation methods, and mathematical intuition. The dataset contains a large test set of 1,050 problems and a mini test set of 437 problems, divided across seven different problem types. A "Word Problem in Context" set is also introduced, which consists of 40 handwritten problems that require asymptotic reasoning in the context of plausible real-world scenarios. 
+
+### Problem Types
+
+| Problem Type    | Form |
+| -------- | ------- |
+| Nondimensionalization of symbolic polynomials  | $a_1 x^{n_1} + a_2 x^{n_2} + a_3, ~~ n_1 > n_2 > 0$    |
+| Nondimensionalization of numerical polynomials | $\pm a_1 x^{n_1} \pm a_2 x^{n_2} \pm a_3, ~~ n_1 > n_2$     |
+| Polynomial root-finding   | $\epsilon x^{n_1} \pm x^{n_2} \pm 1 $    |
+| Polynomial root correction terms  | $x^*(\epsilon) = \overline{x}(\epsilon) + \delta$    |
+| Nonlinear ordinary differential equations | $\frac{d^3y}{dx^3}=f(x)$     |
+| Integrals   | $I(\epsilon) = \int_0^a \frac{1}{\epsilon + P(x)} \, dx$    |
+| Laplace Integrals   | $I(x) = \int_a^b g(t) e^{\pm x f(t)} dt$    |
+
 
 ### Data Access
 Our full datasets of problems and solutions are stored in the `data` directory. They are available in either CSV or JSON format.
