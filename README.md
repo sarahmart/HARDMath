@@ -86,13 +86,13 @@ This will install all required packages and dependencies and the custom modules 
 To run the script, use the following command:
 
 ```bash
-python script_name.py --data_dir <path_to_data> --input_file <input_file_name> --example_file <example_file_name> --output_dir <output_directory> --output_file <output_file_name> --model <model_name> --key <api_key> --sys_prompt <system_prompt_type> --question_type <question_type> --temperature <temperature_value> --server_ip <server_ip_address>
+python script_name.py --data_dir <path_to_data> --input_file <input_file_name> --example_file <example_file_name> --output_dir <output_directory> --output_file <output_file_name> --model <model_name> --key <api_key> --question_type <question_type> --temperature <temperature_value> --server_ip <server_ip_address>
 ```
 
 Example command:
 
 ```bash
-python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --key YOUR_API_KEY --sys_prompt math_assistant --question_type nondimensionalization_symbolic --temperature 0.0 
+python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
 ```
 
 ##### Command-Line Flags
