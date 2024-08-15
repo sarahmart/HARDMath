@@ -61,7 +61,10 @@ class GPT_Model():
 class Ollama_Server:
     def __init__(self, server_url, model_name, temperature=0):
         self.server_url = server_url
-        self.model_name = model_name
+        if model_name == 'codellama-13b':
+            self.model_name = 'codellama:13b'
+        elif model_name == 'llama3-8b':
+            self.model_name = 'llama3:latest'
         self.temperature = temperature
         self.headers = {
             "Content-Type": "application/json"
