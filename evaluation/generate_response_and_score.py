@@ -22,7 +22,6 @@ def compare_answers(extracted_answer, model_answer):
         # Convert the string answers to sympy expressions
         extracted_answer_expr = utils.safe_parse_latex(extracted_answer)
         model_answer_expr = utils.safe_parse_latex(model_answer)
-        
         # Compare the simplified difference
         if simplify(extracted_answer_expr - model_answer_expr) == 0:
             return 1
@@ -82,8 +81,8 @@ if __name__ == '__main__':
     parser.add_argument('--input_file', type=str, default='eval_HARDMath.json')
     parser.add_argument('--example_file', type=str, default='HARDMath_shot_examples.json')
     # output
-    parser.add_argument('--output_dir', type=str, default='results/responses/nondimensionalization_numeric')
-    parser.add_argument('--output_file', type=str, default='nondimensionalization_numeric_10shot_llama3.json')
+    parser.add_argument('--output_dir', type=str, default='results/responses/nondimensionalization_symbolic')
+    parser.add_argument('--output_file', type=str, default='nondimensionalization_symbolic_10shot_llama3.json')
     # model
     parser.add_argument('--model', type=str, default='gpt-4-turbo', 
                         choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','codellama-13b'])
@@ -93,7 +92,7 @@ if __name__ == '__main__':
     # prompt
     parser.add_argument('--prompt_file', type=str, default=None)  
     parser.add_argument('--shot_num', type=int, default=0)
-    parser.add_argument('--question_type', type=str, default='nondimensionalization_numeric',
+    parser.add_argument('--question_type', type=str, default='nondimensionalization_symbolic',
                         choices=['nondimensionalization_symbolic','nondimensionalization_numeric',
                                  'integral','ODE','polynomial_roots'])
     parser.add_argument('--integral_subtype', type=str, default=None, choices=['traditional','laplace'])
