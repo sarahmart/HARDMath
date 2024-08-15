@@ -43,22 +43,7 @@ def load_model(args, role):
     Returns:
         model: An instance of the model class, either GPT_Model or Ollama_Server.
     """
-    if "gpt" in args.model:
-        # Load the API key from environment or use the provided key
-        key = os.getenv("OPENAI_API_KEY") if args.key == '' else args.key
-        print("Loading openai token from environment variable" if args.key == '' else "Using provided API key")
-
-        # Determine the system prompt
-        if role == 'none':
-            model = models.GPT_Model(args.model, key)
-        elif role == 'math_assistant':
-            system_prompt = (
-                "You are a helpful assistant designed to help with advanced applied mathematics problems, "
-                "specifically focusing on tasks like nondimensionalizing polynomials, using approximation methods to solve for polynomial "
-                "roots, PDEs, integrals, etc. When given a physical math question, you should answer the question according to the user's prompt."
-            )
-            model = models.GPT_Model(args.model, key, temperature=args.temperature, system_prompt=system_prompt)
-        elif role == 'grader':
+    if role == 'grader':
             system_prompt = (
                 "You are a helpful grading assistant designed to help with advanced applied mathematics problems, "
                 "specifically focusing on tasks like nondimensionalizing polynomials, using approximation methods to solve for polynomial roots, PDEs, integrals, etc. "
@@ -67,9 +52,25 @@ def load_model(args, role):
             #print(args.grader)
             model = models.GPT_Model(args.grader, key, temperature=args.temperature, system_prompt=system_prompt)
     else:
-        # For non-GPT models, load from the server
-        server_url = f"http://{args.server_ip}:11434/api/generate"
-        model = models.Ollama_Server(server_url, args.model, args.temperature)
+        if "gpt" in args.model:
+            # Load the API key from environment or use the provided key
+            key = os.getenv("OPENAI_API_KEY") if args.key == '' else args.key
+            print("Loading openai token from environment variable" if args.key == '' else "Using provided API key")
+
+            # Determine the system prompt
+            if role == 'none':
+                model = models.GPT_Model(args.model, key)
+            elif role == 'math_assistant':
+                system_prompt = (
+                    "You are a helpful assistant designed to help with advanced applied mathematics problems, "
+                    "specifically focusing on tasks like nondimensionalizing polynomials, using approximation methods to solve for polynomial "
+                    "roots, PDEs, integrals, etc. When given a physical math question, you should answer the question according to the user's prompt."
+                )
+                model = models.GPT_Model(args.model, key, temperature=args.temperature, system_prompt=system_prompt)
+        else:
+            # For non-GPT models, load from the server
+            server_url = f"http://{args.server_ip}:11434/api/generate"
+            model = models.Ollama_Server(server_url, args.model, args.temperature)
 
     return model
 
