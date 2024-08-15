@@ -62,6 +62,16 @@ def parse_frac_expression(frac_expression):
     else:
         print("No fraction found in the string.")
 
+def convert_to_numbers(string_list):
+    result = []
+    for num in string_list:
+        try:
+            result.append(float(num))
+        except Exception as e:
+            print(f"Error: {e}")
+            result.append(0)
+    return result
+
 def compare_lists_within_threshold(list1, list2,threshold):
     result = []
     for val1, val2 in zip(list1, list2):

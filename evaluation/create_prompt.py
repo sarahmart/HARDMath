@@ -85,13 +85,13 @@ def create_grading_prompt(latex_response, solution_latex, question_type=None,int
             3) For both partial and no credit briefly state the error reason. \
             4) Average the scores for the small and large epsilon solutions to obtain a final score between 0 and 1.\
             5) Give the final grading as a float in Latex boxed format \\[boxed{}\\]"
-    elif question_type == "integral" and integral_subtype == "traditional_integral":
+    elif question_type == "integral" and integral_subtype == "traditional":
         grade_guide = "1) Check both the small and large $\epsilon$ solutions. \
         2) For each solution, give full credit if it matches the formula in the answer key; \
         give no credit if it is completely wrong and briefly state the reason for the error. \
         3) Average the scores for the small and large epsilon solutions to obtain a final score between 0 and 1.\
         4) Give the final grading as a float in Latex boxed format \\[boxed{}\\"
-    elif question_type == "integral" and integral_subtype == "laplace_integral":
+    elif question_type == "integral" and integral_subtype == "laplace":
         grade_guide = "1) Check the large $x$ final solution. \
         2) Give full credit if it matches the formula in the answer key; \
         give half credit if the response get to the checkpoint where it correctly identifies \
