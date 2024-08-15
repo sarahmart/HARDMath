@@ -121,6 +121,21 @@ def nondimensionalize_polynomial2(coefficients):
 
     # Find value of epsilon
     epsilon_value = list(final_simplified_polynomial_subs.expand().args)[::-1][0] / (y**n1)
+    epsilon = simplify(N(epsilon_value.evalf()))
+
+    # Round epsilon to 2 decimal places for display
+    try:
+        if epsilon.is_real and epsilon.is_number:
+            # If epsilon is real
+            formatted_eps = f"$$\\boxed{{\\epsilon \\approx{float(epsilon):.2f}}}\\]$$"
+        else:
+            # If epsilon is complex
+            real_part = float(re(epsilon))
+            imag_part = float(im(epsilon))
+            formatted_eps = f"$$\\boxed{{\\epsilon \\approx{real_part:.2f} {'+' if imag_part >= 0 else '-'} {abs(imag_part):.2f}i}}\\]$$"
+    except TypeError:
+        # Handle cases where conversion to float fails --> fallback to showing expression
+        formatted_eps = f"$$\\boxed{{\\epsilon \\approx {epsilon}}}\\]$$" 
 
     # Return question and answer
     question += "Nondimensionalize the polynomial \[P(x) = "
@@ -140,9 +155,9 @@ def nondimensionalize_polynomial2(coefficients):
     answer += "\[" + latex(final_simplified_polynomial_subs) + "\]"
 
     answer += "\nFrom inspection of this nondimensionalized equation, we can now identify $\\epsilon$: "
-    answer += "\[ \\epsilon=" + latex(epsilon_value) + "\\implies \\boxed{" + f"\\epsilon \\approx{float(epsilon_value.evalf()):.2f}" + ".}\]"
+    answer += "\[ \\epsilon=" + latex(epsilon_value) + "\\implies \\boxed{" + f"\\epsilon \\approx{formatted_eps}" + ".}\]"
 
-    extracted_answer = "$$\\boxed{" + f"\\epsilon \\approx{float(epsilon_value.evalf()):.2f}" + "}\]$$"
+    extracted_answer = "$$\\boxed{" + f"\\epsilon \\approx{formatted_eps}" + "}$$"
 
     return question, answer, question_type, answer_type, extracted_answer
 
