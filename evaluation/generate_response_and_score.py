@@ -82,7 +82,7 @@ if __name__ == '__main__':
     parser.add_argument('--example_file', type=str, default='HARDMath_shot_examples.json')
     # output
     parser.add_argument('--output_dir', type=str, default='results/responses/ode')
-    parser.add_argument('--output_file', type=str, default='ode_10shot_llama3.json')
+    parser.add_argument('--output_file', type=str, default='ode_10shot_codellama.json')
     # model
     parser.add_argument('--model', type=str, default='gpt-4-turbo', 
                         choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','codellama-13b'])
