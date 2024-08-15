@@ -43,6 +43,10 @@ def load_model(args, role):
     Returns:
         model: An instance of the model class, either GPT_Model or Ollama_Server.
     """
+    # Load the API key from environment or use the provided key
+    key = os.getenv("OPENAI_API_KEY") if args.key == '' else args.key
+    print("Loading openai token from environment variable" if args.key == '' else "Using provided API key")
+
     if role == 'grader':
             system_prompt = (
                 "You are a helpful grading assistant designed to help with advanced applied mathematics problems, "
@@ -53,10 +57,7 @@ def load_model(args, role):
             model = models.GPT_Model(args.grader, key, temperature=args.temperature, system_prompt=system_prompt)
     else:
         if "gpt" in args.model:
-            # Load the API key from environment or use the provided key
-            key = os.getenv("OPENAI_API_KEY") if args.key == '' else args.key
-            print("Loading openai token from environment variable" if args.key == '' else "Using provided API key")
-
+            
             # Determine the system prompt
             if role == 'none':
                 model = models.GPT_Model(args.model, key)
