@@ -1,6 +1,6 @@
 problem_type,problem_num,gpt4turbo_0shot,gpt4turbo_1shot,gpt4turbo_5shot,gpt4turbo_10shot,gpt3.5turbo_0shot,gpt3.5turbo_1shot,gpt3.5turbo_5shot,gpt3.5turbo_10shot,llama3_0shot,llama3_5shot,llama3_10shot,codellama_0shot,codellama_5shot,codellama_10shot
 overall,437,13.4,37.6,44.6,,4.54,13.8,24.2,,3.87,21.1,,3.13,10.3,
-nondimensionalization,200,6.04,36.5,48.6,62.2,5.05,6.11,24.3,31.5,0.5,17.9,22.1,0,8.41,11.4
+nondimensionalization,200,6.04,36.5,48.6,62.2,5.05,6.11,24.3,31.5,0.5,17.9,29.5,0,8.41,11.4
 root_finding,63,32.1,50.4,58.1,,17.2,28.9,29.3,,11.3,17.5,,8,13.1,
 ode,54,15.7,20.3,21.7,22.2,7.41,14.81,20.37,19.6,10.7,21.9,,14.1,15.3,
 integral,120,14.9,40.5,41.4,,3.33,18.2,23.1,,2.52,28.1,,0.5,9.57,
