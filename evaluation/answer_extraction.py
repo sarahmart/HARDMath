@@ -52,6 +52,8 @@ def categorize_scores(data_dict):
     for value in data_dict.values():
         if 'score' in value:
             score = value['score']
+            if isinstance(score, str):
+                score = float(score)
             if score == 0:
                 incorrect += 1
             elif score == 1:
