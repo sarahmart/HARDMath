@@ -52,7 +52,7 @@ def create_example_dict_all(row):
     }
     return example_dict
 
-def create_problem_example_dict_all(df,example_list,problem_dict_path = "data/eval_HARDMath.json",example_dict_path = "data/examples_HARDMath_1shot.json"):
+def create_problem_example_dict_all(df,example_list,problem_dict_path = "data/HARDMath_mini.json",example_dict_path = "data/examples_HARDMath_1shot.json"):
     problem_dict_all = {}
     example_dict_all = {}
     for i, row in df.iterrows():
