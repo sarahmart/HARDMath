@@ -94,7 +94,7 @@ python script_name.py --data_dir <path_to_data> --input_file <input_file_name> -
 Example command:
 
 ```bash
-python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --grader gpt-4o --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
+python generate_response_and_score.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --grader gpt-4o --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
 ```
 
 ##### Command-Line Flags
