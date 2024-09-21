@@ -1,6 +1,8 @@
 # HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics
 
-This is the repository for HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics.
+This is the repository for HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics. 
+
+**The updated paper is available here:** [HARDMath](https://github.com/sarahmart/HARDMath/blob/main/HARDMath_revised_manuscript.pdf).
 
 This repository hosts the [full dataset](./data/HARDMath.json) and the [evaluation dataset](./evaluation/data/eval_HARDMath.json), together with the generation and evaluation code described in the paper. The format of the data is detailed below.
 
@@ -92,7 +94,7 @@ python script_name.py --data_dir <path_to_data> --input_file <input_file_name> -
 Example command:
 
 ```bash
-python script_name.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --grader gpt-4o --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
+python generate_response_and_score.py --data_dir data --input_file eval_HARDMath.json --example_file example_HARDMath_1shot.json --output_dir results/test --output_file nondimensionalization_symbolic_0shot_gpt4.json --model gpt-3.5-turbo --grader gpt-4o --key YOUR_API_KEY --question_type nondimensionalization_symbolic --temperature 0.0 
 ```
 
 ##### Command-Line Flags
