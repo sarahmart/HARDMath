@@ -65,6 +65,8 @@ class Ollama_Server:
             self.model_name = 'codellama:13b'
         elif model_name == 'llama3-8b':
             self.model_name = 'llama3:8b'
+        elif model_name == 'llama3.1-8b':
+            self.model_name = 'llama3.1:8b'
         self.temperature = temperature
         self.headers = {
             "Content-Type": "application/json"

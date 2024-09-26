@@ -87,7 +87,7 @@ if __name__ == '__main__':
     parser.add_argument('--output_file', type=str, default='nondimensionalization_symbolic_0shot_o1mini.json')
     # model
     parser.add_argument('--model', type=str, default='gpt-4-turbo', 
-                        choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','codellama-13b','o1-mini'])
+                        choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','llama3.1-8b','codellama-13b','o1-mini'])
     parser.add_argument('--grader', type=str, default='gpt-4o', 
                         choices = ['gpt-4o','gpt-4-turbo'])
     parser.add_argument('--key', type=str, default='')
