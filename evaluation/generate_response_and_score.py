@@ -83,8 +83,8 @@ if __name__ == '__main__':
     parser.add_argument('--input_file', type=str, default='HARDMath_mini.json')
     parser.add_argument('--example_file', type=str, default='HARDMath_shot_examples.json')
     # output
-    parser.add_argument('--output_dir', type=str, default='results/responses/ode')
-    parser.add_argument('--output_file', type=str, default='ode_0shot_mistral7b.json')
+    parser.add_argument('--output_dir', type=str, default='results/responses/nondimensionalization_symbolic')
+    parser.add_argument('--output_file', type=str, default='nondimensionalization_symbolic_0shot_o1mini.json')
     # model
     parser.add_argument('--model', type=str, default='gpt-4-turbo', 
                         choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','llama3.1-8b','codellama-13b','mistral-7b','o1-mini'])
@@ -94,7 +94,7 @@ if __name__ == '__main__':
     # prompt
     parser.add_argument('--prompt_file', type=str, default=None)  
     parser.add_argument('--shot_num', type=int, default=0)
-    parser.add_argument('--question_type', type=str, default='ODE',
+    parser.add_argument('--question_type', type=str, default='nondimensionalization_symbolic',
                         choices=['nondimensionalization_symbolic','nondimensionalization_numeric',
                                  'integral','ODE','polynomial_roots'])
     parser.add_argument('--integral_subtype', type=str, default=None, choices=['traditional','laplace'])
