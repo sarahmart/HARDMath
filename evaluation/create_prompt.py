@@ -101,8 +101,10 @@ def create_grading_prompt(latex_response, solution_latex, question_type=None,int
         4) Give the final grading as a float in Latex boxed format \\[boxed{}\\]"
     elif question_type == "ODE":
         grade_guide = "1) Check both the small and large $\epsilon$ solutions. \
-        2) For each solution, give full credit if it matches the formula in the answer key; \
-        give no credit if it is completely wrong and briefly state the reason for the error. \
+        2) For small regime solution, only give full credit if it matches the formula in the answer key exactly; \
+        give no credit if it is doesn't match the form. For large regime solution, give full credit if it matches the \
+        formula in the answer key exactly; give partial credit if it doesn't match but the numerical evaluation is \
+        not far from solution at this regime; give no credit if neither satisfies \
         3) Average the scores for the small and large epsilon solutions to obtain a final score between 0 and 1. \
         4) Give the final grading as a float in Latex boxed format \\[boxed{}\\]"
     query = f"{common_query}\n\n{grade_guide}"
