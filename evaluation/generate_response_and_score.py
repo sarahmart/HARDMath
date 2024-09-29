@@ -60,14 +60,14 @@ def load_model(args, role):
             
             # Determine the system prompt
             if role == 'none':
-                model = models.GPT_Model(args.model, key)
+                model = models.GPT_Model_openrouter(args.model, key)
             elif role == 'math_assistant':
                 system_prompt = (
                     "You are a helpful assistant designed to help with advanced applied mathematics problems, "
                     "specifically focusing on tasks like nondimensionalizing polynomials, using approximation methods to solve for polynomial "
                     "roots, PDEs, integrals, etc. When given a physical math question, you should answer the question according to the user's prompt."
                 )
-                model = models.GPT_Model(args.model, key, temperature=args.temperature, sleep_time=args.sleep_time, system_prompt=system_prompt)
+                model = models.GPT_Model_openrouter(args.model, key, temperature=args.temperature, sleep_time=args.sleep_time, system_prompt=system_prompt)
         else:
             # For non-GPT models, load from the server
             server_url = f"http://{args.server_ip}:11434/api/generate"
@@ -83,18 +83,18 @@ if __name__ == '__main__':
     parser.add_argument('--input_file', type=str, default='HARDMath_mini.json')
     parser.add_argument('--example_file', type=str, default='HARDMath_shot_examples.json')
     # output
-    parser.add_argument('--output_dir', type=str, default='results/responses/nondimensionalization_symbolic')
-    parser.add_argument('--output_file', type=str, default='nondimensionalization_symbolic_0shot_llama3.1.json')
+    parser.add_argument('--output_dir', type=str, default='results/responses/polynomial_roots')
+    parser.add_argument('--output_file', type=str, default='polynomial_roots_5shot_o1mini.json')
     # model
     parser.add_argument('--model', type=str, default='gpt-4-turbo', 
-                        choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','llama3.1-8b','codellama-13b','mistral-7b','o1-mini'])
+                        choices = ['gpt-4-turbo','gpt-3.5-turbo', 'gpt-4o','llama3-8b','llama3.1-8b','codellama-13b','mistral-7b','openai/o1-mini'])
     parser.add_argument('--grader', type=str, default='gpt-4o', 
                         choices = ['gpt-4o','gpt-4-turbo'])
     parser.add_argument('--key', type=str, default='')
     # prompt
     parser.add_argument('--prompt_file', type=str, default=None)  
     parser.add_argument('--shot_num', type=int, default=0)
-    parser.add_argument('--question_type', type=str, default='nondimensionalization_symbolic',
+    parser.add_argument('--question_type', type=str, default='polynomial_roots',
                         choices=['nondimensionalization_symbolic','nondimensionalization_numeric',
                                  'integral','ODE','polynomial_roots'])
     parser.add_argument('--integral_subtype', type=str, default=None, choices=['traditional','laplace'])
