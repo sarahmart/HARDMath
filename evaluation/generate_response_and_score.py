@@ -151,7 +151,7 @@ if __name__ == '__main__':
     test_pids = list(data.keys())
     print("Number of test problems in total:", len(test_pids))
 
-    skip_pids = [322]
+    skip_pids = ['322']
     print("Removing problems with existing valid response...")
     for pid in test_pids:
         if pid in results and 'response' in results[pid]:
@@ -165,7 +165,7 @@ if __name__ == '__main__':
     for _, pid in enumerate(tqdm(test_pids)):
         problem_dict = data[pid]
         user_prompt = prompt_data[pid]
-        print(results)
+        #print(results)
         print(f"Generating response for {pid}...")
         try:
             results[pid] = {}
