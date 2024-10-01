@@ -48,7 +48,7 @@ def create_query_prompt(problem, examples, shot_num):
         hint_text = "Hint: Please answer the question requiring a floating-point number with two decimal\
               places and provide the final value, e.g., 0.80, 3.12, inside a Latex boxed format \\[boxed{}\\]."   
     elif answer_type == "list":
-        if question_type == 'ode':
+        if question_type == 'ODE':
             hint_text = "Hint: Please answer the question requiring a Python list containing SymPy \
                 convertible formula of $y = f(x)$ and provide the final list, e.g., \
                 $[y = 1 - x^{3}, y = -6/(x-5)]$, inside a Latex boxed format \\[boxed{}\\]."
