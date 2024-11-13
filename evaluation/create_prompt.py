@@ -76,7 +76,7 @@ def create_word_augment_qus_prompt(problem, domain_seed):
     assert answer_type in ["math_expression", "float", "list"]
     assert question_type in ["integral", "ODE","polynomial_roots", "nondimensionalization_symbolic", 'nondimensionalization_numeric']
     hint_text = f"Rewrite this {question_type} problem by embedding it within a plausible real-world {domain_seed} problem scenario, \
-                without changing the mathematical question at the end."
+        without changing the mathematical question at the end."
     elements = [question_text, hint_text, "Rewritten word problem: "]
     test_query = "\n".join([e for e in elements if e != ""])
     return test_query.strip()

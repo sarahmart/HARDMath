@@ -84,7 +84,7 @@ if __name__ == '__main__':
     parser.add_argument('--example_file', type=str, default='word_problems_HARDMath.json')
     # output
     parser.add_argument('--output_dir', type=str, default='results/LLM_word_problems/ode')
-    parser.add_argument('--output_file', type=str, default='ode_5shot_gpt4o.json')
+    parser.add_argument('--output_file', type=str, default='ode_gpt4o.json')
     # model
     parser.add_argument('--model', type=str, default='gpt-4o', 
                         choices = ['gpt-4-turbo','gpt-4o','openai/o1-mini'])
