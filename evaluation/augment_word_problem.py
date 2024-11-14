@@ -204,6 +204,7 @@ if __name__ == '__main__':
         print(f"Rewriting question for {pid}...")
         try:
             results[pid] = {}
+            results[pid]['subdomain_seed'] = subdomain_seed
             results[pid]['question_prompt'] = user_prompt
             augmented_question = model.get_response(user_prompt)
             latex_response = utils.display_content(augmented_question,False)
