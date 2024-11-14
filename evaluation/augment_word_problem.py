@@ -7,6 +7,32 @@ import models
 from tqdm import tqdm
 import answer_extraction
 from sympy import simplify, sympify
+import random
+
+
+# subfdomains dictionary for each domain
+domains = {
+    "physics": [
+        "Fluid Flow", "Hydrodynamics", "Groundwater", "Open Channel Flow", "Spray Dynamics", "Turbulence", "Viscosity",
+        "Erosion", "Circuit Analysis", "Electromagnetic Induction", "Vibration Analysis", "Resonance",
+        "Damped Oscillations", "Rotational Dynamics", "Spring-Mass Systems", "Frictional Forces", "Heat Transfer",
+        "Thermal Conductivity", "Cooling Systems", "Energy Storage", "Battery Dynamics", "Thermodynamic Cycles",
+        "Thermal Resistance", "Orbital Mechanics", "Celestial Motion", "Rocket Dynamics", "Satellite Trajectories",
+        "Gravitational Influence", "Asteroid Deflection", "Tidal Forces"
+    ],
+    "biology": [
+        "Population Dynamics", "Predator-Prey Models", "Neuroscience", "Signal Transmission", "Epidemiology",
+        "Enzyme Kinetics", "Biochemical Reactions", "Cell Growth", "Pollutant Dispersion", "Habitat Migration"
+    ],
+    "chemistry": [
+        "Biochemical Reactions", "Enzyme Kinetics", "Pollutant Dispersion", "Temperature Gradients", "Thermodynamic Cycles",
+        "Energy Storage", "Battery Dynamics", "Thermal Conductivity"
+    ],
+    "economics": [
+        "Supply and Demand", "Economic Cycles", "Trend Propagation", "Social Dynamics", "Market Equilibrium",
+        "Spread of Opinions", "Population Economics", "Resource Allocation"
+    ]
+}
 
 def verify_response(response):
     if isinstance(response, str):
@@ -31,7 +57,6 @@ def compare_answers(extracted_answer, model_answer):
     
     return 0
 
-import os
 
 def load_model(args, role):
     """
@@ -101,11 +126,10 @@ if __name__ == '__main__':
     parser.add_argument('--temperature', type=float, default=0.0)
     parser.add_argument('--sleep_time', type=float, default=0.1)
     parser.add_argument('--server_ip', type=str, default='10.120.16.254')
-    parser.add_argument('--domain_seed', type=str, default='physics', choices = ['physics','biology','chemistry'])
+    parser.add_argument('--domain_seed', type=str, default='physics', choices = ['physics','biology','chemistry', 'economics'])
     parser.add_argument('--num_problems', type=int, default=None)
     # other settings
     args = parser.parse_args()
-
     # load data
     input_file = os.path.join(args.data_dir, args.input_file)
     print(f"Reading {input_file}...")
@@ -131,7 +155,7 @@ if __name__ == '__main__':
     else:
         print("Creating new prompts...")
         # create query
-        prompt_data = create_prompt.create_word_augment_prompt_batch(data, args)
+        prompt_data = create_prompt.create_word_augment_prompt_batch(data, domains, args.domain_seed)
 
     # output file
     os.makedirs(args.output_dir, exist_ok=True)
@@ -174,7 +198,8 @@ if __name__ == '__main__':
     for _, pid in enumerate(tqdm(test_pids)):
         problem_dict = data[pid]
         solution = problem_dict['solution']
-        user_prompt = prompt_data[pid]
+        user_prompt = prompt_data[pid]['prompt']
+        subdomain_seed = prompt_data[pid]['subdomain_seed']
         #print(results)
         print(f"Rewriting question for {pid}...")
         try:
@@ -183,7 +208,7 @@ if __name__ == '__main__':
             augmented_question = model.get_response(user_prompt)
             latex_response = utils.display_content(augmented_question,False)
             results[pid]['aug_question'] = augmented_question
-            augmented_sol_prompt = create_prompt.create_word_augment_sol_prompt(augmented_question, solution, args.domain_seed)
+            augmented_sol_prompt = create_prompt.create_word_augment_sol_prompt(augmented_question, solution, subdomain_seed)
             results[pid]['solution_prompt'] = augmented_sol_prompt
             linker_sentence = model.get_response(augmented_sol_prompt)
             augmented_solution = [linker_sentence, solution]
@@ -193,7 +218,7 @@ if __name__ == '__main__':
             print("Scoring problem plausibility using gpt-4o method. Creating grading prompts...")
             # create grading prompt
             grading_model = load_model(args, 'grader')
-            grading_prompt = create_prompt.create_word_augment_grading_prompt(augmented_question, args.domain_seed)
+            grading_prompt = create_prompt.create_word_augment_grading_prompt(augmented_question, subdomain_seed)
             results[pid]['grade_prompt'] = grading_prompt
             grade_response = grading_model.get_response(grading_prompt)
             results[pid]['grade_response'] = grade_response

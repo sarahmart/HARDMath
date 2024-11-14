@@ -1,5 +1,8 @@
+import random
 
 examples = []
+
+
 
 def create_demo_prompt(examples, shot_num):
     demo_prompt = ""
@@ -61,7 +64,7 @@ def create_query_prompt(problem, examples, shot_num):
     query = (demo_prompt + "\n\n" + test_query).strip()
     return query
 
-def create_word_augment_qus_prompt(problem, domain_seed):
+def create_word_augment_qus_prompt(problem, subdomain_seed):
     # demo prompt
     #demo_prompt = create_demo_prompt(examples,shot_num)
 
@@ -75,20 +78,20 @@ def create_word_augment_qus_prompt(problem, domain_seed):
     #hint_text = ""
     assert answer_type in ["math_expression", "float", "list"]
     assert question_type in ["integral", "ODE","polynomial_roots", "nondimensionalization_symbolic", 'nondimensionalization_numeric']
-    hint_text = f"Rewrite this {question_type} problem by embedding it within a plausible real-world {domain_seed} problem scenario, \
+    hint_text = f"Rewrite this {question_type} problem by embedding it within a plausible real-world {subdomain_seed} problem scenario, \
         without changing the mathematical question at the end."
     elements = [question_text, hint_text, "Rewritten word problem: "]
     test_query = "\n".join([e for e in elements if e != ""])
     return test_query.strip()
 
-def create_word_augment_sol_prompt(augmented_question, solution, domain_seed):
+def create_word_augment_sol_prompt(augmented_question, solution, subdomain_seed):
     # demo prompt
     #demo_prompt = create_demo_prompt(examples,shot_num)
     # Hint and prompt setup based on problem and answer type
-    question_text = f"Real-world {domain_seed} question: {augmented_question}"
+    question_text = f"Real-world {subdomain_seed} question: {augmented_question}"
     solution_text = f"Original math solution: {solution}"
-    hint_text = f"We provide above a real-world {domain_seed} question, and its mathmetical solution. Generate a single introductory \
-        sentence before the solution that can connect the solution to the real-world {domain_seed} context provided in the question."
+    hint_text = f"We provide above a real-world {subdomain_seed} question, and its mathematical solution. Generate a single introductory \
+        sentence before the solution that can connect the solution to the real-world {subdomain_seed} context provided in the question."
     elements = [question_text, solution_text, hint_text, "Introductory sentence: "]
     test_query = "\n".join([e for e in elements if e != ""])
     return test_query.strip()
@@ -105,15 +108,25 @@ def create_query_prompt_batch(problem_metadata_json, examples, args):
         prompt_dict[pid] = prompt
     return prompt_dict
 
-def create_word_augment_prompt_batch(problem_metadata_json, args):
+def get_random_subdomain(domains, domain_seed):
+    if domain_seed in domains:
+        return random.choice(domains[domain_seed])
+    else:
+        return "Domain not found. Please choose from: " + ", ".join(domains.keys())
+
+def create_word_augment_prompt_batch(problem_metadata_json, domains, domain_seed):
     prompt_dict = {}
     #question_specific_examples = {key: value for key, value in examples.items() if value.get('question_type') == args.question_type}
     for pid, problem in problem_metadata_json.items():
+        subdomain_seed = get_random_subdomain(domains, domain_seed)
         prompt = create_word_augment_qus_prompt(
             problem = problem, 
-            domain_seed = args.domain_seed,
+            subdomain_seed = subdomain_seed,
             )
-        prompt_dict[pid] = prompt
+        prompt_dict[pid] = {
+            "prompt": prompt,
+            "subdomain_seed": subdomain_seed
+        }
     return prompt_dict
 
 def create_grading_prompt(latex_response, solution_latex, question_type=None,integral_subtype=None):
@@ -153,9 +166,9 @@ def create_grading_prompt(latex_response, solution_latex, question_type=None,int
     query = f"{common_query}\n\n{grade_guide}"
     return query
 
-def create_word_augment_grading_prompt(augmented_question, domain_seed):
-    question_text = f"Real-world {domain_seed} question: {augmented_question}"
-    hint_text = f"We provide above a real-world {domain_seed} question. Review and verify its plausibility within the context \
+def create_word_augment_grading_prompt(augmented_question, subdomain_seed):
+    question_text = f"Real-world {subdomain_seed} question: {augmented_question}"
+    hint_text = f"We provide above a real-world {subdomain_seed} question. Review and verify its plausibility within the context \
         of parameter ranges of this domain. Identify any inconsistencies or areas needing clarification to ensure the problem \
             is realistic for this domain. Return a single float number as plausibility score (0-1) in LaTeX boxed format \\[boxed{{}}\\] at the end."
     elements = [question_text, hint_text, "Plausibility assessment: "]
