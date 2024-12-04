@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" version="24.8.6">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1080" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="dpOeT1c7Tx3LjSWL2dck-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="&lt;b style=&quot;font-size: 11px;&quot;&gt;Generate problem. &lt;/b&gt;Add coefficients, powers, &amp;amp; functional forms into template (e.g., &lt;i style=&quot;font-size: 11px;&quot;&gt;polynomial&lt;/i&gt;, &lt;i style=&quot;font-size: 11px;&quot;&gt;ODE&lt;/i&gt;, &lt;i style=&quot;font-size: 11px;&quot;&gt;integral&lt;/i&gt;) as &lt;font face=&quot;Courier New&quot; style=&quot;font-size: 11px;&quot;&gt;SymPy&lt;/font&gt; expression." style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry y="120" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-3" value="&lt;b style=&quot;font-size: 11px;&quot;&gt;LaTeX format&lt;/b&gt;&amp;nbsp;step-by-step solutions with&lt;font face=&quot;Courier New&quot; style=&quot;font-size: 11px;&quot;&gt; \boxed{}&lt;/font&gt; final answers." style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="737" y="140" width="90" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-6" target="dpOeT1c7Tx3LjSWL2dck-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-6" target="WIyWlLk6GJQsqaUBKTNV-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="223" y="135" as="sourcePoint" />
+            <mxPoint x="55.5" y="90" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="232" y="135" />
+              <mxPoint x="233" y="100" />
+              <mxPoint x="65" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-6" value="&lt;b style=&quot;font-size: 11px;&quot;&gt;&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;Problem already&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;exists in&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;database?&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="150" y="140" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-9" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="216" y="119" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-10" target="dpOeT1c7Tx3LjSWL2dck-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-10" value="&lt;b style=&quot;font-size: 11px;&quot;&gt;Apply approximation methods&lt;/b&gt;&amp;nbsp;(e.g., dominant balances, Taylor Expansion, physical arguments)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="287" y="120" width="83" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-12" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="239" y="168" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-13" target="dpOeT1c7Tx3LjSWL2dck-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-13" value="&lt;b&gt;Verify&lt;/b&gt;&amp;nbsp;solutions are self-consistent and assumptions were valid." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="500" y="120" width="80" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-18" target="dpOeT1c7Tx3LjSWL2dck-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-18" value="&lt;b style=&quot;font-size: 11px;&quot;&gt;Generate approximate analytical solutions&lt;/b&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;&amp;nbsp;&lt;/b&gt;by solving the simplified expressions using &lt;font face=&quot;Courier New&quot; style=&quot;font-size: 11px;&quot;&gt;SciPy&lt;/font&gt;.&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;&amp;nbsp;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="394" y="119" width="80" height="141" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="100" as="targetPoint" />
+            <mxPoint x="695" y="130" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="655" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dpOeT1c7Tx3LjSWL2dck-20" target="dpOeT1c7Tx3LjSWL2dck-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-20" value="Analytical&amp;nbsp;&lt;div style=&quot;font-size: 11px;&quot;&gt;solutions within&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;10% of&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;numerical?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="600" y="135" width="111" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-23" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="638" y="105" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dpOeT1c7Tx3LjSWL2dck-29" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="690" y="163" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
