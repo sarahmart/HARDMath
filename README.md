@@ -11,7 +11,7 @@ This repository hosts the [full dataset](./data/HARDMath.json) and the [evaluati
 Improving the mathematical reasoning capabilities of Large Language Models (LLMs) is of significant interest to the machine learning community. To rigorously track the progress of these models, comprehensive and diverse benchmarks are essential. However, most existing benchmarks focus on problems at the undergraduate level or below and often feature straightforward solutions. In contrast, many real-world problems in science and engineering do not follow this trend and require approximations or sophisticated techniques that current benchmarks fail to evaluate. Therefore, it is imperative to develop benchmarks with more challenging problems and emphasize a different style of mathematical reasoning.    
 
 <p align="center">
-    <img src="assets/laplace_integral_example.png" width="80%"> <br>
+    <img src="assets/sample_simple_integral.png" width="80%"> <br>
   An example of a difficult problem that does not have an exact solution but can be accurately approximated using techniques from applied mathematics.
 </p>
 
