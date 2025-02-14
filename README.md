@@ -1,5 +1,7 @@
 # HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics
 
+[![arXiv](https://img.shields.io/badge/arXiv-2410.09988-b31b1b.svg)](https://arxiv.org/abs/2410.09988)
+
 This is the repository for HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics. 
 
 **The updated paper is available here:** [HARDMath](https://arxiv.org/pdf/2410.09988).
